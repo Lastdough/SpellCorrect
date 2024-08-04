@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.abdurraahm.spellcheck"
+    namespace = "com.abdurraahm.spellcorrect"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.abdurraahm.spellcheck"
+        applicationId = "com.abdurraahm.spellcorrect"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
