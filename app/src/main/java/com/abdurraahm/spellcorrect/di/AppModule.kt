@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcheck.di
+package com.abdurraahm.spellcorrect.di
 
 import dagger.Module
 import dagger.Provides
