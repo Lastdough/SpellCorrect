@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcheck
+package com.abdurraahm.spellcorrect
 
 import org.junit.Test
 

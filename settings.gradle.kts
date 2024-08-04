@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SpellCheck"
+rootProject.name = "SpellCorrect"
 include(":app")
  

@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcheck.ui.theme
+package com.abdurraahm.spellcorrect.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

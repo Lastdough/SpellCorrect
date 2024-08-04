@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">SpellCheck</string>
-    <string name="app_display_name">Spell Check</string>
+    <string name="app_name">SpellCorrect</string>
+    <string name="app_display_name">Spell Correct</string>
 </resources>
