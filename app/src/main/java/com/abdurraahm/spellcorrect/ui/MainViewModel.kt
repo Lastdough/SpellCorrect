@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val wordEntryRepository: WordEntryRepository
+    wordEntryRepository: WordEntryRepository
 ) : ViewModel() {
     var wordOfTheDay = wordEntryRepository.wordOfTheDay()
 }

@@ -1,5 +1,7 @@
 package com.abdurraahm.spellcorrect.di
 
+import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataSource
+import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.repository.WordEntryRepository
 import com.abdurraahm.spellcorrect.data.repository.WordEntryRepositoryImpl
 import dagger.Binds
@@ -13,8 +15,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
     @Provides
-    @Singleton
-    fun provideMainRepositoryImpl(): WordEntryRepository {
-        return WordEntryRepositoryImpl()
+    fun provideMainRepositoryImpl(
+        wordEntryDataSource: WordEntryDataSource,
+        wordEntryDataStore: WordEntryDataStore
+    ): WordEntryRepository {
+        return WordEntryRepositoryImpl(wordEntryDataSource, wordEntryDataStore)
     }
 }
