@@ -68,6 +68,6 @@ fun CustomButton(
 @Composable
 private fun CustomButtonPreview() {
     SpellCorrectTheme {
-        CustomButton(onClick = { /*TODO*/ }, text = "Get Started")
+        CustomButton(onClick = { }, text = "Get Started")
     }
 }
