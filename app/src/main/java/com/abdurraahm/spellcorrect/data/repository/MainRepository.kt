@@ -2,8 +2,14 @@ package com.abdurraahm.spellcorrect.data.repository
 
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
+import kotlinx.coroutines.flow.Flow
 
-interface WordEntryRepository {
+interface MainRepository {
+    // Navigation
+    val onboardingState: Flow<Boolean>
+    suspend fun updateOnboardingState(completed: Boolean)
+
+    // Word Entry
     fun wordOfTheDay(): WordEntry
     fun exerciseStart(section: Section): List<WordEntry>
     fun exerciseResume(section: Section): List<WordEntry>
