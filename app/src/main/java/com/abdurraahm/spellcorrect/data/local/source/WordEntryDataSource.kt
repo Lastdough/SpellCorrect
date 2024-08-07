@@ -8,65 +8,39 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
+import java.util.Locale
 import javax.inject.Inject
 
 class WordEntryDataSource @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
-    private lateinit var firstSectionJsonString: String
-    private lateinit var secondSectionJsonString: String
-    private lateinit var thirdSectionJsonString: String
-
+    private val sectionJsonStrings = mutableMapOf<Section, String>()
 
     init {
         try {
-            firstSectionJsonString = context.assets.open("separate/first_section.json")
-                .bufferedReader()
-                .use { it.readText() }
-            secondSectionJsonString = context.assets.open("separate/second_section.json")
-                .bufferedReader()
-                .use { it.readText() }
-            thirdSectionJsonString = context.assets.open("separate/third_section.json")
-                .bufferedReader()
-                .use { it.readText() }
+            Section.entries.forEach { section ->
+                sectionJsonStrings[section] = context.assets.open("separate/${
+                    section.name.lowercase(
+                        Locale.ROOT
+                    )
+                }_section.json")
+                    .bufferedReader()
+                    .use { it.readText() }
+            }
         } catch (ioException: IOException) {
-            Log.d("Data Source", "readWordEntriesFromAssets: $ioException ")
+            Log.d("Data Source", "Error loading section data: $ioException")
         }
-
     }
 
     fun sectionEntry(section: Section): List<WordEntry> {
         val listType = object : TypeToken<List<WordEntry>>() {}.type
-        when (section) {
-            Section.FIRST -> {
-                val firstSection =
-                    Gson().fromJson<List<WordEntry>>(firstSectionJsonString, listType)
-                return firstSection
-            }
-
-            Section.SECOND -> {
-                val secondSection =
-                    Gson().fromJson<List<WordEntry>>(secondSectionJsonString, listType)
-                return secondSection
-
-            }
-
-            Section.THIRD -> {
-                val thirdSection =
-                    Gson().fromJson<List<WordEntry>>(thirdSectionJsonString, listType)
-                return thirdSection
-            }
-        }
+        return sectionJsonStrings[section]?.let {
+            Gson().fromJson(it, listType)
+        } ?: emptyList()
     }
 
     fun mergedEntry(): List<WordEntry> {
-        val listOfSection = listOf(
-            sectionEntry(Section.FIRST),
-            sectionEntry(Section.SECOND),
-            sectionEntry(Section.THIRD)
-        )
-        val mergedSection = listOfSection.flatten()
-        return mergedSection
+        return Section.entries.flatMap { sectionEntry(it) }
     }
 
 }
