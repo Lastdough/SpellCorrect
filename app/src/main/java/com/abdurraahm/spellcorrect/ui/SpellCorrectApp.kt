@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.ui.navigation.Screen
+import com.abdurraahm.spellcorrect.ui.screen.home.HomeScreen
 import com.abdurraahm.spellcorrect.ui.screen.onboarding.OnBoardingScreen
 
 @Composable
@@ -23,9 +24,8 @@ fun SpellCorrectApp(
     navController: NavHostController = rememberNavController(),
     startDestination: String
 ) {
-    val onBoardingState = mainViewModel.onboardingCompletedState.collectAsState(initial = false).value
-
-
+    val onBoardingState =
+        mainViewModel.onboardingCompletedState.collectAsState(initial = false).value
     NavHost(
         modifier = modifier.fillMaxSize(),
         navController = navController,
@@ -34,19 +34,13 @@ fun SpellCorrectApp(
         composable(Screen.OnBoarding.route) {
             OnBoardingScreen(
                 onClickGetStartedClicked = {
-                    navController.navigate(Screen.Home.route)
                     mainViewModel.onOnboardingCompleted()
+                    navController.navigate(Screen.Home.route)
                 }
             )
         }
         composable(Screen.Home.route) {
-            Column(
-                modifier = Modifier,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(text = "Halo Ges ini Home $onBoardingState")
-            }
+            HomeScreen()
         }
         composable(Screen.More.route) {
             Column(
