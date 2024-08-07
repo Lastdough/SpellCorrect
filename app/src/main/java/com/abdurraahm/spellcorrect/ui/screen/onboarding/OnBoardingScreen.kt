@@ -49,7 +49,7 @@ fun OnBoardingScreen(
 
 @Preview
 @Composable
-private fun OnBoardingPreview() {
+private fun OnBoardingScreenPreview() {
     SpellCorrectTheme {
         OnBoardingScreen(onClickGetStartedClicked = { })
     }
