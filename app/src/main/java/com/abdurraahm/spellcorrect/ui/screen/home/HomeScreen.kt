@@ -29,21 +29,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.abdurraahm.spellcorrect.R
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.DummyWordEntrySource
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
+import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 import com.abdurraahm.spellcorrect.ui.utils.toPercent
 import com.abdurraahm.spellcorrect.ui.utils.toRomanNumeral
+import kotlin.Int
+import kotlin.OptIn
+import kotlin.Unit
+import com.abdurraahm.spellcorrect.R.drawable as Drawable
+import com.abdurraahm.spellcorrect.R.string as String
 
 @Composable
 fun HomeScreen(
@@ -81,7 +85,7 @@ private fun HomeContent(
             CenterAlignedTopAppBar(title = {
                 Icon(
                     modifier = Modifier.height(24.dp),
-                    painter = painterResource(id = R.drawable.logo_with_text),
+                    imageVector = Drawable.logo_with_text.imageVectorResource(),
                     contentDescription = "",
                     tint = MaterialTheme.colorScheme.onSurface
                 )
@@ -255,7 +259,7 @@ private fun TopContent(
             )
             Icon(
                 modifier = Modifier.size(28.dp),
-                painter = painterResource(id = R.drawable.outline_dictionary_28),
+                imageVector = Drawable.outline_dictionary_28.imageVectorResource(),
                 contentDescription = null
             )
         }
@@ -285,27 +289,27 @@ private fun HomeContentPreview() {
         val listOfSection = listOf(
             SectionData(
                 part = 1,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.4f
             ),
             SectionData(
                 part = 2,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.1f
             ),
             SectionData(
                 part = 3,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.83f
             ),
 //            SectionCard(
 //                part = 4,
-//                description = stringResource(id = R.string.desc_temp),
+//                description = stringResource(id = String.desc_temp),
 //                progress = 1f
 //            ),
 //            SectionCard(
 //                part = 5,
-//                description = stringResource(id = R.string.desc_temp),
+//                description = stringResource(id = String.desc_temp),
 //                progress = 1f
 //            )
         )
@@ -327,17 +331,17 @@ private fun HomeContentDarkPreview() {
         val listOfSection = listOf(
             SectionData(
                 part = 1,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.3f
             ),
             SectionData(
                 part = 2,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.53f
             ),
             SectionData(
                 part = 3,
-                description = stringResource(id = R.string.desc_temp),
+                description = stringResource(id = String.desc_temp),
                 progress = 0.33f
             )
         )
