@@ -8,6 +8,35 @@ data class WordEntry(
     val type: String,
     val ipa: String
 ) {
+    private fun String.formatType(): String = if (arrayOf(
+            'a',
+            'i',
+            'u',
+            'e',
+            'o'
+        ).contains(this.first())
+    ) "an $this" else "a $this"
+
+    private fun List<String>.formatDefinitions(): String =
+        this.mapIndexed { index, definition ->
+            when (index) {
+                0 -> definition
+                1 -> "or $definition"
+                2 -> "or $definition"
+                else -> "Another meaning is: $definition"
+            }
+        }.joinToString(separator = ". ") { it }
+
+    private fun List<String>.mergeDefinitions(): String =
+        this.mapIndexed { index, definition ->
+            "${index + 1}. $definition"
+        }.joinToString(separator = "\n") { it }
+
+    val definitionWithNumber
+        get() = definition.mergeDefinitions()
+
+    val fullDescription
+        get() = "$word: ${type.formatType()} meaning ${definition.formatDefinitions()}"
 
     private fun String.abbreviation(): String {
         return when (this) {
