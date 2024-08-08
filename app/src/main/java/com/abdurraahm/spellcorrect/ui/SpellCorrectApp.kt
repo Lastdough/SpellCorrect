@@ -1,12 +1,8 @@
 package com.abdurraahm.spellcorrect.ui
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -15,7 +11,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.ui.navigation.Screen
 import com.abdurraahm.spellcorrect.ui.screen.home.HomeScreen
+import com.abdurraahm.spellcorrect.ui.screen.more.MoreScreen
 import com.abdurraahm.spellcorrect.ui.screen.onboarding.OnBoardingScreen
+import com.abdurraahm.spellcorrect.ui.screen.review.ReviewScreen
 
 @Composable
 fun SpellCorrectApp(
@@ -24,8 +22,10 @@ fun SpellCorrectApp(
     navController: NavHostController = rememberNavController(),
     startDestination: String
 ) {
-    val onBoardingState =
-        mainViewModel.onboardingCompletedState.collectAsState(initial = false).value
+    val onBoardingState = mainViewModel
+        .onboardingCompletedState
+        .collectAsState(initial = false).value
+
     NavHost(
         modifier = modifier.fillMaxSize(),
         navController = navController,
@@ -40,16 +40,14 @@ fun SpellCorrectApp(
             )
         }
         composable(Screen.Home.route) {
-            HomeScreen()
+            HomeScreen(navController = navController)
+        }
+        composable(Screen.Review.route) {
+            ReviewScreen(navController = navController)
         }
         composable(Screen.More.route) {
-            Column(
-                modifier = Modifier,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(text = "Halo Ges ini More $onBoardingState")
-            }
+            MoreScreen(navController = navController)
         }
     }
 }
+

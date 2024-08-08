@@ -1,5 +1,6 @@
 package com.abdurraahm.spellcorrect.ui.screen.home
 
+import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -7,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,8 +17,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -35,16 +33,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.DummyWordEntrySource
+import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
+import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 import com.abdurraahm.spellcorrect.ui.utils.toPercent
 import com.abdurraahm.spellcorrect.ui.utils.toRomanNumeral
 import kotlin.Int
-import kotlin.OptIn
 import kotlin.Unit
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
 import com.abdurraahm.spellcorrect.R.string as String
@@ -52,6 +53,7 @@ import com.abdurraahm.spellcorrect.R.string as String
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
+    navController: NavHostController,
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
@@ -67,32 +69,25 @@ fun HomeScreen(
         },
         onWordOfTheDayClicked = {
             Toast.makeText(context, "$wordOfTheDay", Toast.LENGTH_SHORT).show()
-        }
+        },
+        navController = navController
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun HomeContent(
     modifier: Modifier = Modifier,
+    navController: NavHostController,
     wordOfTheDay: WordEntry,
     listOfSection: List<SectionData>,
     onSectionClicked: (Int) -> Unit,
     onWordOfTheDayClicked: () -> Unit
 ) {
     Scaffold(modifier = modifier,
-        topBar = {
-            CenterAlignedTopAppBar(title = {
-                Icon(
-                    modifier = Modifier.height(24.dp),
-                    imageVector = Drawable.logo_with_text.imageVectorResource(),
-                    contentDescription = "",
-                    tint = MaterialTheme.colorScheme.onSurface
-                )
-            })
-        }) {
-        // Content
-        Column(
+        topBar = { DefaultTopBar() },
+        bottomBar = { DefaultBottomBar(navController = navController) }
+    ) {
+        LazyColumn(
             modifier = Modifier
                 .padding(it)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
@@ -100,35 +95,25 @@ private fun HomeContent(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TopContent(
-                modifier = Modifier.padding(bottom = 16.dp),
-                sectionFinished = listOfSection.count { section -> section.finished },
-                totalSection = listOfSection.size
-            )
-            WordOfTheDay(
-                modifier = Modifier.padding(bottom = 16.dp),
-                word = wordOfTheDay,
-                onWordOfTheDayClicked = onWordOfTheDayClicked
-            )
-//            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-//                sectionList.forEach { section ->
-//                    SectionCard(
-//                        section = section,
-//                        onSectionClicked = {
-//                        }
-//                    )
-//                }
-//
-//            }
-            LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(listOfSection, key = { section -> section.part }) { section ->
-                    SectionCard(
-                        section = section,
-                        onSectionClicked = {
-                            onSectionClicked(section.part)
-                        }
-                    )
-                }
+            item {
+                TopContent(
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    sectionFinished = listOfSection.count { section -> section.finished },
+                    totalSection = listOfSection.size
+                )
+                WordOfTheDay(
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    word = wordOfTheDay,
+                    onWordOfTheDayClicked = onWordOfTheDayClicked
+                )
+            }
+            items(listOfSection, key = { section -> section.part }) { section ->
+                SectionCard(
+                    section = section,
+                    onSectionClicked = {
+                        onSectionClicked(section.part)
+                    }
+                )
             }
         }
     }
@@ -283,6 +268,7 @@ private fun TopContent(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun HomeContentPreview() {
     SpellCorrectTheme {
@@ -302,58 +288,23 @@ private fun HomeContentPreview() {
                 description = stringResource(id = String.desc_temp),
                 progress = 0.83f
             ),
-//            SectionCard(
-//                part = 4,
-//                description = stringResource(id = String.desc_temp),
-//                progress = 1f
-//            ),
-//            SectionCard(
-//                part = 5,
-//                description = stringResource(id = String.desc_temp),
-//                progress = 1f
-//            )
-        )
-        val sectionFinished = listOfSection.count { it.finished }
-
-        HomeContent(
-            wordOfTheDay = DummyWordEntrySource.singleWord(),
-            listOfSection = listOfSection,
-            onSectionClicked = {},
-            onWordOfTheDayClicked = {}
-        )
-    }
-}
-
-@Preview
-@Composable
-private fun HomeContentDarkPreview() {
-    SpellCorrectTheme(darkTheme = true) {
-        val listOfSection = listOf(
             SectionData(
-                part = 1,
+                part = 4,
                 description = stringResource(id = String.desc_temp),
-                progress = 0.3f
+                progress = 1f
             ),
             SectionData(
-                part = 2,
+                part = 5,
                 description = stringResource(id = String.desc_temp),
-                progress = 0.53f
-            ),
-            SectionData(
-                part = 3,
-                description = stringResource(id = String.desc_temp),
-                progress = 0.33f
+                progress = 1f
             )
         )
-        val sectionFinished = listOfSection.count { it.finished }
-
-
         HomeContent(
             wordOfTheDay = DummyWordEntrySource.singleWord(),
             listOfSection = listOfSection,
             onSectionClicked = {},
-            onWordOfTheDayClicked = {}
-
+            onWordOfTheDayClicked = {},
+            navController = rememberNavController()
         )
     }
 }
