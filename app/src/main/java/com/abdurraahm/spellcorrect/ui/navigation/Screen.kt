@@ -3,9 +3,10 @@ package com.abdurraahm.spellcorrect.ui.navigation
 sealed class Screen(val route: String) {
 
 
-    object OnBoarding : Screen("onboarding")
-    object Home : Screen("home")
-    object More : Screen("more")
+    object OnBoarding : Screen("OnBoarding")
+    object Home : Screen("Home")
+    object Review : Screen("Review")
+    object More : Screen("More")
 
 
 
