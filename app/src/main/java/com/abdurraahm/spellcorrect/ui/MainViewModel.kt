@@ -17,4 +17,12 @@ class MainViewModel @Inject constructor(
             mainRepository.updateOnboardingState(true)
         }
     }
+
+    fun startTextToSpeech() {
+        mainRepository.startTextToSpeech()
+    }
+
+    fun stopTextToSpeech() {
+        mainRepository.stopTextToSpeech()
+    }
 }

@@ -16,6 +16,8 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     val wordOfTheDay = mainRepository.wordOfTheDay()
 
+    fun speak(text: String) = mainRepository.speak(text)
+
     val listOfSection = listOf(
         SectionData(
             part = 1,

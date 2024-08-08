@@ -16,29 +16,38 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val mainViewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         var keepSplashScreen = true
         val splashScreen = installSplashScreen()
-        splashScreen.setKeepOnScreenCondition{
+        splashScreen.setKeepOnScreenCondition {
             keepSplashScreen
         }
 
-        val mainViewModel: MainViewModel by viewModels()
         lifecycleScope.launch {
             mainViewModel.onboardingCompletedState.collect { completed ->
                 // splash screen false once state is known
                 keepSplashScreen = false
                 setContent {
                     SpellCorrectTheme {
-                        val startDestination = if (completed) Screen.Home.route else Screen.OnBoarding.route
+                        val startDestination =
+                            if (completed) Screen.Home.route else Screen.OnBoarding.route
                         SpellCorrectApp(startDestination = startDestination)
                     }
                 }
             }
         }
+        mainViewModel.startTextToSpeech()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Destroy TTS
+        mainViewModel.stopTextToSpeech()
     }
 }
 

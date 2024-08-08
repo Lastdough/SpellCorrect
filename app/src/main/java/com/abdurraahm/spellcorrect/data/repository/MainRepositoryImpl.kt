@@ -1,11 +1,15 @@
 package com.abdurraahm.spellcorrect.data.repository
 
+import android.content.Context
+import android.content.Intent
 import android.os.Build
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataSource
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
+import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -18,10 +22,25 @@ import kotlin.random.Random
 
 @Singleton
 class MainRepositoryImpl @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val wordEntryDataSource: WordEntryDataSource,
     private val wordEntryDataStore: WordEntryDataStore,
-    private val navigationDataStore: NavigationDataStore
+    private val navigationDataStore: NavigationDataStore,
+    private val ttsService: TextToSpeechService
 ) : MainRepository {
+    // Text To Speech
+    override fun startTextToSpeech() {
+        val intent = Intent(context, TextToSpeechService::class.java)
+        context.startService(intent)
+    }
+
+    override fun stopTextToSpeech() {
+        val intent = Intent(context, TextToSpeechService::class.java)
+        context.stopService(intent)
+    }
+
+    override fun ttsService(): TextToSpeechService = ttsService
+    override fun speak(text: String) = ttsService.speak(text)
 
     // Navigation
     override val onboardingState: Flow<Boolean> = navigationDataStore.onboardingState
@@ -33,16 +52,16 @@ class MainRepositoryImpl @Inject constructor(
     override fun wordOfTheDay(): WordEntry {
         val wordEntry = wordEntryDataSource.mergedEntry()
         val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                // Using newer APIs for Oreo and above
-                val currentDate = LocalDate.now()
-                val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
-                "50002101" + currentDate.format(formatter)
-            } else {
-                // Fallback for older versions
-                val currentDateOlder = Date()
-                val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
-                "50002101" + formatterOlder.format(currentDateOlder)
-            }
+            // Using newer APIs for Oreo and above
+            val currentDate = LocalDate.now()
+            val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
+            "50002101" + currentDate.format(formatter)
+        } else {
+            // Fallback for older versions
+            val currentDateOlder = Date()
+            val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
+            "50002101" + formatterOlder.format(currentDateOlder)
+        }
         val randomSeeded = Random(seed.toLong())
         val wordOfTheDayIndex = wordEntry.indices.random(randomSeeded)
         val wordOfTheDay = wordEntry[wordOfTheDayIndex]

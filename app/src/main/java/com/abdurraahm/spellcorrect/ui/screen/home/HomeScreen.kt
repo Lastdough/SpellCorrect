@@ -59,11 +59,12 @@ fun HomeScreen(
         modifier = modifier,
         wordOfTheDay = wordOfTheDay,
         listOfSection = listOfSection,
-        onSectionClicked = {
-            Toast.makeText(context, "Section $it", Toast.LENGTH_SHORT).show()
-        },
         onWordOfTheDayClicked = {
             Toast.makeText(context, "$wordOfTheDay", Toast.LENGTH_SHORT).show()
+            homeViewModel.speak(wordOfTheDay.word + "meaning" + wordOfTheDay.definition)
+        },
+        onSectionClicked = {
+            Toast.makeText(context, "Section $it", Toast.LENGTH_SHORT).show()
         },
         navController = navController
     )
@@ -75,8 +76,8 @@ private fun HomeContent(
     navController: NavHostController,
     wordOfTheDay: WordEntry,
     listOfSection: List<SectionData>,
-    onSectionClicked: (Int) -> Unit,
-    onWordOfTheDayClicked: () -> Unit
+    onWordOfTheDayClicked: () -> Unit,
+    onSectionClicked: (Int) -> Unit
 ) {
     Scaffold(modifier = modifier,
         topBar = { DefaultTopBar() },
