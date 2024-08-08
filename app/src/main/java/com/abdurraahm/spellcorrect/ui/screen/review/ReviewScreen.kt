@@ -1,8 +1,11 @@
 package com.abdurraahm.spellcorrect.ui.screen.review
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -27,6 +30,9 @@ import com.abdurraahm.spellcorrect.ui.component.SectionCardType
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
+import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
+import com.abdurraahm.spellcorrect.R.drawable as Drawable
+
 
 @Composable
 fun ReviewScreen(
@@ -42,7 +48,7 @@ fun ReviewScreen(
         navController = navController,
         listOfSection = listOfSection,
         onSectionCartClicked = { part, isStarted ->
-            
+
         }
     )
 }
@@ -81,6 +87,19 @@ private fun ReviewContent(
                     sectionCardType = SectionCardType.TITLE_ONLY,
                     icon = if (section.started) null else Icons.Outlined.Lock
                 )
+            }
+            item {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    contentAlignment = Alignment.BottomEnd
+                ) {
+                    Image(
+                        imageVector = Drawable.undraw_quiz_re_aol4.imageVectorResource(),
+                        contentDescription = ""
+                    )
+                }
             }
         }
     }

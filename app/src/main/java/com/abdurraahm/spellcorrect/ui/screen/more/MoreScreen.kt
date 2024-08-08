@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -60,57 +63,60 @@ private fun MoreContent(
                 .padding(it)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.Start
         ) {
             Icon(
                 modifier = Modifier
+                    .padding(bottom = 24.dp)
                     .width(200.dp)
                     .height(50.dp)
                     .align(Alignment.CenterHorizontally),
                 imageVector = R.drawable.logo_with_text.imageVectorResource(),
                 contentDescription = "Logo"
             )
-            Text(
-                text = "About SpellCorrect",
-                style = TextStyle(
-                    fontSize = 14.sp
-                ),
-            )
-            Text(
-                text = "SpellCorrect is a comprehensive language learning application designed to help you improve your English vocabulary and spelling skills. Whether you are a beginner or looking to polish your advanced vocabulary, SpellCorrect offers a structured approach to mastering new words and phrases.",
-                style = TextStyle(
-                    fontSize = 12.sp
-                ),
-            )
-            Text(
-                text = "Features",
-                style = TextStyle(
-                    fontSize = 14.sp
-                ),
-            )
-            Text(
-                text = "Interactive Learning With Digital Flash Card:\nAudio-Spelling Challenges:\nProgress Tracking:\nWord of The Day:",
-                style = TextStyle(
-                    fontSize = 12.sp
-                ),
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
-            Text(
-                text = "Developer Connect ",
-                style = TextStyle(
-                    fontSize = 14.sp
-                ),
-            )
-            Text(
-                text = "Email: abdurraahm@gmail.com\ngithub: github/lasdough\nlinkdeln: link/abdurrahman-sembiring",
-                style = TextStyle(
-                    fontSize = 12.sp
-                ),
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Text(
+                    text = "About SpellCorrect",
+                    style = MaterialTheme.typography.titleMedium,
+                )
+                Text(
+                    text = "SpellCorrect is a comprehensive language learning application designed to help you improve your English vocabulary and spelling skills. Whether you are a beginner or looking to polish your advanced vocabulary, SpellCorrect offers a structured approach to mastering new words and phrases.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    textAlign = TextAlign.Justify
+                )
+            }
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Text(
+                    text = "Features",
+                    style = MaterialTheme.typography.titleMedium,
+                )
+                Text(
+                    text = "Interactive Learning With Digital Flash Card:\n" +
+                            "1. Audio-Spelling Challenges\n" +
+                            "2. Progress Tracking\n" +
+                            "3. Word of The Day",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Text(
+                    text = "Developer Connect ",
+                    style = MaterialTheme.typography.titleMedium,
+                )
+                Text(
+                    text = "GitHub: github.com/Lastdough\n" +
+                            "LinkedIn: linkedin.com/in/abdurrahman-sembiring/",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
         }
     }
 }
