@@ -5,8 +5,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,9 +25,11 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.abdurraahm.spellcorrect.R
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
+import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 
 @Composable
 fun MoreScreen(
@@ -45,7 +51,7 @@ private fun MoreContent(
     navController: NavHostController,
 ) {
     Scaffold(modifier = modifier,
-        topBar = { DefaultTopBar() },
+        topBar = { DefaultTopBar(showIcon = false) },
         bottomBar = { DefaultBottomBar(navController = navController) }
     ) {
         // Content
@@ -57,6 +63,14 @@ private fun MoreContent(
             verticalArrangement = Arrangement.spacedBy(10.dp),
             horizontalAlignment = Alignment.Start
         ) {
+            Icon(
+                modifier = Modifier
+                    .width(200.dp)
+                    .height(50.dp)
+                    .align(Alignment.CenterHorizontally),
+                imageVector = R.drawable.logo_with_text.imageVectorResource(),
+                contentDescription = "Logo"
+            )
             Text(
                 text = "About SpellCorrect",
                 style = TextStyle(
