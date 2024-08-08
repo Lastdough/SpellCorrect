@@ -18,7 +18,6 @@ import androidx.compose.material.icons.filled.CheckCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,28 +26,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
-import com.abdurraahm.spellcorrect.data.local.source.DummyWordEntrySource
+import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
+import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
-import com.abdurraahm.spellcorrect.ui.utils.toPercent
-import com.abdurraahm.spellcorrect.ui.utils.toRomanNumeral
 import kotlin.Int
 import kotlin.Unit
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
-import com.abdurraahm.spellcorrect.R.string as String
 
 @Composable
 fun HomeScreen(
@@ -119,58 +114,6 @@ private fun HomeContent(
     }
 }
 
-
-@Composable
-private fun SectionCard(
-    section: SectionData,
-    onSectionClicked: (Int) -> Unit
-) {
-    Card(
-        shape = RoundedCornerShape(5.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.secondaryContainer
-        ),
-        modifier = Modifier
-            .fillMaxWidth(),
-        onClick = { onSectionClicked(section.part) },
-        border = BorderStroke(2.dp, Color.Black),
-        content = {
-            Column(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Row(
-                    modifier = Modifier,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.Bottom
-                ) {
-                    Text(
-                        style = MaterialTheme.typography.headlineLarge,
-                        text = "Section ${section.part.toRomanNumeral()}"
-                    )
-                }
-                Text(
-                    style = MaterialTheme.typography.displaySmall,
-                    text = section.description
-                )
-
-                LinearProgressIndicator(
-                    modifier = Modifier.fillMaxWidth(),
-                    progress = { section.progress },
-                )
-                Text(
-                    modifier = Modifier.align(Alignment.End),
-                    style = MaterialTheme.typography.displaySmall.copy(
-                        fontSize = 12.sp
-                    ),
-                    text = if (!section.finished) "${section.progress.toPercent()}% Word" else "Completed"
-                )
-
-            }
-        })
-}
 
 @Composable
 private fun WordOfTheDay(
@@ -272,36 +215,9 @@ private fun TopContent(
 @Composable
 private fun HomeContentPreview() {
     SpellCorrectTheme {
-        val listOfSection = listOf(
-            SectionData(
-                part = 1,
-                description = stringResource(id = String.desc_temp),
-                progress = 0.4f
-            ),
-            SectionData(
-                part = 2,
-                description = stringResource(id = String.desc_temp),
-                progress = 0.1f
-            ),
-            SectionData(
-                part = 3,
-                description = stringResource(id = String.desc_temp),
-                progress = 0.83f
-            ),
-            SectionData(
-                part = 4,
-                description = stringResource(id = String.desc_temp),
-                progress = 1f
-            ),
-            SectionData(
-                part = 5,
-                description = stringResource(id = String.desc_temp),
-                progress = 1f
-            )
-        )
         HomeContent(
-            wordOfTheDay = DummyWordEntrySource.singleWord(),
-            listOfSection = listOfSection,
+            wordOfTheDay = PreviewDataSource.singleWord(),
+            listOfSection = PreviewDataSource.section().take(3),
             onSectionClicked = {},
             onWordOfTheDayClicked = {},
             navController = rememberNavController()

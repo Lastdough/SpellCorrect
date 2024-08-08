@@ -5,5 +5,8 @@ data class SectionData(
     val description: String,
     val progress: Float,
 ) {
-    val finished: Boolean = progress == 1F
+    val finished: Boolean
+        get() = progress == 1F
+    val started: Boolean
+        get() = progress > 0F
 }
