@@ -2,9 +2,13 @@ package com.abdurraahm.spellcorrect.ui.screen.review
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Lock
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,6 +20,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.abdurraahm.spellcorrect.data.local.model.SectionData
+import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
+import com.abdurraahm.spellcorrect.ui.component.SectionCard
+import com.abdurraahm.spellcorrect.ui.component.SectionCardType
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
@@ -27,10 +35,15 @@ fun ReviewScreen(
     reviewViewModel: ReviewViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
+    val listOfSection = reviewViewModel.listOfSection
 
     ReviewContent(
         modifier = modifier,
-        navController = navController
+        navController = navController,
+        listOfSection = listOfSection,
+        onSectionCartClicked = { part, isStarted ->
+            
+        }
     )
 }
 
@@ -38,26 +51,36 @@ fun ReviewScreen(
 private fun ReviewContent(
     modifier: Modifier = Modifier,
     navController: NavHostController,
+    listOfSection: List<SectionData>,
+    onSectionCartClicked: (Int, Boolean) -> Unit
 ) {
     Scaffold(modifier = modifier,
         topBar = { DefaultTopBar() },
         bottomBar = { DefaultBottomBar(navController = navController) }
     ) {
-        // Content
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .padding(it)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            horizontalAlignment = Alignment.Start
         ) {
-            Column(
-                modifier = Modifier,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(text = "Halo Ges ini Review")
+            item {
+                Text(
+                    modifier = Modifier.padding(bottom = 8.dp, top = 16.dp),
+                    text = "Review", style = MaterialTheme.typography.titleLarge
+                )
+            }
+            items(listOfSection) { section ->
+                SectionCard(
+                    section = section,
+                    onSectionClicked = {
+                        onSectionCartClicked(section.part, section.started)
+                    },
+                    sectionCardType = SectionCardType.TITLE_ONLY,
+                    icon = if (section.started) null else Icons.Outlined.Lock
+                )
             }
         }
     }
@@ -68,7 +91,13 @@ private fun ReviewContent(
 @Composable
 private fun ReviewContentPreview() {
     SpellCorrectTheme {
-        ReviewContent(navController = rememberNavController())
+        ReviewContent(
+            navController = rememberNavController(),
+            listOfSection = PreviewDataSource.section().take(3),
+            onSectionCartClicked = { _, _ ->
+
+            }
+        )
     }
 }
 
