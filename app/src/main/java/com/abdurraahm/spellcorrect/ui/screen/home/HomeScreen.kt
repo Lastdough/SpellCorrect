@@ -41,8 +41,6 @@ import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
-import kotlin.Int
-import kotlin.Unit
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
 
 @Composable
@@ -60,8 +58,8 @@ fun HomeScreen(
         wordOfTheDay = wordOfTheDay,
         listOfSection = listOfSection,
         onWordOfTheDayClicked = {
-            Toast.makeText(context, "$wordOfTheDay", Toast.LENGTH_SHORT).show()
-            homeViewModel.speak(wordOfTheDay.word + "meaning" + wordOfTheDay.definition)
+            Toast.makeText(context, wordOfTheDay.fullDescription, Toast.LENGTH_SHORT).show()
+            homeViewModel.speak(wordOfTheDay.fullDescription)
         },
         onSectionClicked = {
             Toast.makeText(context, "Section $it", Toast.LENGTH_SHORT).show()
