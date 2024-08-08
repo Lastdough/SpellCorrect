@@ -1,10 +1,12 @@
 package com.abdurraahm.spellcorrect.ui.screen.onboarding
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,6 +17,8 @@ import androidx.compose.ui.unit.dp
 import com.abdurraahm.spellcorrect.R
 import com.abdurraahm.spellcorrect.ui.component.CustomButton
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
+import com.abdurraahm.spellcorrect.ui.utils.imagePainterResource
+import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 
 @Composable
 fun OnBoardingScreen(
@@ -32,14 +36,13 @@ fun OnBoardingScreen(
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter =
-                painterResource(id = R.drawable.logo_with_text),
+            Icon(
+                imageVector =
+                R.drawable.logo_with_text.imageVectorResource(),
                 contentDescription = ""
             )
             Image(
-                painter =
-                painterResource(id = R.drawable.poetry_pana),
+                painter = R.drawable.poetry_pana.imagePainterResource(),
                 contentDescription = ""
             )
             CustomButton(onClick = onClickGetStartedClicked, text = "Get Started")
@@ -48,6 +51,7 @@ fun OnBoardingScreen(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun OnBoardingScreenPreview() {
     SpellCorrectTheme {
