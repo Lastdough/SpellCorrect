@@ -1,7 +1,6 @@
 package com.abdurraahm.spellcorrect.ui.component
 
 import android.content.res.Configuration
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,9 +27,6 @@ import androidx.compose.ui.unit.sp
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
-import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
-import com.abdurraahm.spellcorrect.ui.utils.toPercent
-import com.abdurraahm.spellcorrect.ui.utils.toRomanNumeral
 
 enum class SectionCardType {
     FULL,
@@ -71,7 +66,7 @@ fun SectionCard(
                 ) {
                     Text(
                         style = MaterialTheme.typography.headlineLarge,
-                        text = "Section ${section.part.toRomanNumeral()}"
+                        text = "Section ${section.partInRomanNumeral}"
                     )
                     icon?.let {
                         Icon(
@@ -95,7 +90,7 @@ fun SectionCard(
                             style = MaterialTheme.typography.displaySmall.copy(
                                 fontSize = 12.sp
                             ),
-                            text = if (!section.finished) "${section.progress.toPercent()}% Word" else "Completed"
+                            text = if (!section.finished) "${section.progressInPercent}% Word" else "Completed"
                         )
                     }
 

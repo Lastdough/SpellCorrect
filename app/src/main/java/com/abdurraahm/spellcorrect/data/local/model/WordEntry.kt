@@ -1,13 +1,22 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
-import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
-
 data class WordEntry(
     val word: String,
     val definition: List<String>,
     val type: String,
     val ipa: String
 ) {
+    private fun String.capitalizeFirstLetter(): String {
+        return if (this.isNotEmpty()) {
+            this.substring(0, 1).uppercase() + this.substring(1)
+        } else {
+            this
+        }
+    }
+
+    val wordFirstLetterCapitalized
+        get() = word.capitalizeFirstLetter()
+
     private fun String.formatType(): String = if (arrayOf(
             'a',
             'i',
