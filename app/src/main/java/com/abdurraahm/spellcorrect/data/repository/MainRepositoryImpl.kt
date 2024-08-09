@@ -12,13 +12,17 @@ import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -77,7 +81,9 @@ class MainRepositoryImpl @Inject constructor(
 
     // Word Entry
     override fun wordOfTheDay(): Flow<WordEntry> = flow {
-        wordEntryLocalDataSource.mergedSection.map { word ->
+        // Collect the list once
+        val wordList = wordEntryLocalDataSource.mergedSection.first()
+        while (true) {
             val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 // Using newer APIs for Oreo and above
                 val currentDate = LocalDate.now()
@@ -90,15 +96,14 @@ class MainRepositoryImpl @Inject constructor(
                 "50002101" + formatterOlder.format(currentDateOlder)
             }
             val randomSeeded = Random(seed.toLong())
-            val wordOfTheDayIndex = word.indices.random(randomSeeded)
-            val wordOfTheDay = word[wordOfTheDayIndex]
+            val wordOfTheDayIndex = wordList.indices.random(randomSeeded)
+            val wordOfTheDay = wordList[wordOfTheDayIndex]
             emit(wordOfTheDay)
         }
-    }
+    }.flowOn(Dispatchers.IO)
 
     override fun exerciseStart(section: Section): Flow<List<WordEntry>> {
         return wordEntryLocalDataSource.sectionEntry(section)
-        TODO("Not yet implemented")
     }
 
     override fun exerciseResume(section: Section): List<WordEntry> {

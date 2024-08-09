@@ -9,8 +9,12 @@ import com.abdurraahm.spellcorrect.R
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
+import com.abdurraahm.spellcorrect.ui.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,30 +24,28 @@ class HomeViewModel @Inject constructor(
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 
-    private val _wordOfTheDay: MutableState<WordEntry> = mutableStateOf(
-        WordEntry(
-            word = "Word Of The Day is in Progress",
-            type = "",
-            ipa = "",
-            definition = listOf()
-        )
-    )
-    val wordOfTheDay = _wordOfTheDay.value
+//    fun getWeatherForecast(): Flow<String> {
+//        return forecastRepository
+//            .getWeatherForecastEveryTwoSeconds(spendingDetailsRequest)
+//            .map {
+//                it + " °C"
+//            }
+//    }
 
-    fun wordOfTheDayInvoke(){
+    private val _wordOfTheDay: MutableStateFlow<UiState<WordEntry>> =
+        MutableStateFlow(UiState.Loading)
+    val wordOfTheDay = _wordOfTheDay.asStateFlow()
+
+    fun getWordOfTheDay() {
         viewModelScope.launch {
             // Trigger the flow and consume its elements using collect
-            mainRepository.wordOfTheDay().collect { e ->
-                val wordE = e
-                // Update View with the latest favorite news
-                _wordOfTheDay.value = wordE
+            mainRepository.wordOfTheDay().collect { word ->
+                _wordOfTheDay.value = UiState.Success(word)
             }
         }
-    }
-
-    init {
 
     }
+
 
 // Masalah asalnya dari
 // Realita != Idealita

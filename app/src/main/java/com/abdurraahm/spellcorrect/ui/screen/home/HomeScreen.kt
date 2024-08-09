@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,6 +26,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
@@ -49,6 +51,8 @@ import com.abdurraahm.spellcorrect.ui.component.CustomButton
 import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
+import com.abdurraahm.spellcorrect.ui.screen.loading.CircularLoading
+import com.abdurraahm.spellcorrect.ui.state.UiState
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
@@ -59,50 +63,64 @@ fun HomeScreen(
     navController: NavHostController,
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
-    LaunchedEffect(true) {
-        homeViewModel.wordOfTheDayInvoke()
-    }
     val context = LocalContext.current
-    val wordOfTheDay = homeViewModel.wordOfTheDay
     val listOfSection = homeViewModel.listOfSection
 
-    var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
-    DefaultBottomSheet(
-        showBottomSheet = showWordOfTheDayBottomSheet,
-        onBottomSheetDismissRequest = {
-            showWordOfTheDayBottomSheet = false
-        },
-        title = "Today Word Of The Day\n" +
-                wordOfTheDay.wordFirstLetterCapitalized,
-        buttonData = listOf(
-            BottomSheetButtonData("More Detail") { homeViewModel.speak(wordOfTheDay.fullDescription) },
-            BottomSheetButtonData("Exercise") { /* Second button action */ },
-            BottomSheetButtonData("Review") { /* Third button action */ }
-        )
-    )
-
-    val showSectionBottomSheetMap = remember { mutableStateMapOf<Int, Boolean>() }
-    listOfSection.forEach { section ->
-        val showBottomSheet = showSectionBottomSheetMap[section.part] ?: false
-        DefaultBottomSheet(
-            showBottomSheet = showBottomSheet,
-            onBottomSheetDismissRequest = { showSectionBottomSheetMap[section.part] = false },
-            title = "Section ${section.part}", // Or any other relevant title
-            buttonData = listOf(
-                BottomSheetButtonData("More Detail") { /* Action for this section */ },
-                // Add more buttons as needed
-            )
-        )
+    LaunchedEffect(Unit) {
+        homeViewModel.getWordOfTheDay()
     }
 
-    HomeContent(
-        modifier = modifier,
-        wordOfTheDay = wordOfTheDay,
-        listOfSection = listOfSection,
-        onWordOfTheDayClicked = { showWordOfTheDayBottomSheet = true },
-        onSectionClicked = { part -> showSectionBottomSheetMap[part] = true },
-        navController = navController,
-    )
+    when (val wordOfTheDay = homeViewModel.wordOfTheDay.collectAsState().value) {
+        UiState.Loading -> {
+            CircularLoading()
+        }
+
+        is UiState.Error -> {}
+
+        is UiState.Success -> {
+
+            val showSectionBottomSheetMap = remember { mutableStateMapOf<Int, Boolean>() }
+            listOfSection.forEach { section ->
+                val showBottomSheet = showSectionBottomSheetMap[section.part] ?: false
+                DefaultBottomSheet(
+                    showBottomSheet = showBottomSheet,
+                    onBottomSheetDismissRequest = {
+                        showSectionBottomSheetMap[section.part] = false
+                    },
+                    title = "Section ${section.part}", // Or any other relevant title
+                    buttonData = listOf(
+                        BottomSheetButtonData("More Detail") { /* Action for this section */ },
+                        // Add more buttons as needed
+                    )
+                )
+            }
+
+            var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
+            DefaultBottomSheet(
+                showBottomSheet = showWordOfTheDayBottomSheet,
+                onBottomSheetDismissRequest = {
+                    showWordOfTheDayBottomSheet = false
+                },
+                title = "Today Word Of The Day\n" +
+                        wordOfTheDay.data.wordFirstLetterCapitalized,
+                buttonData = listOf(
+                    BottomSheetButtonData("More Detail") { homeViewModel.speak(wordOfTheDay.data.fullDescription) },
+                    BottomSheetButtonData("Exercise") { /* Second button action */ },
+                    BottomSheetButtonData("Review") { /* Third button action */ }
+                )
+            )
+
+            HomeContent(
+                modifier = modifier,
+                wordOfTheDay = wordOfTheDay.data,
+                listOfSection = listOfSection,
+                onWordOfTheDayClicked = { showWordOfTheDayBottomSheet = true },
+                onSectionClicked = { part -> showSectionBottomSheetMap[part] = true },
+                navController = navController,
+            )
+        }
+    }
+
 
 }
 

@@ -49,9 +49,4 @@ class WordEntryLocalDataSource @Inject constructor(
         } ?: emptyList<WordEntry>()
         emit(entries)
     }
-
-    fun mergedEntry(): Flow<List<WordEntry>> = flow {
-        val mergedSection = Section.entries.flatMap { sectionEntry(it).first() }
-        emit(mergedSection)
-    }
 }
