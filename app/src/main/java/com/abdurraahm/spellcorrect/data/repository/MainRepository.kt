@@ -21,8 +21,8 @@ interface MainRepository {
     suspend fun updateOnboardingState(completed: Boolean)
 
     // Word Entry
-    fun wordOfTheDay(): WordEntry
-    fun exerciseStart(section: Section): List<WordEntry>
+    fun wordOfTheDay(): Flow<WordEntry>
+    fun exerciseStart(section: Section): Flow<List<WordEntry>>
     fun exerciseResume(section: Section): List<WordEntry>
     fun exerciseSpecific(word: String, section: Section): WordEntry
     fun reviewType(section: Section): List<WordEntry>
