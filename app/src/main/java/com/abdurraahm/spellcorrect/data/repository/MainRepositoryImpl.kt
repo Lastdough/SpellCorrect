@@ -8,7 +8,7 @@ import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
-import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataSource
+import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -28,7 +28,7 @@ import kotlin.random.Random
 @Singleton
 class MainRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val wordEntryDataSource: WordEntryDataSource,
+    private val wordEntryLocalDataSource: WordEntryLocalDataSource,
     private val wordEntryDataStore: WordEntryDataStore,
     private val navigationDataStore: NavigationDataStore,
     private val ttsService: TextToSpeechService
@@ -73,7 +73,7 @@ class MainRepositoryImpl @Inject constructor(
 
     // Word Entry
     override fun wordOfTheDay(): WordEntry {
-        val wordEntry = wordEntryDataSource.mergedEntry()
+        val wordEntry = wordEntryLocalDataSource.mergedEntry()
         val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Using newer APIs for Oreo and above
             val currentDate = LocalDate.now()
@@ -92,7 +92,7 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     override fun exerciseStart(section: Section): List<WordEntry> {
-        return wordEntryDataSource.sectionEntry(section)
+        return wordEntryLocalDataSource.sectionEntry(section)
     }
 
     override fun exerciseResume(section: Section): List<WordEntry> {

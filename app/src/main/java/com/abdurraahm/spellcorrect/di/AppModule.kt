@@ -3,7 +3,7 @@ package com.abdurraahm.spellcorrect.di
 import android.content.Context
 import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
-import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataSource
+import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.data.repository.MainRepositoryImpl
@@ -23,14 +23,14 @@ object AppModule {
     @Singleton
     fun provideMainRepositoryImpl(
         @ApplicationContext context: Context,
-        wordEntryDataSource: WordEntryDataSource,
+        wordEntryLocalDataSource: WordEntryLocalDataSource,
         wordEntryDataStore: WordEntryDataStore,
         navigationDataStore: NavigationDataStore,
         ttsService: TextToSpeechService
     ): MainRepository {
         return MainRepositoryImpl(
             context = context,
-            wordEntryDataSource = wordEntryDataSource,
+            wordEntryLocalDataSource = wordEntryLocalDataSource,
             wordEntryDataStore = wordEntryDataStore,
             navigationDataStore = navigationDataStore,
             ttsService = ttsService

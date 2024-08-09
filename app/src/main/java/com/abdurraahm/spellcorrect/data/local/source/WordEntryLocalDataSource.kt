@@ -11,7 +11,7 @@ import java.io.IOException
 import java.util.Locale
 import javax.inject.Inject
 
-class WordEntryDataSource @Inject constructor(
+class WordEntryLocalDataSource @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
     private val sectionJsonStrings = mutableMapOf<Section, String>()
