@@ -27,6 +27,7 @@ class TextToSpeechService @Inject constructor() : Service(), TextToSpeech.OnInit
             Log.d(TAG, "Done with utterance $utteranceId")
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onError(utteranceId: String?) {}
     }
 
