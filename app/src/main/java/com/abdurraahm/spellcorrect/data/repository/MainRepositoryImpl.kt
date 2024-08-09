@@ -16,7 +16,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -72,25 +75,26 @@ class MainRepositoryImpl @Inject constructor(
         navigationDataStore.updateOnboardingState(completed)
     }
 
- // Word Entry
-override fun wordOfTheDay(): Flow<WordEntry> = flow {
-    val wordEntry = wordEntryLocalDataSource.mergedEntry()// Collect the list of entries
-    val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        // Using newer APIs for Oreo and above
-        val currentDate = LocalDate.now()
-        val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
-        "50002101" + currentDate.format(formatter)
-    } else {
-        // Fallback for older versions
-        val currentDateOlder = Date()
-        val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
-        "50002101" + formatterOlder.format(currentDateOlder)
+    // Word Entry
+    override fun wordOfTheDay(): Flow<WordEntry> = flow {
+        wordEntryLocalDataSource.mergedSection.map { word ->
+            val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                // Using newer APIs for Oreo and above
+                val currentDate = LocalDate.now()
+                val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
+                "50002101" + currentDate.format(formatter)
+            } else {
+                // Fallback for older versions
+                val currentDateOlder = Date()
+                val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
+                "50002101" + formatterOlder.format(currentDateOlder)
+            }
+            val randomSeeded = Random(seed.toLong())
+            val wordOfTheDayIndex = word.indices.random(randomSeeded)
+            val wordOfTheDay = word[wordOfTheDayIndex]
+            emit(wordOfTheDay)
+        }
     }
-    val randomSeeded = Random(seed.toLong())
-    val wordOfTheDayIndex = wordEntry.indices.random(randomSeeded)
-    val wordOfTheDay = wordEntry[wordOfTheDayIndex]
-    emit(wordOfTheDay) // Emit the selected WordEntry
-}
 
     override fun exerciseStart(section: Section): Flow<List<WordEntry>> {
         return wordEntryLocalDataSource.sectionEntry(section)

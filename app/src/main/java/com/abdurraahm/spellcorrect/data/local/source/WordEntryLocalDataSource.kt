@@ -22,17 +22,24 @@ class WordEntryLocalDataSource @Inject constructor(
     init {
         try {
             Section.entries.forEach { section ->
-                sectionJsonStrings[section] = context.assets.open("separate/${
-                    section.name.lowercase(
-                        Locale.ROOT
-                    )
-                }_section.json")
+                sectionJsonStrings[section] = context.assets.open(
+                    "separate/${
+                        section.name.lowercase(
+                            Locale.ROOT
+                        )
+                    }_section.json"
+                )
                     .bufferedReader()
                     .use { it.readText() }
             }
         } catch (ioException: IOException) {
             Log.d("Data Source", "Error loading section data: $ioException")
         }
+    }
+
+    val mergedSection: Flow<List<WordEntry>> = flow {
+        val mergedSection = Section.entries.flatMap { sectionEntry(it).first() }
+        emit(mergedSection)
     }
 
     fun sectionEntry(section: Section): Flow<List<WordEntry>> = flow {
@@ -43,8 +50,8 @@ class WordEntryLocalDataSource @Inject constructor(
         emit(entries)
     }
 
-    suspend fun mergedEntry(): List<WordEntry> {
-        return Section.entries.flatMap { sectionEntry(it).first() }
+    fun mergedEntry(): Flow<List<WordEntry>> = flow {
+        val mergedSection = Section.entries.flatMap { sectionEntry(it).first() }
+        emit(mergedSection)
     }
-
 }
