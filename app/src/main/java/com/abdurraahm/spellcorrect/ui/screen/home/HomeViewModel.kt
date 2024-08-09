@@ -23,17 +23,17 @@ class HomeViewModel @Inject constructor(
         SectionData(
             part = 1,
             description = context.getString(R.string.desc_temp),
-            progress = 0.03f
+            progress = 1f
         ),
         SectionData(
             part = 2,
             description = context.getString(R.string.desc_temp),
-            progress = 0.03f
+            progress = 0.5f
         ),
         SectionData(
             part = 3,
             description = context.getString(R.string.desc_temp),
-            progress = 0.03f
+            progress = 0f
         )
     )
 }

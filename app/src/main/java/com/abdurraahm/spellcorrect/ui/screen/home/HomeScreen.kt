@@ -84,10 +84,18 @@ fun HomeScreen(
             showBottomSheet = showBottomSheet,
             onBottomSheetDismissRequest = { showSectionBottomSheetMap[section.part] = false },
             title = "Section ${section.part}", // Or any other relevant title
-            buttonData = listOf(
-                BottomSheetButtonData("More Detail") { /* Action for this section */ },
-                // Add more buttons as needed
-            )
+            buttonData = mutableListOf(
+                BottomSheetButtonData("Search Specific Word") {}
+            ).apply {
+                if (section.finished) {
+                    add(0, BottomSheetButtonData("Start Over") {})
+                } else if (section.started) {
+                    add(0, BottomSheetButtonData("Continue Last Session") {})
+                    add(0, BottomSheetButtonData("Start Over") {})
+                } else {
+                    add(0, BottomSheetButtonData("Start Section") {})
+                }
+            }
         )
     }
 
