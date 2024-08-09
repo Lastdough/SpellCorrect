@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.data.local.source
 
 import android.content.Context
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -23,6 +24,7 @@ class NavigationDataStore @Inject constructor(
         get() = context.onboardingDataStore.data
             .catch { exception ->
                 // Handle exceptions (emit false if an error occurs)
+                Log.e("Navigation Data Store", "$exception")
                 emit(emptyPreferences())
             }
             .map{ preferences ->

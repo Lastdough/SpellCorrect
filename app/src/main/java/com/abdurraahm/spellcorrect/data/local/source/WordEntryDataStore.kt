@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.data.local.source
 
 import android.content.Context
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -35,7 +36,7 @@ class WordEntryDataStore @Inject constructor(
     fun wordHistoryForSection(section: Section): Flow<String> {
         return context.wordHistoryDataStore.data
             .catch { exception ->
-
+                Log.e("WordEntry Data Store", "$exception")
                 // Handle exceptions here (e.g., emit an empty string)
                 emit(emptyPreferences())
             }
