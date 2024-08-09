@@ -17,29 +17,39 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
+import com.abdurraahm.spellcorrect.ui.component.CustomButton
 import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
-import com.abdurraahm.spellcorrect.ui.utils.capitalizeFirstLetter
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
 
@@ -53,19 +63,76 @@ fun HomeScreen(
     val wordOfTheDay = homeViewModel.wordOfTheDay
     val listOfSection = homeViewModel.listOfSection
 
+    var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
+    DefaultBottomSheet(
+        showBottomSheet = showWordOfTheDayBottomSheet,
+        onBottomSheetDismissRequest = {
+            showWordOfTheDayBottomSheet = false
+        },
+        title = "Today Word Of The Day\n" +
+                wordOfTheDay.wordFirstLetterCapitalized,
+        buttonData = listOf(
+            BottomSheetButtonData("More Detail") { homeViewModel.speak(wordOfTheDay.fullDescription) },
+            BottomSheetButtonData("Exercise") { /* Second button action */ },
+            BottomSheetButtonData("Review") { /* Third button action */ }
+        )
+    )
+
+    val showSectionBottomSheetMap = remember { mutableStateMapOf<Int, Boolean>() }
+    listOfSection.forEach { section ->
+        val showBottomSheet = showSectionBottomSheetMap[section.part] ?: false
+        DefaultBottomSheet(
+            showBottomSheet = showBottomSheet,
+            onBottomSheetDismissRequest = { showSectionBottomSheetMap[section.part] = false },
+            title = "Section ${section.part}", // Or any other relevant title
+            buttonData = listOf(
+                BottomSheetButtonData("More Detail") { /* Action for this section */ },
+                // Add more buttons as needed
+            )
+        )
+    }
+
     HomeContent(
         modifier = modifier,
         wordOfTheDay = wordOfTheDay,
         listOfSection = listOfSection,
-        onWordOfTheDayClicked = {
-            Toast.makeText(context, wordOfTheDay.fullDescription, Toast.LENGTH_SHORT).show()
-            homeViewModel.speak(wordOfTheDay.fullDescription)
-        },
-        onSectionClicked = {
-            Toast.makeText(context, "Section $it", Toast.LENGTH_SHORT).show()
-        },
-        navController = navController
+        onWordOfTheDayClicked = { showWordOfTheDayBottomSheet = true },
+        onSectionClicked = { part -> showSectionBottomSheetMap[part] = true },
+        navController = navController,
     )
+
+}
+
+@Composable
+@OptIn(ExperimentalMaterial3Api::class)
+private fun DefaultBottomSheet(
+    showBottomSheet: Boolean,
+    title: String,
+    onBottomSheetDismissRequest: () -> Unit,
+    buttonData: List<BottomSheetButtonData>
+) {
+    if (showBottomSheet) {
+        ModalBottomSheet(
+            onDismissRequest = onBottomSheetDismissRequest,
+            sheetState = rememberModalBottomSheetState(),
+        ) {
+            // Sheet content
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = title,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.headlineLarge
+                )
+                buttonData.forEach { data ->
+                    CustomButton(onClick = data.onClick, text = data.text)
+                }
+            }
+        }
+    }
 }
 
 @Composable
@@ -154,7 +221,7 @@ private fun WordOfTheDay(
                             style = MaterialTheme.typography.headlineLarge.copy(
                                 fontWeight = FontWeight.Normal
                             ),
-                            text = word.word.capitalizeFirstLetter()
+                            text = word.wordFirstLetterCapitalized
                         )
                         Text(
                             style = MaterialTheme.typography.labelLarge,
@@ -219,7 +286,7 @@ private fun HomeContentPreview() {
             listOfSection = PreviewDataSource.section().take(3),
             onSectionClicked = {},
             onWordOfTheDayClicked = {},
-            navController = rememberNavController()
+            navController = rememberNavController(),
         )
     }
 }
