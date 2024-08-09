@@ -16,7 +16,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     val wordOfTheDay = mainRepository.wordOfTheDay()
 
-    fun ttsService() = mainRepository.ttsService()
+    fun setRate(newRate: Float) = mainRepository.updateRate(newRate)
     fun speak(text: String) = mainRepository.speak(text)
 
     val listOfSection = listOf(

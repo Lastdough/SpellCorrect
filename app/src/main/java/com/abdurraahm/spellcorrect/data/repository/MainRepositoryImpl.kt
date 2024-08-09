@@ -3,6 +3,8 @@ package com.abdurraahm.spellcorrect.data.repository
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
@@ -11,6 +13,9 @@ import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -39,8 +44,26 @@ class MainRepositoryImpl @Inject constructor(
         context.stopService(intent)
     }
 
-    override fun ttsService(): TextToSpeechService = ttsService
-    override fun speak(text: String) = ttsService.speak(text)
+    override val tts: TextToSpeech
+        get() = ttsService.tts
+
+    private val _rate = MutableStateFlow(0.95f)
+    override val rate: StateFlow<Float> = _rate.asStateFlow()
+
+    override fun updateRate(newRate: Float) {
+        _rate.value = newRate.coerceIn(0.1f, 2.0f)
+    }
+
+    override fun speak(text: String) {
+        val queueMode: Int = TextToSpeech.QUEUE_FLUSH
+        tts.language = Locale.ENGLISH
+        tts.setPitch(1f)
+        tts.setSpeechRate(rate.value)
+        val voice = tts.voices.find { v -> v.name == "en-US-language" } ?: tts.defaultVoice
+        tts.setVoice(voice)
+        tts.speak(text, queueMode, Bundle(), "utteranceId")
+    }
+
 
     // Navigation
     override val onboardingState: Flow<Boolean> = navigationDataStore.onboardingState

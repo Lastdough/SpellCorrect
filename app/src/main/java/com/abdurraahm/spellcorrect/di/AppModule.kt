@@ -38,6 +38,7 @@ object AppModule {
     }
 
     @Provides
+    @Singleton
     fun provideTextToSpeech(@ApplicationContext context: Context): TextToSpeech {
         return TextToSpeech(context, null)
     }

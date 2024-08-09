@@ -1,16 +1,19 @@
 package com.abdurraahm.spellcorrect.data.repository
 
+import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
-import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 
 interface MainRepository {
     // Text To Speech
     fun startTextToSpeech()
     fun stopTextToSpeech()
 
-    fun ttsService() : TextToSpeechService
+    val tts: TextToSpeech
+    val rate: StateFlow<Float>
+    fun updateRate(newRate: Float)
     fun speak(text: String)
 
     // Navigation
