@@ -7,9 +7,9 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
-import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
+import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
-import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
+import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow

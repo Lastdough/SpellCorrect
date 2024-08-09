@@ -24,7 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
-import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
+import com.abdurraahm.spellcorrect.data.preview.PreviewDataSource
 import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.component.SectionCardType
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar

@@ -2,9 +2,9 @@ package com.abdurraahm.spellcorrect.di
 
 import android.content.Context
 import android.speech.tts.TextToSpeech
-import com.abdurraahm.spellcorrect.data.local.source.NavigationDataStore
+import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
-import com.abdurraahm.spellcorrect.data.local.source.WordEntryDataStore
+import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.data.repository.MainRepositoryImpl
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService

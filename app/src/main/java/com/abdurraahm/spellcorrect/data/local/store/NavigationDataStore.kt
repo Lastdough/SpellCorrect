@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcorrect.data.local.source
+package com.abdurraahm.spellcorrect.data.local.store
 
 import android.content.Context
 import android.util.Log

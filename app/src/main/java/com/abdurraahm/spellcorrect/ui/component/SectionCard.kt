@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
-import com.abdurraahm.spellcorrect.data.local.source.PreviewDataSource
+import com.abdurraahm.spellcorrect.data.preview.PreviewDataSource
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 
 enum class SectionCardType {

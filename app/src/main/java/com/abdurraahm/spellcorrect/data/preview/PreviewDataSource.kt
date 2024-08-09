@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcorrect.data.local.source
+package com.abdurraahm.spellcorrect.data.preview
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
