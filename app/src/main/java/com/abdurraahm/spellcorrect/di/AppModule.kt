@@ -30,7 +30,7 @@ object AppModule {
         return TextToSpeech(context, null)
     }
 
-    @Singleton // Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationCompenent (i.e. everywhere in the application)
+    @Singleton
     @Provides
     fun provideSpellCheckDatabase(
         @ApplicationContext context: Context
@@ -39,7 +39,7 @@ object AppModule {
         SpellCheckDatabase::class.java,
         "spell_check_db")
         .createFromAsset("database/section.db")
-        .build() // The reason we can construct a database for the repo
+        .build()
 
     @Provides
     @Singleton
