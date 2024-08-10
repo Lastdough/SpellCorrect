@@ -43,7 +43,7 @@ fun SectionCard(
     sectionCardType: SectionCardType = SectionCardType.FULL,
     shape: RoundedCornerShape = RoundedCornerShape(5.dp),
     border: BorderStroke = BorderStroke(2.dp, Color.Black),
-    onSectionClicked: (Int) -> Unit,
+    onSectionClicked: (SectionData) -> Unit,
     icon: ImageVector? = null,
 ) {
     Card(
@@ -52,7 +52,7 @@ fun SectionCard(
             containerColor = MaterialTheme.colorScheme.secondaryContainer
         ),
         modifier = modifier.fillMaxWidth(),
-        onClick = { onSectionClicked(section.part) },
+        onClick = { onSectionClicked(section) },
         border = border,
         content = {
             Column(
@@ -90,7 +90,7 @@ fun SectionCard(
                             style = MaterialTheme.typography.displaySmall.copy(
                                 fontSize = 12.sp
                             ),
-                            text = if (!section.finished) "${section.progressInPercent}% Word" else "Completed"
+                            text = if (section.finished) "Completed" else "${section.progressInPercent}% Word"
                         )
                     }
 
@@ -109,7 +109,7 @@ private fun SectionCardPreview() {
     SpellCorrectTheme {
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SectionCard(
-                section = PreviewDataSource.section()[0],
+                section = PreviewDataSource.section()[0].copy(progress = 1f),
                 onSectionClicked = {},
                 icon = null
             )

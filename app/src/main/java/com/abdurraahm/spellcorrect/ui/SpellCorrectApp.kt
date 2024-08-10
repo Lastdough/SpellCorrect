@@ -22,10 +22,6 @@ fun SpellCorrectApp(
     navController: NavHostController = rememberNavController(),
     startDestination: String
 ) {
-    val onBoardingState = mainViewModel
-        .onboardingCompletedState
-        .collectAsState(initial = false).value
-
     NavHost(
         modifier = modifier.fillMaxSize(),
         navController = navController,

@@ -16,7 +16,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,7 +24,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -36,7 +34,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,6 +42,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
+import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.preview.PreviewDataSource
@@ -64,11 +62,9 @@ fun HomeScreen(
     navController: NavHostController,
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
-    val context = LocalContext.current
-    val listOfSection = homeViewModel.listOfSection
-
     LaunchedEffect(Unit) {
         homeViewModel.getWordOfTheDay()
+        homeViewModel.getListOfSection()
     }
 
     when (val wordOfTheDay = homeViewModel.wordOfTheDay.collectAsState().value) {
@@ -78,55 +74,71 @@ fun HomeScreen(
 
         is UiState.Error -> {}
 
-        is UiState.Success -> {}
-    }
-
-    var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
-    DefaultBottomSheet(
-        showBottomSheet = showWordOfTheDayBottomSheet,
-        onBottomSheetDismissRequest = {
-            showWordOfTheDayBottomSheet = false
-        },
-        title = "Today Word Of The Day\n" +
-                wordOfTheDay.wordFirstLetterCapitalized,
-        buttonData = listOf(
-            BottomSheetButtonData("More Detail") { homeViewModel.speak(wordOfTheDay.fullDescription) },
-            BottomSheetButtonData("Exercise") { /* Second button action */ },
-            BottomSheetButtonData("Review") { /* Third button action */ }
-        )
-    )
-
-    val showSectionBottomSheetMap = remember { mutableStateMapOf<Int, Boolean>() }
-    listOfSection.forEach { section ->
-        val showBottomSheet = showSectionBottomSheetMap[section.part] ?: false
-        DefaultBottomSheet(
-            showBottomSheet = showBottomSheet,
-            onBottomSheetDismissRequest = { showSectionBottomSheetMap[section.part] = false },
-            title = "Section ${section.part}", // Or any other relevant title
-            buttonData = mutableListOf(
-                BottomSheetButtonData("Search Specific Word") {}
-            ).apply {
-                if (section.finished) {
-                    add(0, BottomSheetButtonData("Start Over") {})
-                } else if (section.started) {
-                    add(0, BottomSheetButtonData("Continue Last Session") {})
-                    add(0, BottomSheetButtonData("Start Over") {})
-                } else {
-                    add(0, BottomSheetButtonData("Start Section") {})
+        is UiState.Success -> {
+            var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
+            DefaultBottomSheet(
+                showBottomSheet = showWordOfTheDayBottomSheet,
+                onBottomSheetDismissRequest = {
+                    showWordOfTheDayBottomSheet = false
+                },
+                title = "Today Word Of The Day\n" +
+                        wordOfTheDay.data.wordFirstLetterCapitalized,
+                buttonData = listOf(
+                    BottomSheetButtonData("More Detail") { homeViewModel.speak(wordOfTheDay.data.fullDescription) },
+                    BottomSheetButtonData("Exercise") { /* Second button action */ },
+                    BottomSheetButtonData("Review") { /* Third button action */ }
+                )
+            )
+            val showSectionBottomSheetMap = remember { mutableStateMapOf<Section, Boolean>() }
+            when (val listOfSection = homeViewModel.listOfSection.collectAsState().value) {
+                is UiState.Error -> {}
+                UiState.Loading -> {}
+                is UiState.Success -> {
+                    listOfSection.data.forEach { section ->
+                        val showBottomSheet =
+                            showSectionBottomSheetMap[section.partSection] ?: false
+                        DefaultBottomSheet(
+                            showBottomSheet = showBottomSheet,
+                            onBottomSheetDismissRequest = {
+                                showSectionBottomSheetMap[section.partSection] = false
+                            },
+                            title = "Section ${section.partInRomanNumeral}", // Or any other relevant title
+                            buttonData = mutableListOf(
+                                BottomSheetButtonData("Search Specific Word") {}
+                            ).apply {
+                                if (section.finished) {
+                                    add(0, BottomSheetButtonData("Start Over") {
+                                        homeViewModel.updateSectionData(section.copy(progress = 0f))
+                                    })
+                                } else if (section.started) {
+                                    add(0, BottomSheetButtonData("Continue Last Session") {
+                                        homeViewModel.updateSectionData(
+                                            section.copy(progress = (section.progress + 0.1f))
+                                        )
+                                    })
+                                    add(0, BottomSheetButtonData("Start Over") {
+                                        homeViewModel.updateSectionData(section.copy(progress = 0f))
+                                    })
+                                } else {
+                                    add(0, BottomSheetButtonData("Start Section") {
+                                        homeViewModel.updateSectionData(section.copy(progress = 0.5f))
+                                    })
+                                }
+                            }
+                        )
+                    }
+                    HomeContent(
+                        modifier = modifier,
+                        wordOfTheDay = wordOfTheDay.data,
+                        listOfSection = listOfSection.data,
+                        onWordOfTheDayClicked = { showWordOfTheDayBottomSheet = true },
+                        onSectionClicked = { part -> showSectionBottomSheetMap[part] = true },
+                        navController = navController,
+                    )
                 }
             }
-        )
+        }
     }
-
-    HomeContent(
-        modifier = modifier,
-        wordOfTheDay = wordOfTheDay,
-        listOfSection = listOfSection,
-        onWordOfTheDayClicked = { showWordOfTheDayBottomSheet = true },
-        onSectionClicked = { part -> showSectionBottomSheetMap[part] = true },
-        navController = navController,
-    )
-
 }
 
 @Composable
@@ -168,7 +180,7 @@ private fun HomeContent(
     wordOfTheDay: WordEntry,
     listOfSection: List<SectionData>,
     onWordOfTheDayClicked: () -> Unit,
-    onSectionClicked: (Int) -> Unit
+    onSectionClicked: (Section) -> Unit
 ) {
     Scaffold(modifier = modifier,
         topBar = { DefaultTopBar() },
@@ -194,11 +206,11 @@ private fun HomeContent(
                     onWordOfTheDayClicked = onWordOfTheDayClicked
                 )
             }
-            items(listOfSection, key = { section -> section.part }) { section ->
+            items(listOfSection, key = { section -> section.id }) { section ->
                 SectionCard(
                     section = section,
                     onSectionClicked = {
-                        onSectionClicked(section.part)
+                        onSectionClicked(section.partSection)
                     }
                 )
             }

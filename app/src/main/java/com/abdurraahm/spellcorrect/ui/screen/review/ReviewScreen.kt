@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.ui.screen.review
 
 import android.content.res.Configuration
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,6 +16,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -29,6 +32,7 @@ import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.component.SectionCardType
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
+import com.abdurraahm.spellcorrect.ui.state.UiState
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import com.abdurraahm.spellcorrect.ui.utils.imageVectorResource
 import com.abdurraahm.spellcorrect.R.drawable as Drawable
@@ -41,16 +45,42 @@ fun ReviewScreen(
     reviewViewModel: ReviewViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
-    val listOfSection = reviewViewModel.listOfSection
+    LaunchedEffect(Unit) {
+        reviewViewModel.getListOfSection()
+    }
+    when (val listOfSection = reviewViewModel.listOfSection.collectAsState().value) {
+        is UiState.Error -> {}
+        UiState.Loading -> {}
+        is UiState.Success -> {
+            ReviewContent(
+                modifier = modifier,
+                navController = navController,
+                listOfSection = listOfSection.data,
+                onSectionCartClicked = { id, isStarted ->
+                    reviewViewModel.getSectionDataById(id)
+                    if (!isStarted) {
+                        Toast.makeText(
+                            context,
+                            "Do The Section ${id + 1} to review",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
 
-    ReviewContent(
-        modifier = modifier,
-        navController = navController,
-        listOfSection = listOfSection,
-        onSectionCartClicked = { part, isStarted ->
-
+                }
+            )
         }
-    )
+    }
+//    when (val data = reviewViewModel.sectionData.collectAsState().value) {
+//        is UiState.Error -> {}
+//        UiState.Loading -> {}
+//        is UiState.Success -> {
+//            Toast.makeText(
+//                context,
+//                "Section id: ${data.data.id} p: ${data.data.progress} status: ${data.data.started}",
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        }
+//    }
 }
 
 @Composable
@@ -82,7 +112,7 @@ private fun ReviewContent(
                 SectionCard(
                     section = section,
                     onSectionClicked = {
-                        onSectionCartClicked(section.part, section.started)
+                        onSectionCartClicked(section.id, section.started)
                     },
                     sectionCardType = SectionCardType.TITLE_ONLY,
                     icon = if (section.started) null else Icons.Outlined.Lock
