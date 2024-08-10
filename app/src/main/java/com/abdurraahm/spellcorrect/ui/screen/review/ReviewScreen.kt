@@ -57,7 +57,6 @@ fun ReviewScreen(
                 navController = navController,
                 listOfSection = listOfSection.data,
                 onSectionCartClicked = { id, isStarted ->
-                    reviewViewModel.getSectionDataById(id)
                     if (!isStarted) {
                         Toast.makeText(
                             context,
@@ -70,17 +69,6 @@ fun ReviewScreen(
             )
         }
     }
-//    when (val data = reviewViewModel.sectionData.collectAsState().value) {
-//        is UiState.Error -> {}
-//        UiState.Loading -> {}
-//        is UiState.Success -> {
-//            Toast.makeText(
-//                context,
-//                "Section id: ${data.data.id} p: ${data.data.progress} status: ${data.data.started}",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-//    }
 }
 
 @Composable
