@@ -1,7 +1,12 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "section_table")
 data class SectionData(
-    val part: Int,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
     val description: String,
     val progress: Float,
 ) {
@@ -29,14 +34,21 @@ data class SectionData(
         return romanNumeral.toString()
     }
 
+    val partInArabicNumeral
+        get() = id + 1
+
+    val partSection
+        get() = Section.entries[id]
+
     val partInRomanNumeral
-        get() = part.toRomanNumeral()
+        get() = partInArabicNumeral.toRomanNumeral()
 
     val progressInPercent
         get() = progress.toPercent()
 
     val finished: Boolean
-        get() = progress == 1F
+        get() = progress >= 1F
+
     val started: Boolean
         get() = progress > 0F
 }

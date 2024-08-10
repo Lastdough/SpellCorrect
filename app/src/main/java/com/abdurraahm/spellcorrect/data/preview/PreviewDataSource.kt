@@ -19,30 +19,30 @@ object PreviewDataSource {
         )
 
     @Composable
-    fun section(): List<SectionData>{
+    fun section(): List<SectionData> {
         return listOf(
             SectionData(
-                part = 1,
-                description = stringResource(id = R.string.desc_temp),
-                progress = 0.4f
-            ),
-            SectionData(
-                part = 2,
-                description = stringResource(id = R.string.desc_temp),
-                progress = 0f
-            ),
-            SectionData(
-                part = 3,
-                description = stringResource(id = R.string.desc_temp),
-                progress = 0.83f
-            ),
-            SectionData(
-                part = 4,
+                id = 0,
                 description = stringResource(id = R.string.desc_temp),
                 progress = 1f
             ),
             SectionData(
-                part = 5,
+                id = 1,
+                description = stringResource(id = R.string.desc_temp),
+                progress = 0.83f
+            ),
+            SectionData(
+                id = 2,
+                description = stringResource(id = R.string.desc_temp),
+                progress = 0f
+            ),
+            SectionData(
+                id = 3,
+                description = stringResource(id = R.string.desc_temp),
+                progress = 1f
+            ),
+            SectionData(
+                id = 4,
                 description = stringResource(id = R.string.desc_temp),
                 progress = 1f
             )

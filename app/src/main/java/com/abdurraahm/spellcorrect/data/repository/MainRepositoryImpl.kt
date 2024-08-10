@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
 import com.abdurraahm.spellcorrect.data.local.model.Section
+import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
@@ -39,7 +41,8 @@ class MainRepositoryImpl @Inject constructor(
     private val wordEntryLocalDataSource: WordEntryLocalDataSource,
     private val wordEntryDataStore: WordEntryDataStore,
     private val navigationDataStore: NavigationDataStore,
-    private val ttsService: TextToSpeechService
+    private val ttsService: TextToSpeechService,
+    private val sectionDataDao: SectionDataDao
 ) : MainRepository {
     // Text To Speech
     override fun startTextToSpeech() {
@@ -121,4 +124,17 @@ class MainRepositoryImpl @Inject constructor(
     override fun reviewListen(section: Section): List<WordEntry> {
         TODO("Not yet implemented")
     }
+
+    // Room Database
+    override fun totalSectionInDB() =
+        sectionDataDao.totalSectionInDB()
+
+    override fun sectionInDB(): Flow<List<SectionData>> =
+        sectionDataDao.dataInDB()
+
+    override fun getSectionDataById(id: Int): Flow<SectionData> =
+        sectionDataDao.getSectionDataById(id)
+
+    override suspend fun updateSectionData(sectionData: SectionData) =
+        sectionDataDao.updateSectionData(sectionData)
 }
