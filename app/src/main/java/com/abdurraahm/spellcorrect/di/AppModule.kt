@@ -7,9 +7,11 @@ import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
 import com.abdurraahm.spellcorrect.data.local.source.SpellCheckDatabase
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
+import com.abdurraahm.spellcorrect.data.local.store.ProgressDataStore
 import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.data.repository.MainRepositoryImpl
+import com.abdurraahm.spellcorrect.data.service.SeedGenerator
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.Module
 import dagger.Provides
@@ -45,13 +47,26 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideSeedGenerator(): SeedGenerator = SeedGenerator()
+
+    @Provides
+    @Singleton
+    fun provideProgressDataStore(
+        @ApplicationContext context: Context
+    ): ProgressDataStore = ProgressDataStore(context)
+
+
+    @Provides
+    @Singleton
     fun provideMainRepositoryImpl(
         @ApplicationContext context: Context,
         wordEntryLocalDataSource: WordEntryLocalDataSource,
         wordEntryDataStore: WordEntryDataStore,
         navigationDataStore: NavigationDataStore,
+        progressDataStore: ProgressDataStore,
         ttsService: TextToSpeechService,
-        sectionDataDao: SectionDataDao
+        sectionDataDao: SectionDataDao,
+        seedGenerator: SeedGenerator
     ): MainRepository {
         return MainRepositoryImpl(
             context = context,
@@ -59,7 +74,9 @@ object AppModule {
             wordEntryDataStore = wordEntryDataStore,
             navigationDataStore = navigationDataStore,
             ttsService = ttsService,
-            sectionDataDao = sectionDataDao
+            sectionDataDao = sectionDataDao,
+            seedGenerator = seedGenerator,
+            progressDataStore = progressDataStore
         )
     }
 }

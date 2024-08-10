@@ -2,34 +2,28 @@ package com.abdurraahm.spellcorrect.data.repository
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
-import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
+import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
+import com.abdurraahm.spellcorrect.data.local.store.ProgressDataStore
 import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
+import com.abdurraahm.spellcorrect.data.service.SeedGenerator
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Date
+import java.util.Collections
 import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -41,8 +35,10 @@ class MainRepositoryImpl @Inject constructor(
     private val wordEntryLocalDataSource: WordEntryLocalDataSource,
     private val wordEntryDataStore: WordEntryDataStore,
     private val navigationDataStore: NavigationDataStore,
+    private val progressDataStore: ProgressDataStore,
     private val ttsService: TextToSpeechService,
-    private val sectionDataDao: SectionDataDao
+    private val sectionDataDao: SectionDataDao,
+    private val seedGenerator: SeedGenerator
 ) : MainRepository {
     // Text To Speech
     override fun startTextToSpeech() {
@@ -87,34 +83,49 @@ class MainRepositoryImpl @Inject constructor(
         // Collect the list once
         val wordList = wordEntryLocalDataSource.mergedSection.first()
         while (true) {
-            val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                // Using newer APIs for Oreo and above
-                val currentDate = LocalDate.now()
-                val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
-                "50002101" + currentDate.format(formatter)
-            } else {
-                // Fallback for older versions
-                val currentDateOlder = Date()
-                val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
-                "50002101" + formatterOlder.format(currentDateOlder)
-            }
-            val randomSeeded = Random(seed.toLong())
+            val randomSeeded = Random(seedGenerator.generateDaily())
             val wordOfTheDayIndex = wordList.indices.random(randomSeeded)
             val wordOfTheDay = wordList[wordOfTheDayIndex]
             emit(wordOfTheDay)
         }
     }.flowOn(Dispatchers.IO)
 
-    override fun exerciseStart(section: Section): Flow<List<WordEntry>> {
-        return wordEntryLocalDataSource.sectionEntry(section)
-    }
-
-    override fun exerciseResume(section: Section): List<WordEntry> {
-        TODO("Not yet implemented")
-    }
-
     override fun exerciseSpecific(word: String, section: Section): WordEntry {
         TODO("Not yet implemented")
+    }
+
+    override fun exerciseStart(section: Section): Flow<List<WordEntry>> = flow {
+        val seed = seedGenerator.generate()
+        progressDataStore.saveSeed(seed = seed, section = section)
+        progressDataStore.saveLastIndex(index = 0, section = section)
+        val randomSeeded = Random(seed)
+        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val shuffledList = list.shuffled(randomSeeded)
+        emit(shuffledList)
+    }
+
+    /**
+     * Collection.rotate but my implementation
+     *
+     * var shuffledList = list.shuffled(randomSeeded)
+     *
+     * val firstHalf = shuffledList.subList(0, lastIndex - 1)
+     *
+     * val secondHalf = shuffledList.subList(lastIndex, shuffledList.lastIndex)
+     *
+     * shuffledList = secondHalf + firstHalf
+     */
+    override suspend fun exerciseEnd(section: Section, currentIndex: Int) =
+        progressDataStore.saveLastIndex(index = currentIndex, section = section)
+
+    override fun exerciseResume(section: Section): Flow<List<WordEntry>> = flow {
+        val seed = progressDataStore.getLastSeed(section).first()
+        val lastIndex = progressDataStore.getLastIndex(section).first()
+        val randomSeeded = Random(seed)
+        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val shuffledList = list.shuffled(randomSeeded)
+        Collections.rotate(shuffledList, -lastIndex)
+        emit(shuffledList)
     }
 
     override fun reviewType(section: Section): List<WordEntry> {

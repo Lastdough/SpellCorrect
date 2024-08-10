@@ -22,10 +22,12 @@ interface MainRepository {
     suspend fun updateOnboardingState(completed: Boolean)
 
     // Word Entry
+    fun exerciseSpecific(word: String, section: Section): WordEntry
     fun wordOfTheDay(): Flow<WordEntry>
     fun exerciseStart(section: Section): Flow<List<WordEntry>>
-    fun exerciseResume(section: Section): List<WordEntry>
-    fun exerciseSpecific(word: String, section: Section): WordEntry
+    fun exerciseResume(section: Section): Flow<List<WordEntry>>
+    suspend fun exerciseEnd(section: Section, currentIndex: Int)
+
     fun reviewType(section: Section): List<WordEntry>
     fun reviewListen(section: Section): List<WordEntry>
 
