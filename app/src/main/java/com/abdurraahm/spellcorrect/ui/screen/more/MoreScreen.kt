@@ -124,7 +124,7 @@ private fun MoreContent(
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun HomeContentPreview() {
+private fun MoreContentPreview() {
     SpellCorrectTheme {
         MoreContent(navController = rememberNavController())
     }
