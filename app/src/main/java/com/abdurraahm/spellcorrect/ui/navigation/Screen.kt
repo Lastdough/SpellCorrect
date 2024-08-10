@@ -6,9 +6,7 @@ sealed class Screen(val route: String) {
     data object Review : Screen("Review")
     data object More : Screen("More")
 
-    object DrugsDetails : Screen("detail/{id}") {
-        fun createRoute(id: String) = "detail/$id"
+    data object FlashScreen : Screen("flash/{exerciseState}/{sectionId}") {
+        fun createRoute(exerciseState: Int, sectionId: Int) = "flash/$exerciseState/$sectionId"
     }
-
-
 }

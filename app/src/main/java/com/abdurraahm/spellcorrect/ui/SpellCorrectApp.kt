@@ -5,10 +5,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.abdurraahm.spellcorrect.ui.navigation.Screen
+import com.abdurraahm.spellcorrect.ui.screen.flashcard.FlashScreen
 import com.abdurraahm.spellcorrect.ui.screen.home.HomeScreen
 import com.abdurraahm.spellcorrect.ui.screen.more.MoreScreen
 import com.abdurraahm.spellcorrect.ui.screen.onboarding.OnBoardingScreen
@@ -42,6 +45,21 @@ fun SpellCorrectApp(
         }
         composable(Screen.More.route) {
             MoreScreen(navController = navController)
+        }
+        composable(
+            route = Screen.FlashScreen.route,
+            arguments = listOf(
+                navArgument("sectionId") { type = NavType.IntType },
+                navArgument("exerciseState") { type = NavType.IntType },
+            ),
+        ) {
+            val sectionId = it.arguments?.getInt("sectionId") ?: 0
+            val exerciseState = it.arguments?.getInt("exerciseState") ?: 0
+            FlashScreen(
+                navController = navController,
+                sectionId = sectionId,
+                exerciseState = exerciseState
+            )
         }
     }
 }
