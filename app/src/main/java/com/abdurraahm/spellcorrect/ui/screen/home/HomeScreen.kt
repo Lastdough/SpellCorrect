@@ -42,6 +42,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
+import com.abdurraahm.spellcorrect.data.local.model.Exercise
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
@@ -50,6 +51,7 @@ import com.abdurraahm.spellcorrect.ui.component.CustomButton
 import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar
+import com.abdurraahm.spellcorrect.ui.navigation.Screen
 import com.abdurraahm.spellcorrect.ui.screen.loading.CircularLoading
 import com.abdurraahm.spellcorrect.ui.state.UiState
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
@@ -108,20 +110,42 @@ fun HomeScreen(
                             ).apply {
                                 if (section.finished) {
                                     add(0, BottomSheetButtonData("Start Over") {
-                                        homeViewModel.updateSectionData(section.copy(progress = 0f))
+                                        showSectionBottomSheetMap[section.partSection] = false
+                                        navController.navigate(
+                                            Screen.FlashScreen.createRoute(
+                                                sectionId = section.id,
+                                                exerciseState = Exercise.START.ordinal
+                                            )
+                                        )
                                     })
                                 } else if (section.started) {
                                     add(0, BottomSheetButtonData("Continue Last Session") {
-                                        homeViewModel.updateSectionData(
-                                            section.copy(progress = (section.progress + 0.1f))
+                                        showSectionBottomSheetMap[section.partSection] = false
+                                        navController.navigate(
+                                            Screen.FlashScreen.createRoute(
+                                                sectionId = section.id,
+                                                exerciseState = Exercise.RESUME.ordinal
+                                            )
                                         )
                                     })
                                     add(0, BottomSheetButtonData("Start Over") {
-                                        homeViewModel.updateSectionData(section.copy(progress = 0f))
+                                        showSectionBottomSheetMap[section.partSection] = false
+                                        navController.navigate(
+                                            Screen.FlashScreen.createRoute(
+                                                sectionId = section.id,
+                                                exerciseState = Exercise.START.ordinal
+                                            )
+                                        )
                                     })
                                 } else {
                                     add(0, BottomSheetButtonData("Start Section") {
-                                        homeViewModel.updateSectionData(section.copy(progress = 0.5f))
+                                        showSectionBottomSheetMap[section.partSection] = false
+                                        navController.navigate(
+                                            Screen.FlashScreen.createRoute(
+                                                sectionId = section.id,
+                                                exerciseState = Exercise.START.ordinal
+                                            )
+                                        )
                                     })
                                 }
                             }

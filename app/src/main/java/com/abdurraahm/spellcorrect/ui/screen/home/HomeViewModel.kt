@@ -64,4 +64,12 @@ class HomeViewModel @Inject constructor(
     // Realita != Idealita
     // Hipotesa
     // Pembuktian Hipotesa
+
+    fun startExercise(section: SectionData) {
+        mainRepository.exerciseStart(section = section.partSection)
+    }
+
+    fun resumeExercise(section: SectionData){
+        mainRepository.exerciseResume(section = section.partSection)
+    }
 }
