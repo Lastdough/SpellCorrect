@@ -12,10 +12,18 @@ import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -72,26 +80,29 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     // Word Entry
-    override fun wordOfTheDay(): WordEntry {
-        val wordEntry = wordEntryLocalDataSource.mergedEntry()
-        val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Using newer APIs for Oreo and above
-            val currentDate = LocalDate.now()
-            val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
-            "50002101" + currentDate.format(formatter)
-        } else {
-            // Fallback for older versions
-            val currentDateOlder = Date()
-            val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
-            "50002101" + formatterOlder.format(currentDateOlder)
+    override fun wordOfTheDay(): Flow<WordEntry> = flow {
+        // Collect the list once
+        val wordList = wordEntryLocalDataSource.mergedSection.first()
+        while (true) {
+            val seed = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                // Using newer APIs for Oreo and above
+                val currentDate = LocalDate.now()
+                val formatter = DateTimeFormatter.ofPattern("ddMMyyyy")
+                "50002101" + currentDate.format(formatter)
+            } else {
+                // Fallback for older versions
+                val currentDateOlder = Date()
+                val formatterOlder = SimpleDateFormat("ddMMyyyy", Locale.getDefault())
+                "50002101" + formatterOlder.format(currentDateOlder)
+            }
+            val randomSeeded = Random(seed.toLong())
+            val wordOfTheDayIndex = wordList.indices.random(randomSeeded)
+            val wordOfTheDay = wordList[wordOfTheDayIndex]
+            emit(wordOfTheDay)
         }
-        val randomSeeded = Random(seed.toLong())
-        val wordOfTheDayIndex = wordEntry.indices.random(randomSeeded)
-        val wordOfTheDay = wordEntry[wordOfTheDayIndex]
-        return wordOfTheDay
-    }
+    }.flowOn(Dispatchers.IO)
 
-    override fun exerciseStart(section: Section): List<WordEntry> {
+    override fun exerciseStart(section: Section): Flow<List<WordEntry>> {
         return wordEntryLocalDataSource.sectionEntry(section)
     }
 
