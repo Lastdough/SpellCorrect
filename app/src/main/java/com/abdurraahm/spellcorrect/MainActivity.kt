@@ -4,44 +4,50 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
+import com.abdurraahm.spellcorrect.ui.MainViewModel
+import com.abdurraahm.spellcorrect.ui.SpellCorrectApp
+import com.abdurraahm.spellcorrect.ui.navigation.Screen
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val mainViewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-            SpellCorrectTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
+        var keepSplashScreen = true
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition {
+            keepSplashScreen
+        }
+
+        lifecycleScope.launch {
+            mainViewModel.onboardingCompletedState.collect { completed ->
+                // splash screen false once state is known
+                keepSplashScreen = false
+                setContent {
+                    SpellCorrectTheme {
+                        val startDestination =
+                            if (completed) Screen.Home.route else Screen.OnBoarding.route
+                        SpellCorrectApp(startDestination = startDestination)
+                    }
                 }
             }
         }
+        mainViewModel.startTextToSpeech()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Destroy TTS
+        mainViewModel.stopTextToSpeech()
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SpellCorrectTheme {
-        Greeting("Android")
-    }
-}

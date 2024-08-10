@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SpellCorrect</string>
     <string name="app_display_name">Spell Correct</string>
+    <string name="desc_temp">Master foundational words that are essential for daily interactions and basic comprehension.</string>
 </resources>

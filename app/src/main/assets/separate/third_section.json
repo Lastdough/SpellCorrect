@@ -1,0 +1,5005 @@
+[
+    {
+        "word":"abalones",
+        "definition":[
+            "a type of shellfish that is eaten as food and that has a shell that is lined with a hard white material (called mother-of-pearl)"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6b\u0259\u02c8lo\u028ani"
+    },
+    {
+        "word":"abattoir",
+        "definition":[
+            "slaughterhouse"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6b\u0259\u02cctw\u0251\u025a"
+    },
+    {
+        "word":"abdomen",
+        "definition":[
+            "the part of the body below the chest that contains the stomach and other organs",
+            "the rear part of an insect's body"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6bd\u0259m\u0259n"
+    },
+    {
+        "word":"abeyance",
+        "definition":[
+            "{it}formal{\/it} {bc} in a temporary state of being stopped"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8bej\u0259ns"
+    },
+    {
+        "word":"abundance",
+        "definition":[
+            "a large amount of something : an abundant amount of something"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8b\u028cnd\u0259ns"
+    },
+    {
+        "word":"acacias",
+        "definition":[
+            "a shrub or tree that grows in warm regions and that has white or yellow flowers"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8ke\u026a\u0283\u0259"
+    },
+    {
+        "word":"accelerates",
+        "definition":[
+            "to move faster : to gain speed",
+            "to cause (something) to happen sooner or more quickly"
+        ],
+        "type":"verb",
+        "ipa":"\u026ak\u02c8s\u025bl\u0259\u02ccre\u026at"
+    },
+    {
+        "word":"accordance",
+        "definition":[
+            "{bc} in a way that agrees with or follows (something, such as a rule or request)"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8ko\u025adn\u0329s"
+    },
+    {
+        "word":"adduced",
+        "definition":[
+            "to mention or provide (something, such as a fact or example) as evidence or proof to support an argument"
+        ],
+        "type":"verb",
+        "ipa":"\u0259\u02c8du\u02d0s"
+    },
+    {
+        "word":"Adelaide",
+        "definition":[
+            "city in Australia"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8\u00e6d\u0259\u02ccle\u026ad"
+    },
+    {
+        "word":"adjutant",
+        "definition":[
+            "an army officer who helps the commanding officer and is responsible for written communications"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6\u02a4\u0259t\u0259nt"
+    },
+    {
+        "word":"adversity",
+        "definition":[
+            "a difficult situation or condition : misfortune or tragedy"
+        ],
+        "type":"noun",
+        "ipa":"\u00e6d\u02c8v\u025as\u0259ti"
+    },
+    {
+        "word":"aerials",
+        "definition":[
+            "antenna",
+            "a difficult movement of the body performed by an athlete (such as a skier) in the air"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"agate",
+        "definition":[
+            "a very hard stone used especially in jewelry that has colors arranged in stripes or in patches"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6g\u0259t"
+    },
+    {
+        "word":"aggrandizement",
+        "definition":[
+            "advancement or increase in power or importance"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"aisles",
+        "definition":[
+            "a passage where people walk: such as",
+            "a passage between sections of seats in a church, theater, airplane, etc.",
+            "a passage where people walk through a store, market, etc."
+        ],
+        "type":"noun",
+        "ipa":"\u02c8aj\u0259l"
+    },
+    {
+        "word":"Algiers",
+        "definition":[
+            "city in Algeria"
+        ],
+        "type":"No word type available",
+        "ipa":"\u00e6l\u02c8\u02a4irz"
+    },
+    {
+        "word":"almoner",
+        "definition":[
+            "a person whose job is to help people in hospitals with their financial and social problems"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6lm\u0259n\u025a"
+    },
+    {
+        "word":"amputation",
+        "definition":[
+            "to cut off (part of a person's body)"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8\u00e6mpj\u0259\u02ccte\u026at"
+    },
+    {
+        "word":"anagrams",
+        "definition":[
+            "a word or phrase made by changing the order of the letters in another word or phrase"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6n\u0259\u02ccgr\u00e6m"
+    },
+    {
+        "word":"analgesia",
+        "definition":[
+            "the loss of the ability to feel pain while conscious"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6nl\u031f\u02c8\u02a4i\u02d0\u0292\u0259"
+    },
+    {
+        "word":"anathema",
+        "definition":[
+            "someone or something that is very strongly disliked\u2014usually + to"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8n\u00e6\u03b8\u0259m\u0259"
+    },
+    {
+        "word":"anecdote",
+        "definition":[
+            "a short story about an interesting or funny event or occurrence"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6n\u026ak\u02ccdo\u028at"
+    },
+    {
+        "word":"anemone",
+        "definition":[
+            "a type of garden plant that has white, purple, or red flowers",
+            "sea anemone"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8n\u025bm\u0259ni"
+    },
+    {
+        "word":"anguish",
+        "definition":[
+            "extreme suffering, grief, or pain"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6\u014bgw\u026a\u0283"
+    },
+    {
+        "word":"annoyance",
+        "definition":[
+            "slight anger : the feeling of being annoyed",
+            "something that causes feelings of slight anger or irritation : a source of annoyance"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8noj\u0259ns"
+    },
+    {
+        "word":"anodyne",
+        "definition":[
+            "not likely to offend or upset anyone"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8\u00e6n\u0259\u02ccda\u026an"
+    },
+    {
+        "word":"apocryphal",
+        "definition":[
+            "well-known but probably not true"
+        ],
+        "type":"adjective",
+        "ipa":"\u0259\u02c8p\u0251\u02d0kr\u0259f\u0259\u026b"
+    },
+    {
+        "word":"apoplexy",
+        "definition":[
+            "the sudden loss of the ability to feel or move parts of the body caused by too little blood going to the brain : stroke",
+            "great anger and excitement"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6p\u0259\u02ccpl\u025bksi"
+    },
+    {
+        "word":"appalling",
+        "definition":[
+            "very bad in a way that causes fear, shock, or disgust"
+        ],
+        "type":"adjective",
+        "ipa":"\u0259\u02c8p\u0251\u02d0l\u026a\u014b"
+    },
+    {
+        "word":"apparition",
+        "definition":[
+            "a ghost or spirit of a dead person"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6p\u0259\u02c8r\u026a\u0283\u0259n"
+    },
+    {
+        "word":"appeasement",
+        "definition":[
+            "to make (someone) pleased or less angry by giving or saying something desired",
+            "to make (a pain, a problem, etc.) less painful or troubling"
+        ],
+        "type":"verb",
+        "ipa":"\u0259\u02c8pi\u02d0z"
+    },
+    {
+        "word":"appendectomy",
+        "definition":[
+            "an operation to remove a person's appendix"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6p\u0259n\u02c8d\u025bkt\u0259mi"
+    },
+    {
+        "word":"apprentice",
+        "definition":[
+            "a person who learns a job or skill by working for a fixed period of time for someone who is very good at that job or skill \u2014often used before another noun"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8pr\u025bnt\u0259s"
+    },
+    {
+        "word":"appropriate",
+        "definition":[
+            "right or suited for some purpose or situation"
+        ],
+        "type":"adjective",
+        "ipa":"\u0259\u02c8pro\u028aprij\u0259t"
+    },
+    {
+        "word":"appurtenances",
+        "definition":[
+            "an object that is used with or for something\u2014usually plural"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8p\u025at\u0259n\u0259ns"
+    },
+    {
+        "word":"apres",
+        "definition":[
+            "social activities after a day of skiing\u2014often used before another noun"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u0251\u02d0\u02ccpre\u026a\u02c8ski\u02d0"
+    },
+    {
+        "word":"aquiline",
+        "definition":[
+            "curving like an eagle's beak",
+            "like an eagle"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8\u00e6kw\u0259\u02ccla\u026an"
+    },
+    {
+        "word":"arcane",
+        "definition":[
+            "secret or mysterious : known or understood by only a few people"
+        ],
+        "type":"adjective",
+        "ipa":"\u0251\u025a\u02c8ke\u026an"
+    },
+    {
+        "word":"argot",
+        "definition":[
+            "the language used by a particular type or group of people"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u0251\u025ag\u0259t"
+    },
+    {
+        "word":"arrayed",
+        "definition":[
+            "to place (a group of things) in a particular position so that they are in order or so that they look attractive\u2014usually used as (be) arrayed",
+            "to dress (someone, especially yourself) in fine clothing",
+            "to put (soldiers) in a place or position so that they are ready to attack \u2014usually used as (be) arrayed"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"ascetic",
+        "definition":[
+            "relating to or having a strict and simple way of living that avoids physical pleasure"
+        ],
+        "type":"adjective",
+        "ipa":"\u0259\u02c8s\u025bt\u026ak"
+    },
+    {
+        "word":"asparagus",
+        "definition":[
+            "a plant with long green stems and tiny leaves at one end that is cooked and eaten as a vegetable"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8sper\u0259g\u0259s"
+    },
+    {
+        "word":"aspersions",
+        "definition":[
+            "{it}formal{\/it} {bc} to say critical things about someone or someone's character {bc} to criticize someone harshly or unfairly"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8sp\u025a\u0292\u0259nz"
+    },
+    {
+        "word":"asphyxiate",
+        "definition":[
+            "to cause (someone) to stop breathing and often to become unconscious and die"
+        ],
+        "type":"verb",
+        "ipa":"\u00e6s\u02c8f\u026aksi\u02cce\u026at"
+    },
+    {
+        "word":"assassinate",
+        "definition":[
+            "to kill (someone, such as a famous or important person) usually for political reasons"
+        ],
+        "type":"verb",
+        "ipa":"\u0259\u02c8s\u00e6s\u0259\u02ccne\u026at"
+    },
+    {
+        "word":"assuage",
+        "definition":[
+            "to make (something, such as an unpleasant feeling) less painful, severe, etc."
+        ],
+        "type":"verb",
+        "ipa":"\u0259\u02c8swe\u026a\u02a4"
+    },
+    {
+        "word":"astrologers",
+        "definition":[
+            "the study of how the positions of the stars and movements of the planets have a supposed influence on events and on the lives and behavior of people"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8str\u0251\u02d0l\u0259\u02a4i"
+    },
+    {
+        "word":"Aten",
+        "definition":[
+            "to put your hand, fingers, etc., on someone or something \u2014usually used in negative statements",
+            "to be in contact with (something)\u2014used to say that one thing is directly against another thing with no space between",
+            "to change or move (something)\u2014usually used in negative statements"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8t\u028ct\u0283"
+    },
+    {
+        "word":"atmospheric",
+        "definition":[
+            "of or relating to the atmosphere of the Earth or another planet",
+            "creating a pleasant or exciting mood or feeling"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u00e6tm\u0259\u02c8sfir\u026ak"
+    },
+    {
+        "word":"atoll",
+        "definition":[
+            "an island that is made of coral and shaped like a ring"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u00e6\u02cct\u0251\u02d0l"
+    },
+    {
+        "word":"atrocity",
+        "definition":[
+            "a very cruel or terrible act or action"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8tr\u0251\u02d0s\u0259ti"
+    },
+    {
+        "word":"attache",
+        "definition":[
+            "a person who works at an embassy as an expert on a particular subject"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6t\u0259\u02c8\u0283e\u026a"
+    },
+    {
+        "word":"authority",
+        "definition":[
+            "the power to give orders or make decisions : the power or right to direct or control someone or something",
+            "the confident quality of someone who knows a lot about something or who is respected or obeyed by other people",
+            "a quality that makes something seem true or real"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8\u03b8or\u0259ti"
+    },
+    {
+        "word":"aversion",
+        "definition":[
+            "a strong feeling of not liking something \u2014often + to"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8v\u025a\u0292\u0259n"
+    },
+    {
+        "word":"avocations",
+        "definition":[
+            "an activity that you do regularly for enjoyment rather than as a job : hobby"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u00e6v\u0259\u02c8ke\u026a\u0283\u0259n"
+    },
+    {
+        "word":"avuncular",
+        "definition":[
+            "like an uncle : kind or friendly like an uncle"
+        ],
+        "type":"adjective",
+        "ipa":"\u0259\u02c8v\u028c\u014bkj\u0259l\u025a"
+    },
+    {
+        "word":"azalea",
+        "definition":[
+            "a type of bush that has colorful flowers that bloom in the spring"
+        ],
+        "type":"noun",
+        "ipa":"\u0259\u02c8ze\u026alj\u0259"
+    },
+    {
+        "word":"badminton",
+        "definition":[
+            "a game in which a light feathered object (called a shuttlecock) is hit over a net by players using light rackets"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u00e6d\u02ccm\u026atn\u0329"
+    },
+    {
+        "word":"bankrupt",
+        "definition":[
+            "unable to pay debts",
+            "\u2014used to say that someone or something completely lacks a good or desired quality"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8b\u00e6\u014bk\u02ccr\u028cpt"
+    },
+    {
+        "word":"bantam",
+        "definition":[
+            "a kind of small chicken"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u00e6nt\u0259m"
+    },
+    {
+        "word":"barrette",
+        "definition":[
+            "a decorative clip or bar that is used to hold a girl's or woman's hair in place \u2014called also (British) hair slide"
+        ],
+        "type":"noun",
+        "ipa":"b\u0251\u02c8r\u025bt"
+    },
+    {
+        "word":"barricade",
+        "definition":[
+            "a temporary wall, fence, or similar structure that is built to prevent people from entering a place or area"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ber\u0259\u02ccke\u026ad"
+    },
+    {
+        "word":"basilica",
+        "definition":[
+            "a large church that has a long central part that ends in a curved wall"
+        ],
+        "type":"noun",
+        "ipa":"b\u0259\u02c8s\u026al\u026ak\u0259"
+    },
+    {
+        "word":"bathos",
+        "definition":[
+            "the sudden appearance of a silly idea or event in a book, movie discussion, etc., that is serious in tone"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8be\u026a\u02cc\u03b8\u0251\u02d0s"
+    },
+    {
+        "word":"battalion",
+        "definition":[
+            "a large organized group of soldiers",
+            "a large organized group of people who act together"
+        ],
+        "type":"noun",
+        "ipa":"b\u0259\u02c8t\u00e6lj\u0259n"
+    },
+    {
+        "word":"bauxite",
+        "definition":[
+            "a soft substance that looks like clay and that is the source of aluminum"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u0251\u02d0k\u02ccsa\u026at"
+    },
+    {
+        "word":"bayonet",
+        "definition":[
+            "a long knife that is attached to the end of a rifle and used as a weapon in battle"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8bej\u0259n\u0259t"
+    },
+    {
+        "word":"bier",
+        "definition":[
+            "a table or platform on which a coffin or dead body is placed at a funeral"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8bi\u025a"
+    },
+    {
+        "word":"bilious",
+        "definition":[
+            "having or causing a sick feeling in the stomach : feeling or causing nausea",
+            "angry or bad-tempered",
+            "very unpleasant to look at"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8b\u026alj\u0259s"
+    },
+    {
+        "word":"bipolar",
+        "definition":[
+            "manic depression"
+        ],
+        "type":"noun",
+        "ipa":"ba\u026a\u02c8po\u028al\u025a-"
+    },
+    {
+        "word":"bivouac",
+        "definition":[
+            "a temporary camp or shelter"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u026av\u0259\u02ccw\u00e6k"
+    },
+    {
+        "word":"blancmange",
+        "definition":[
+            "a cold, sweet dessert that looks like jelly formed into a shape"
+        ],
+        "type":"noun",
+        "ipa":"bl\u0259\u02c8m\u0251\u02d0n\u02a4"
+    },
+    {
+        "word":"blight",
+        "definition":[
+            "a disease that makes plants dry up and die",
+            "something that causes harm or damage like a disease\u2014usually singular \u2014usually + on",
+            "a damaged condition"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8bla\u026at"
+    },
+    {
+        "word":"boisterously",
+        "definition":[
+            "very noisy and active in a lively way"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8bo\u026astr\u0259s"
+    },
+    {
+        "word":"boroughs",
+        "definition":[
+            "a village, town, or part of a large city that has its own government",
+            "one of the five main sections of New York City"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u025aro\u028a"
+    },
+    {
+        "word":"bouffant",
+        "definition":[
+            "having a full and rounded shape \u2014usually used to refer to a hairstyle in which the hair is up and away from the head in a full, rounded shape"
+        ],
+        "type":"adjective",
+        "ipa":"bu\u02c8f\u0251\u02d0nt"
+    },
+    {
+        "word":"bouillon",
+        "definition":[
+            "a clear liquid in which meat, chicken, fish, or vegetables have been cooked and which is eaten as soup or used to make sauces"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8bu\u02d0l\u02ccj\u0251\u02d0n"
+    },
+    {
+        "word":"bourgeois",
+        "definition":[
+            "relating to or belonging to the middle class of society",
+            "having qualities or values associated with the middle class : too concerned about wealth, possessions, and respectable behavior"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8bu\u025a\u0292\u02ccw\u0251\u02d0"
+    },
+    {
+        "word":"boutonniere",
+        "definition":[
+            "a flower or small group of flowers that men sometimes wear on their jackets on special occasions (such as weddings) \u2014called also (British) buttonhole"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccbu\u02d0tn\u0329\u02c8i\u025a"
+    },
+    {
+        "word":"brigands",
+        "definition":[
+            "a robber who travels with others in a group : bandit"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8br\u026ag\u0259nd"
+    },
+    {
+        "word":"brioche",
+        "definition":[
+            "a light, sweet type of bread"
+        ],
+        "type":"noun",
+        "ipa":"bri\u02c8o\u028a\u0283"
+    },
+    {
+        "word":"brocade",
+        "definition":[
+            "a cloth with a raised design in gold or silver thread"
+        ],
+        "type":"noun",
+        "ipa":"bro\u028a\u02c8ke\u026ad"
+    },
+    {
+        "word":"bucolic",
+        "definition":[
+            "of or relating to the country or country life : pastoral"
+        ],
+        "type":"adjective",
+        "ipa":"bju\u02c8k\u0251\u02d0l\u026ak"
+    },
+    {
+        "word":"burgundy",
+        "definition":[
+            "a red or white wine made in Burgundy, France",
+            "a reddish-purple color"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8b\u025ag\u0259ndi"
+    },
+    {
+        "word":"cabal",
+        "definition":[
+            "a small group of people who work together secretly"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8b\u0251\u02d0l"
+    },
+    {
+        "word":"caisson",
+        "definition":[
+            "{it}medical{\/it}"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"calamine",
+        "definition":[
+            "a pink liquid that is used to treat skin that is sore, itchy, sunburned, etc. \u2014called also calamine lotion"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u00e6l\u0259\u02ccma\u026an"
+    },
+    {
+        "word":"calamitous",
+        "definition":[
+            "causing great harm or suffering : disastrous"
+        ],
+        "type":"adjective",
+        "ipa":"k\u0259\u02c8l\u00e6m\u0259t\u0259s"
+    },
+    {
+        "word":"callous",
+        "definition":[
+            "not feeling or showing any concern about the problems or suffering of other people"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8k\u00e6l\u0259s"
+    },
+    {
+        "word":"calumny",
+        "definition":[
+            "an untrue statement that is made to damage someone's reputation; also : the act of making such statements"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u00e6l\u0259mni"
+    },
+    {
+        "word":"camembert",
+        "definition":[
+            "a type of soft yellow cheese from France"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u00e6m\u0259m\u02ccbe\u025a"
+    },
+    {
+        "word":"canard",
+        "definition":[
+            "a false report or story : a belief or rumor that is not true"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8n\u0251\u025ad"
+    },
+    {
+        "word":"Caracas",
+        "definition":[
+            "city in Venezuela"
+        ],
+        "type":"No word type available",
+        "ipa":"k\u0251\u02c8r\u0251\u02d0k\u0251s"
+    },
+    {
+        "word":"carapace",
+        "definition":[
+            "a hard shell on the back of some animals (such as turtles or crabs)"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ker\u0259\u02ccpe\u026as"
+    },
+    {
+        "word":"carrion",
+        "definition":[
+            "the flesh of dead animals"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kerij\u0259n"
+    },
+    {
+        "word":"carte",
+        "definition":[
+            "permission to do something in any way you choose to do it"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u025at\u02c8bl\u0251\u02d0nt\u0283"
+    },
+    {
+        "word":"cassock",
+        "definition":[
+            "a long gown worn by a priest"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u00e6s\u0259k"
+    },
+    {
+        "word":"Castilian",
+        "definition":[
+            "region of Spain"
+        ],
+        "type":"No word type available",
+        "ipa":"k\u00e6\u02c8sti\u02d0l"
+    },
+    {
+        "word":"catarrh",
+        "definition":[
+            "a condition in which the nose and air passages become filled with mucus"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8t\u0251\u025a"
+    },
+    {
+        "word":"catastrophic",
+        "definition":[
+            "a terrible disaster"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8t\u00e6str\u0259fi"
+    },
+    {
+        "word":"chalet",
+        "definition":[
+            "a type of house that has a steep roof that extends past the walls",
+            "a small house often in a group of similar houses where people go for vacations"
+        ],
+        "type":"noun",
+        "ipa":"\u0283\u00e6\u02c8le\u026a"
+    },
+    {
+        "word":"chalice",
+        "definition":[
+            "a special cup for holding wine; especially : the cup used in the Christian ceremony of Communion"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u0283\u00e6l\u0259s"
+    },
+    {
+        "word":"chandeliers",
+        "definition":[
+            "a large, decorated light that hangs from a ceiling and has branches for holding many light bulbs or candles"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u0283\u00e6nd\u0259\u02c8li\u025a"
+    },
+    {
+        "word":"chaplain",
+        "definition":[
+            "a priest or other Christian religious leader who performs religious services for a military group (such as the army) or for a prison, hospital, etc."
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u0283\u00e6pl\u0259n"
+    },
+    {
+        "word":"chauffeurs",
+        "definition":[
+            "a person whose job is to drive people around in a car"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u0283o\u028af\u025a"
+    },
+    {
+        "word":"chicanery",
+        "definition":[
+            "actions or statements that trick people into believing something that is not true : deception or trickery"
+        ],
+        "type":"noun",
+        "ipa":"\u0283\u026a\u02c8ke\u026an\u0259ri"
+    },
+    {
+        "word":"chimpanzee",
+        "definition":[
+            "an intelligent animal that is a type of ape and that lives mostly in trees in Africa"
+        ],
+        "type":"noun",
+        "ipa":"\u02cct\u0283\u026am\u02ccp\u00e6n\u02c8zi\u02d0"
+    },
+    {
+        "word":"Cincinnati",
+        "definition":[
+            "U.S. city, Ohio"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02ccs\u026ans\u0259\u02c8n\u00e6ti"
+    },
+    {
+        "word":"cladding",
+        "definition":[
+            "siding"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kl\u00e6d\u026a\u014b"
+    },
+    {
+        "word":"clamorous",
+        "definition":[
+            "to be loud and noisy",
+            "to ask for or demand something in a loud way \u2014usually + for"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"claustrophobic",
+        "definition":[
+            "not having enough space for people to feel comfortable : causing claustrophobia",
+            "having a fear of being in closed or small spaces : having claustrophobia",
+            "not having or providing enough freedom"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cckl\u0251\u02d0str\u0259\u02c8fo\u028ab\u026ak"
+    },
+    {
+        "word":"clavichord",
+        "definition":[
+            "a musical instrument that is similar to a piano and was played mostly in the past before the piano was invented"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kl\u00e6v\u0259\u02ccko\u025ad"
+    },
+    {
+        "word":"clematis",
+        "definition":[
+            "a climbing plant that has large pink, purple, red, or white flowers"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kl\u025bm\u0259t\u0259s"
+    },
+    {
+        "word":"cloisters",
+        "definition":[
+            "a place where monks or nuns live : a monastery or convent",
+            "a covered path or hall with arches that is on the side of a building (such as a monastery or church) and that has one open side usually facing a courtyard"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8klo\u026ast\u025a"
+    },
+    {
+        "word":"clouting",
+        "definition":[
+            "to hit (the ball) very hard",
+            "to hit (someone or something) hard especially with your hand"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"coalescence",
+        "definition":[
+            "to come together to form one group or mass"
+        ],
+        "type":"verb",
+        "ipa":"\u02cckow\u0259\u02c8l\u025bs"
+    },
+    {
+        "word":"coaxing",
+        "definition":[
+            "to influence or persuade (a person or animal) to do something by talking in a gentle and friendly way \u2014often + into \u2014sometimes followed by to + verb",
+            "to get (something) by talking in a gentle and friendly way",
+            "to cause (something) to do something by making a careful and continual effort"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8ko\u028aks"
+    },
+    {
+        "word":"cocoon",
+        "definition":[
+            "a covering usually made of silk which some insects (such as caterpillars) make around themselves to protect them while they grow",
+            "something that covers or protects a person or thing"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8ku\u02d0n"
+    },
+    {
+        "word":"codicil",
+        "definition":[
+            "a document that adds or changes something in a will"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0d\u0259s\u0259l"
+    },
+    {
+        "word":"codswallop",
+        "definition":[
+            "nonsense"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0dz\u02ccw\u0251\u02d0l\u0259p"
+    },
+    {
+        "word":"coiffure",
+        "definition":[
+            "a way of cutting and arranging someone's hair : hairdo"
+        ],
+        "type":"noun",
+        "ipa":"kw\u0251\u02c8fju\u025a"
+    },
+    {
+        "word":"coincidence",
+        "definition":[
+            "a situation in which events happen at the same time in a way that is not planned or expected",
+            "the occurrence of two or more things at the same time",
+            "the state of two or more things being the same\u2014often + of"
+        ],
+        "type":"noun",
+        "ipa":"ko\u028a\u02c8\u026ans\u0259d\u0259ns"
+    },
+    {
+        "word":"colonel",
+        "definition":[
+            "an officer of high rank in the army, air force, or marines : a military officer who ranks above a major"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u025anl\u031f"
+    },
+    {
+        "word":"colossal",
+        "definition":[
+            "very large or great"
+        ],
+        "type":"adjective",
+        "ipa":"k\u0259\u02c8l\u0251\u02d0s\u0259l"
+    },
+    {
+        "word":"Columbia",
+        "definition":[
+            "U.S. city, South Carolina",
+            "river in the U.S. and Canada"
+        ],
+        "type":"No word type available",
+        "ipa":"k\u0259\u02c8l\u028cmbi\u0259"
+    },
+    {
+        "word":"commendable",
+        "definition":[
+            "deserving praise and approval"
+        ],
+        "type":"adjective",
+        "ipa":"k\u0259\u02c8m\u025bnd\u0259b\u0259l"
+    },
+    {
+        "word":"commodore",
+        "definition":[
+            "a high-ranking officer in the navy",
+            "the person who is in charge of a yachting or boating club"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0m\u0259\u02ccdo\u025a"
+    },
+    {
+        "word":"communique",
+        "definition":[
+            "an official announcement about a usually very important piece of news"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259\u02c8mju\u02d0n\u0259\u02ccke\u026a"
+    },
+    {
+        "word":"composure",
+        "definition":[
+            "calmness especially of mind, manner, or appearance"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259m\u02c8po\u028a\u0292\u025a"
+    },
+    {
+        "word":"concierge",
+        "definition":[
+            "a person in an apartment building especially in France who takes care of the building and checks the people who enter and leave",
+            "an employee at a hotel whose job is to provide help and information to the people staying at the hotel"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u02d0nsi\u02c8e\u025a\u0292"
+    },
+    {
+        "word":"concussion",
+        "definition":[
+            "an injury to the brain that is caused by something hitting the head very hard (US) (Brit)"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259n\u02c8k\u028c\u0283\u0259n"
+    },
+    {
+        "word":"condescendingly",
+        "definition":[
+            "showing that you believe you are more intelligent or better than other people"
+        ],
+        "type":"adjective",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"condominium",
+        "definition":[
+            "a room or set of rooms that is owned by the people who live there and that is part of a larger building containing other similar sets of rooms",
+            "a building that contains condominiums"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u02d0nd\u0259\u02c8m\u026anij\u0259m"
+    },
+    {
+        "word":"conflagration",
+        "definition":[
+            "a large destructive fire",
+            "a war or conflict"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u02d0nfl\u0259\u02c8gre\u026a\u0283\u0259n"
+    },
+    {
+        "word":"congealing",
+        "definition":[
+            "to become thick or solid \u2014often used figuratively"
+        ],
+        "type":"verb",
+        "ipa":"k\u0259n\u02c8\u02a4i\u02d0l"
+    },
+    {
+        "word":"conjure",
+        "definition":[
+            "to make (something) appear or seem to appear by using magic \u2014usually + up",
+            "to make you think of (something) \u2014usually + up",
+            "to create or imagine (something) \u2014usually + up"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8k\u0251\u02d0n\u02a4\u025a"
+    },
+    {
+        "word":"connoisseur",
+        "definition":[
+            "a person who knows a lot about something (such as art, wine, food, etc.) : an expert in a particular subject"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u02d0n\u0259\u02c8s\u025a"
+    },
+    {
+        "word":"conspicuous",
+        "definition":[
+            "very easy to see or notice",
+            "attracting attention by being great or impressive"
+        ],
+        "type":"adjective",
+        "ipa":"k\u0259n\u02c8sp\u026akj\u0259w\u0259s"
+    },
+    {
+        "word":"conspiracy",
+        "definition":[
+            "a secret plan made by two or more people to do something that is harmful or illegal",
+            "the act of secretly planning to do something that is harmful or illegal"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259n\u02c8spir\u0259si"
+    },
+    {
+        "word":"constricting",
+        "definition":[
+            "to make (something) narrower, smaller, or tighter",
+            "to become narrower, smaller, or tighter",
+            "to prevent or keep (something or someone) from developing freely"
+        ],
+        "type":"verb",
+        "ipa":"k\u0259n\u02c8str\u026akt"
+    },
+    {
+        "word":"contagious",
+        "definition":[
+            "able to be passed from one person or animal to another by touching",
+            "having a sickness that can be passed to someone else by touching",
+            "capable of being easily spread to others : causing other people to feel or act a similar way"
+        ],
+        "type":"adjective",
+        "ipa":"k\u0259n\u02c8te\u026a\u02a4\u0259s"
+    },
+    {
+        "word":"contaminated",
+        "definition":[
+            "to make (something) dangerous, dirty, or impure by adding something harmful or undesirable to it \u2014often used figuratively"
+        ],
+        "type":"verb",
+        "ipa":"k\u0259n\u02c8t\u00e6m\u0259\u02ccne\u026at"
+    },
+    {
+        "word":"contretemps",
+        "definition":[
+            "an unfortunate or embarrassing event, argument, or disagreement"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0ntr\u0259\u02cct\u0251\u02d0n"
+    },
+    {
+        "word":"conurbation",
+        "definition":[
+            "a large area consisting of cities or towns that have grown so that there is very little room between them"
+        ],
+        "type":"noun",
+        "ipa":"\u02cck\u0251\u02d0n\u025a\u02c8be\u026a\u0283\u0259n"
+    },
+    {
+        "word":"convictions",
+        "definition":[
+            "the act of proving that a person is guilty of a crime in a court of law",
+            "a strong belief or opinion",
+            "the feeling of being sure that what you believe or say is true"
+        ],
+        "type":"noun",
+        "ipa":"k\u0259n\u02c8v\u026ak\u0283\u0259n"
+    },
+    {
+        "word":"copious",
+        "definition":[
+            "very large in amount or number"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8ko\u028apij\u0259s"
+    },
+    {
+        "word":"coppice",
+        "definition":[
+            "a group of small trees growing very close together"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0p\u0259s"
+    },
+    {
+        "word":"copse",
+        "definition":[
+            "coppice"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u0251\u02d0ps"
+    },
+    {
+        "word":"coracle",
+        "definition":[
+            "a very small type of boat that has been used in parts of Great Britain since ancient times"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kor\u0259k\u0259l"
+    },
+    {
+        "word":"cordial",
+        "definition":[
+            "politely pleasant and friendly"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8ko\u025a\u02a4\u0259l"
+    },
+    {
+        "word":"cormorant",
+        "definition":[
+            "a type of dark-colored bird that has a long neck and that eats fish that it catches in the ocean"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ko\u025am\u0259r\u0259nt"
+    },
+    {
+        "word":"coronation",
+        "definition":[
+            "a ceremony in which a crown is placed on the head of a new king or queen"
+        ],
+        "type":"noun",
+        "ipa":"\u02cckor\u0259\u02c8ne\u026a\u0283\u0259n"
+    },
+    {
+        "word":"corporate",
+        "definition":[
+            "involving or associated with a corporation",
+            "consisting of or including large corporations",
+            "produced by or associated with large corporations"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8ko\u025ap\u0259r\u0259t"
+    },
+    {
+        "word":"corsair",
+        "definition":[
+            "pirate"
+        ],
+        "type":"noun",
+        "ipa":"ko\u025a\u02c8se\u025a"
+    },
+    {
+        "word":"coterie",
+        "definition":[
+            "a small group of people who are interested in the same thing and who usually do not allow other people to join the group"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ko\u028at\u0259ri"
+    },
+    {
+        "word":"countenance",
+        "definition":[
+            "the appearance of a person's face : a person's expression"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ka\u028antn\u0329\u0259ns"
+    },
+    {
+        "word":"courtiers",
+        "definition":[
+            "a member of a royal court (sense 3b)"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ko\u025atij\u025a"
+    },
+    {
+        "word":"covenant",
+        "definition":[
+            "a formal and serious agreement or promise",
+            "a formal written agreement between two or more people, businesses, countries, etc."
+        ],
+        "type":"noun",
+        "ipa":"\u02c8k\u028cv\u0259n\u0259nt"
+    },
+    {
+        "word":"crampon",
+        "definition":[
+            "a piece of metal with sharp points on the bottom that is worn by mountain climbers on the bottom of boots to make it easier to walk on ice and snow\u2014usually plural"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kr\u00e6m\u02ccp\u0251\u02d0n"
+    },
+    {
+        "word":"crematoria",
+        "definition":[
+            "crematory"
+        ],
+        "type":"noun",
+        "ipa":"\u02cckri\u02d0m\u0259\u02c8torij\u0259m"
+    },
+    {
+        "word":"culminate",
+        "definition":[
+            "to reach the end or the final result of something\u2014usually + in or with",
+            "to be the end or final result of (something)"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8k\u028clm\u0259\u02ccne\u026at"
+    },
+    {
+        "word":"cupolas",
+        "definition":[
+            "a rounded roof or part of a roof : dome",
+            "a small structure that is built on top of a roof"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kju\u02d0p\u0259l\u0259"
+    },
+    {
+        "word":"cygnet",
+        "definition":[
+            "a young swan"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u026agn\u0259t"
+    },
+    {
+        "word":"cypress",
+        "definition":[
+            "a tall and narrow evergreen tree"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sa\u026apr\u0259s"
+    },
+    {
+        "word":"daguerreotype",
+        "definition":[
+            "an old type of photograph that was made on a piece of silver or a piece of copper covered in silver"
+        ],
+        "type":"noun",
+        "ipa":"d\u0259\u02c8gero\u028a\u02ccta\u026ap"
+    },
+    {
+        "word":"Darwinism",
+        "definition":[
+            "the theory of Charles Darwin about how plant and animal species develop : evolution"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8d\u0251\u025aw\u0259\u02ccn\u026az\u0259m"
+    },
+    {
+        "word":"deathin",
+        "definition":[
+            "the end of life : the time when someone or something dies",
+            "the ending of a particular person's life",
+            "the permanent end of something that is not alive : the ruin or destruction of something"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8d\u025b\u03b8"
+    },
+    {
+        "word":"defector",
+        "definition":[
+            "to leave a country, political party, organization, etc., and go to a different one that is a competitor or an enemy"
+        ],
+        "type":"verb",
+        "ipa":"d\u026a\u02c8f\u025bkt"
+    },
+    {
+        "word":"deleterious",
+        "definition":[
+            "damaging or harmful"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccd\u025bl\u0259\u02c8tirij\u0259s"
+    },
+    {
+        "word":"demitasse",
+        "definition":[
+            "a small amount of black coffee that is served in a small cup; also : the cup used to serve it"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8d\u025bm\u026a\u02cct\u00e6s"
+    },
+    {
+        "word":"denouement",
+        "definition":[
+            "the final part of something (such as a book, a play, or a series of events)"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"depilatory",
+        "definition":[
+            "a substance that removes body hair you do not want"
+        ],
+        "type":"noun",
+        "ipa":"d\u026a\u02c8p\u026al\u0259\u02cctori"
+    },
+    {
+        "word":"derogatory",
+        "definition":[
+            "expressing a low opinion of someone or something : showing a lack of respect for someone or something"
+        ],
+        "type":"adjective",
+        "ipa":"d\u026a\u02c8r\u0251\u02d0g\u0259\u02cctori"
+    },
+    {
+        "word":"derrick",
+        "definition":[
+            "a tall machine with a long part like an arm that is used to move or lift heavy things especially on ships",
+            "a tall tower that is built over an oil well and used to support and guide the tool that is used to dig the hole and get oil out of the ground"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8der\u026ak"
+    },
+    {
+        "word":"despondency",
+        "definition":[
+            "very sad and without hope \u2014often + over or about"
+        ],
+        "type":"adjective",
+        "ipa":"d\u026a\u02c8sp\u0251\u02d0nd\u0259nt"
+    },
+    {
+        "word":"devout",
+        "definition":[
+            "deeply religious : devoted to a particular religion",
+            "loyal to something : devoted to a particular belief, organization, person, etc.",
+            "serious and sincere"
+        ],
+        "type":"adjective",
+        "ipa":"d\u026a\u02c8va\u028at"
+    },
+    {
+        "word":"dexterity",
+        "definition":[
+            "the ability to use your hands skillfully",
+            "the ability to easily move in a way that is graceful",
+            "clever skill : the ability to think and act quickly and cleverly"
+        ],
+        "type":"noun",
+        "ipa":"d\u025bk\u02c8ster\u0259ti"
+    },
+    {
+        "word":"diktat",
+        "definition":[
+            "an order that must be followed"
+        ],
+        "type":"noun",
+        "ipa":"d\u026ak\u02c8t\u0251\u02d0t"
+    },
+    {
+        "word":"diphtheria",
+        "definition":[
+            "a serious disease that makes breathing very difficult"
+        ],
+        "type":"noun",
+        "ipa":"d\u026af\u02c8\u03b8irij\u0259"
+    },
+    {
+        "word":"disconcerting",
+        "definition":[
+            "to make (someone) upset or embarrassed \u2014often used as (be) disconcerted"
+        ],
+        "type":"verb",
+        "ipa":"\u02ccd\u026ask\u0259n\u02c8s\u025at"
+    },
+    {
+        "word":"disconsolate",
+        "definition":[
+            "very unhappy or sad"
+        ],
+        "type":"adjective",
+        "ipa":"d\u026as\u02c8k\u0251\u02d0ns\u0259l\u0259t"
+    },
+    {
+        "word":"discord",
+        "definition":[
+            "lack of agreement between people, ideas, etc.",
+            "an unpleasant combination of musical notes"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8d\u026as\u02ccko\u025ad"
+    },
+    {
+        "word":"discriminating",
+        "definition":[
+            "liking only things that are of good quality : able to recognize the difference between things that are of good quality and those that are not"
+        ],
+        "type":"adjective",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"disembodied",
+        "definition":[
+            "not having a body : not attached to a body",
+            "coming from a person who cannot be seen"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccd\u026as\u0259m\u02c8b\u0251\u02d0did"
+    },
+    {
+        "word":"disgorged",
+        "definition":[
+            "to empty whatever is in the stomach through the mouth",
+            "to let out or release (something)",
+            "to flow out"
+        ],
+        "type":"verb",
+        "ipa":"d\u026as\u02c8go\u025a\u02a4"
+    },
+    {
+        "word":"dismayed",
+        "definition":[
+            "to cause (someone) to feel very worried, disappointed, or upset"
+        ],
+        "type":"verb",
+        "ipa":"d\u026as\u02c8me\u026a"
+    },
+    {
+        "word":"dispensation",
+        "definition":[
+            "permission to break a law or an official promise you have made : release from a rule, vow, or oath",
+            "an act of providing something to people"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccd\u026asp\u0259n\u02c8se\u026a\u0283\u0259n"
+    },
+    {
+        "word":"disquisition",
+        "definition":[
+            "a long speech or written report on a subject"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccd\u026askw\u0259\u02c8z\u026a\u0283\u0259n"
+    },
+    {
+        "word":"dissuade",
+        "definition":[
+            "to convince (someone) not to do something \u2014often + from"
+        ],
+        "type":"verb",
+        "ipa":"d\u026a\u02c8swe\u026ad"
+    },
+    {
+        "word":"divan",
+        "definition":[
+            "a long, low seat that has no back or arms or only part of a back and one arm",
+            "a bed that has a thick base and usually no footboard"
+        ],
+        "type":"noun",
+        "ipa":"d\u026a\u02c8v\u00e6n"
+    },
+    {
+        "word":"divulge",
+        "definition":[
+            "to make (information) known : to give (information) to someone"
+        ],
+        "type":"verb",
+        "ipa":"d\u0259\u02c8v\u028cl\u02a4"
+    },
+    {
+        "word":"Djibouti",
+        "definition":[
+            "country in Africa"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02a4\u0259\u02c8bu\u02d0ti"
+    },
+    {
+        "word":"dolmen",
+        "definition":[
+            "an ancient structure made of two or more upright stones and a single stone lying across them"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8do\u028alm\u0259n"
+    },
+    {
+        "word":"dosages",
+        "definition":[
+            "the amount of a medicine, drug, or vitamin that should be taken at one time or regularly during a period of time\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8do\u028as\u026a\u02a4"
+    },
+    {
+        "word":"dragoons",
+        "definition":[
+            "a soldier especially in the past who rode a horse and carried a gun"
+        ],
+        "type":"noun",
+        "ipa":"dr\u0259\u02c8gu\u02d0n"
+    },
+    {
+        "word":"drudgery",
+        "definition":[
+            "boring, difficult, or unpleasant work"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8dr\u028c\u02a4\u0259ri"
+    },
+    {
+        "word":"dudgeon",
+        "definition":[
+            "{it}formal{\/it} {bc} feeling and usually showing that you are angry or offended"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8d\u028c\u02a4\u0259n"
+    },
+    {
+        "word":"Durham",
+        "definition":[
+            "U.S. city, North Carolina"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8d\u025ar\u0259m"
+    },
+    {
+        "word":"Edinburgh",
+        "definition":[
+            "city in Scotland"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8\u025bdn\u0329\u02ccb\u025ar\u0259"
+    },
+    {
+        "word":"effrontery",
+        "definition":[
+            "a very confident attitude or way of behaving that is shocking or rude : nerve"
+        ],
+        "type":"noun",
+        "ipa":"\u026a\u02c8fr\u028cnt\u0259ri"
+    },
+    {
+        "word":"elan",
+        "definition":[
+            "energy and enthusiasm"
+        ],
+        "type":"noun",
+        "ipa":"e\u026a\u02c8l\u0251\u02d0n"
+    },
+    {
+        "word":"elegiac",
+        "definition":[
+            "a sad poem or song : a poem or song that expresses sorrow for someone who is dead"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u025bl\u0259\u02a4i"
+    },
+    {
+        "word":"embellishes",
+        "definition":[
+            "to decorate (something) by adding special details and features : to make (something) more appealing or attractive"
+        ],
+        "type":"verb",
+        "ipa":"\u026am\u02c8b\u025bl\u026a\u0283"
+    },
+    {
+        "word":"embroidery",
+        "definition":[
+            "the process or art of sewing a design on cloth",
+            "cloth decorated by sewing : embroidered material",
+            "extra details that are added to make a story more interesting and that are not true or accurate"
+        ],
+        "type":"noun",
+        "ipa":"\u026am\u02c8bro\u026ad\u0259ri"
+    },
+    {
+        "word":"emphatic",
+        "definition":[
+            "said or done in a forceful or definite way",
+            "speaking or acting in a forceful way"
+        ],
+        "type":"adjective",
+        "ipa":"\u026am\u02c8f\u00e6t\u026ak"
+    },
+    {
+        "word":"enervating",
+        "definition":[
+            "to make (someone or something) very weak or tired\u2014usually used as (be) enervated"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8\u025bn\u025a\u02ccve\u026at"
+    },
+    {
+        "word":"engrossed",
+        "definition":[
+            "to hold the complete interest or attention of (someone)\u2014usually used as (be\/get) engrossed"
+        ],
+        "type":"verb",
+        "ipa":"\u026an\u02c8gro\u028as"
+    },
+    {
+        "word":"ennui",
+        "definition":[
+            "a lack of spirit, enthusiasm, or interest"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u0251\u02d0n\u02c8wi\u02d0"
+    },
+    {
+        "word":"entrepreneurs",
+        "definition":[
+            "a person who starts a business and is willing to risk loss in order to make money"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u0251\u02d0ntr\u0259pr\u0259\u02c8n\u025a"
+    },
+    {
+        "word":"esplanade",
+        "definition":[
+            "a level, open area; especially : an area for walking or driving along a shore"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u025bspl\u0259\u02ccn\u0251\u02d0d"
+    },
+    {
+        "word":"euphonious",
+        "definition":[
+            "having a pleasant sound"
+        ],
+        "type":"adjective",
+        "ipa":"ju\u02c8fo\u028anij\u0259s"
+    },
+    {
+        "word":"eviction",
+        "definition":[
+            "to force (someone) to leave a place"
+        ],
+        "type":"verb",
+        "ipa":"\u026a\u02c8v\u026akt"
+    },
+    {
+        "word":"exasperation",
+        "definition":[
+            "the state of being very annoyed or upset"
+        ],
+        "type":"noun",
+        "ipa":"\u026ag\u02ccz\u00e6sp\u0259\u02c8re\u026a\u0283\u0259n"
+    },
+    {
+        "word":"exchequer",
+        "definition":[
+            "a department of the British government which manages the money that is used to run the government : treasury\u2014now used chiefly in the title the Chancellor of the Exchequer"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u025bks\u02cct\u0283\u025bk\u025a"
+    },
+    {
+        "word":"excruciating",
+        "definition":[
+            "very painful : causing great mental or physical pain",
+            "very severe",
+            "extreme or excessive"
+        ],
+        "type":"adjective",
+        "ipa":"\u026ak\u02c8skru\u02d0\u0283i\u02cce\u026at\u026a\u014b"
+    },
+    {
+        "word":"execrable",
+        "definition":[
+            "very bad"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8\u025bks\u026akr\u0259b\u0259l"
+    },
+    {
+        "word":"exhalation",
+        "definition":[
+            "to breathe out \u2014sometimes used figuratively"
+        ],
+        "type":"verb",
+        "ipa":"eks\u02c8he\u026al"
+    },
+    {
+        "word":"exile",
+        "definition":[
+            "a situation in which you are forced to leave your country or home and go to live in a foreign country \u2014often used after in or into \u2014sometimes used figuratively",
+            "a period of time during which someone has lived in exile",
+            "a person who has been forced to live in a foreign country : a person who is in exile"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u025bg\u02cczaj\u0259l"
+    },
+    {
+        "word":"existence",
+        "definition":[
+            "the state of existing: such as",
+            "the fact of having actual being : the state of being real",
+            "the state of continuing to be or to live"
+        ],
+        "type":"noun",
+        "ipa":"\u026ag\u02c8z\u026ast\u0259ns"
+    },
+    {
+        "word":"expatiate",
+        "definition":[
+            "to speak or write about something in a way that includes a lot of details or uses many words\u2014usually + on or upon"
+        ],
+        "type":"verb",
+        "ipa":"\u025bk\u02c8spe\u026a\u0283i\u02cce\u026at"
+    },
+    {
+        "word":"expatiated",
+        "definition":[
+            "to speak or write about something in a way that includes a lot of details or uses many words\u2014usually + on or upon"
+        ],
+        "type":"verb",
+        "ipa":"\u025bk\u02c8spe\u026a\u0283i\u02cce\u026at"
+    },
+    {
+        "word":"exposure",
+        "definition":[
+            "the fact or condition of being affected by something or experiencing something : the condition of being exposed to something",
+            "the act of revealing secrets about someone or something \u2014often + of",
+            "public attention and notice"
+        ],
+        "type":"noun",
+        "ipa":"\u026ak\u02c8spo\u028a\u0292\u025a"
+    },
+    {
+        "word":"facile",
+        "definition":[
+            "too simple : not showing enough thought or effort",
+            "done or achieved in a way that is too easy",
+            "working, moving, or performing well and very easily"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8f\u00e6s\u0259l"
+    },
+    {
+        "word":"facilitate",
+        "definition":[
+            "to make (something) easier : to help cause (something)",
+            "to help (something) run more smoothly and effectively"
+        ],
+        "type":"verb",
+        "ipa":"f\u0259\u02c8s\u026al\u0259\u02ccte\u026at"
+    },
+    {
+        "word":"facsimile",
+        "definition":[
+            "an exact copy",
+            "fax"
+        ],
+        "type":"noun",
+        "ipa":"f\u00e6k\u02c8s\u026am\u0259li"
+    },
+    {
+        "word":"fait",
+        "definition":[
+            "something that has been done and cannot be changed"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8fe\u026at\u0259\u02cck\u0251\u02d0m\u02c8pli\u02d0"
+    },
+    {
+        "word":"featherbrained",
+        "definition":[
+            "very foolish or silly"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8f\u025b\u00f0\u025a\u02ccbre\u026and"
+    },
+    {
+        "word":"feinted",
+        "definition":[
+            "to pretend to make an attack as a trick to fool your opponent : to make a feint"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"fester",
+        "definition":[
+            "to become painful and infected",
+            "to become worse as time passes"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8f\u025bst\u025a"
+    },
+    {
+        "word":"fetlocks",
+        "definition":[
+            "a part at the back of a horse's leg above the hoof"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8f\u025bt\u02ccl\u0251\u02d0k"
+    },
+    {
+        "word":"financiers",
+        "definition":[
+            "a person who controls the use and lending of large amounts of money"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccf\u026an\u0259n\u02c8si\u025a"
+    },
+    {
+        "word":"fixity",
+        "definition":[
+            "the state or quality of not changing"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8f\u026aks\u0259ti"
+    },
+    {
+        "word":"flabbergasted",
+        "definition":[
+            "to shock or surprise (someone) very much \u2014often used as (be) flabbergasted"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8fl\u00e6b\u025a\u02ccg\u00e6st"
+    },
+    {
+        "word":"fluorescent",
+        "definition":[
+            "producing light when electricity flows through a tube that is filled with a type of gas",
+            "very bright"
+        ],
+        "type":"adjective",
+        "ipa":"fl\u028a\u02c8r\u025bsn\u0329t"
+    },
+    {
+        "word":"fodder",
+        "definition":[
+            "food given to horses, cows, etc.",
+            "material that is used for a particular purpose"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8f\u0251\u02d0d\u025a"
+    },
+    {
+        "word":"formaldehyde",
+        "definition":[
+            "a chemical that is used to prevent decay in the dead bodies of people and animals"
+        ],
+        "type":"noun",
+        "ipa":"fo\u025a\u02c8m\u00e6ld\u0259\u02ccha\u026ad"
+    },
+    {
+        "word":"fortissimo",
+        "definition":[
+            "very loudly"
+        ],
+        "type":"adverb",
+        "ipa":"fo\u025a\u02c8t\u026as\u0259\u02ccmo\u028a"
+    },
+    {
+        "word":"fortuitous",
+        "definition":[
+            "happening by chance",
+            "having or showing good luck : fortunate"
+        ],
+        "type":"adjective",
+        "ipa":"fo\u025a\u02c8tu\u02d0w\u0259t\u0259s"
+    },
+    {
+        "word":"fractious",
+        "definition":[
+            "causing trouble : hard to manage or control",
+            "full of anger and disagreement"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8fr\u00e6k\u0283\u0259s"
+    },
+    {
+        "word":"franchise",
+        "definition":[
+            "the right to sell a company's goods or services in a particular area; also : a business that is given such a right",
+            "the right to vote",
+            "a team that is a member of a professional sports league"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8fr\u00e6n\u02cct\u0283a\u026az"
+    },
+    {
+        "word":"Freudian",
+        "definition":[
+            "of, relating to, or following the theories of Sigmund Freud",
+            "relating to or coming from very deeply hidden desires or feelings"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8fro\u026adij\u0259n"
+    },
+    {
+        "word":"frigate",
+        "definition":[
+            "a small and fast military ship"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8fr\u026ag\u0259t"
+    },
+    {
+        "word":"frisson",
+        "definition":[
+            "a sudden strong feeling or emotion"
+        ],
+        "type":"noun",
+        "ipa":"fri\u02c8so\u028an"
+    },
+    {
+        "word":"fronds",
+        "definition":[
+            "a large, long leaf"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8fr\u0251\u02d0nd"
+    },
+    {
+        "word":"frontispiece",
+        "definition":[
+            "a picture in the front of a book"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8fr\u028cnt\u0259\u02ccspi\u02d0s"
+    },
+    {
+        "word":"galoot",
+        "definition":[
+            "a man or boy; especially : one who is foolish or awkward"
+        ],
+        "type":"noun",
+        "ipa":"g\u0259\u02c8lu\u02d0t"
+    },
+    {
+        "word":"gambol",
+        "definition":[
+            "to run or jump in a lively way"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8g\u00e6mb\u0259l"
+    },
+    {
+        "word":"Ganges",
+        "definition":[
+            "{bc} river in India"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8g\u00e6n\u02cc\u02a4i\u02d0z"
+    },
+    {
+        "word":"gannet",
+        "definition":[
+            "a large ocean bird that eats fish"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8g\u00e6n\u0259t"
+    },
+    {
+        "word":"gargoyle",
+        "definition":[
+            "a strange or ugly human or animal figure that sticks out from the roof of a building (such as a church)"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8g\u0251\u025a\u02ccgoj\u0259l"
+    },
+    {
+        "word":"garrulous",
+        "definition":[
+            "tending to talk a lot : very talkative"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8ger\u0259l\u0259s"
+    },
+    {
+        "word":"Geiger",
+        "definition":[
+            "an instrument used for finding and measuring radioactivity"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ga\u026ag\u025a-"
+    },
+    {
+        "word":"gendarme",
+        "definition":[
+            "a police officer; especially : a police officer in a country where French is spoken"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u0292\u0251\u02d0n\u02ccd\u0251\u025am"
+    },
+    {
+        "word":"genuflect",
+        "definition":[
+            "to kneel on one knee and then rise again as an act of respect",
+            "to obey someone with power in a way that is seen as weak"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8\u02a4\u025bnj\u0259\u02ccfl\u025bkt"
+    },
+    {
+        "word":"germinate",
+        "definition":[
+            "to begin to grow \u2014often used figuratively",
+            "to cause (a seed) to begin to grow"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8\u02a4\u025am\u0259\u02ccne\u026at"
+    },
+    {
+        "word":"gesticulations",
+        "definition":[
+            "to move your arms and hands especially when speaking in an angry or emotional way"
+        ],
+        "type":"verb",
+        "ipa":"\u02a4\u025b\u02c8st\u026akj\u0259\u02ccle\u026at"
+    },
+    {
+        "word":"Giza",
+        "definition":[
+            "city in Egypt"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8gi\u02d0z\u0259"
+    },
+    {
+        "word":"Glaswegian",
+        "definition":[
+            "city in Scotland"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8gl\u00e6\u02ccsko\u028a"
+    },
+    {
+        "word":"glazier",
+        "definition":[
+            "a person who puts glass in window frames"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8gle\u026a\u0292\u025a"
+    },
+    {
+        "word":"gluten",
+        "definition":[
+            "a substance in wheat and flour that holds dough together"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8glu\u02d0tn\u0329"
+    },
+    {
+        "word":"gorgon",
+        "definition":[
+            "any one of the three sisters in Greek mythology who had snakes for hair and who could turn anyone who looked at them into stone"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8go\u025ag\u0259n"
+    },
+    {
+        "word":"grandiose",
+        "definition":[
+            "seeming to be impressive or intended to be impressive but not really possible or practical"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8gr\u00e6ndi\u02cco\u028as"
+    },
+    {
+        "word":"griffon",
+        "definition":[
+            "an animal that is half eagle and half lion"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"grimaces",
+        "definition":[
+            "a facial expression in which your mouth and face are twisted in a way that shows disgust, disapproval, or pain"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8gr\u026am\u0259s"
+    },
+    {
+        "word":"grotesque",
+        "definition":[
+            "very strange or ugly in a way that is not normal or natural",
+            "extremely different from what is expected or usual"
+        ],
+        "type":"adjective",
+        "ipa":"gro\u028a\u02c8t\u025bsk"
+    },
+    {
+        "word":"Gruyere",
+        "definition":[
+            "a type of hard cheese from Switzerland with a nutty flavor"
+        ],
+        "type":"noun",
+        "ipa":"gru\u02c8je\u025a"
+    },
+    {
+        "word":"guarantor",
+        "definition":[
+            "a person who promises to pay back a loan if the original borrower does not pay it back"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccger\u0259n\u02c8to\u025a"
+    },
+    {
+        "word":"Haitian",
+        "definition":[
+            "country in the West Indies"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8he\u026ati"
+    },
+    {
+        "word":"halcyon",
+        "definition":[
+            "very happy and successful\u2014used to refer to a happy and successful time in the past that is remembered as being better than today"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8h\u00e6lsij\u0259n"
+    },
+    {
+        "word":"hallucinations",
+        "definition":[
+            "something (such as an image, a sound, or a smell) that seems real but does not really exist and that is usually caused by mental illness or the effect of a drug"
+        ],
+        "type":"noun",
+        "ipa":"h\u0259\u02cclu\u02d0s\u0259\u02c8ne\u026a\u0283\u0259n"
+    },
+    {
+        "word":"haughty",
+        "definition":[
+            "having or showing the insulting attitude of people who think that they are better, smarter, or more important than other people"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8h\u0251\u02d0ti"
+    },
+    {
+        "word":"hawsers",
+        "definition":[
+            "a very thick rope or cable for towing or tying up a ship"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8h\u0251\u02d0z\u025a"
+    },
+    {
+        "word":"heinousness",
+        "definition":[
+            "very bad or evil : deserving of hate or contempt"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8he\u026an\u0259s"
+    },
+    {
+        "word":"heirloom",
+        "definition":[
+            "a valuable object that is owned by a family for many years and passed from one generation to another",
+            "an old type of plant that is still available because individual people have continued to grow it for many years\u2014usually used before another noun"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8e\u025a\u02cclu\u02d0m"
+    },
+    {
+        "word":"helium",
+        "definition":[
+            "a chemical element that is a colorless gas, that is lighter than air, and that is often used to fill balloons"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8hi\u02d0lij\u0259m"
+    },
+    {
+        "word":"hemorrhage",
+        "definition":[
+            "a condition in which a person bleeds too much and cannot stop the flow of blood \u2014sometimes used figuratively"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"herbalist",
+        "definition":[
+            "a person who grows, sells, or uses herbs to treat illness"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u025ab\u0259l\u026ast"
+    },
+    {
+        "word":"heresy",
+        "definition":[
+            "a belief or opinion that does not agree with the official belief or opinion of a particular religion \u2014often used figuratively"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8her\u0259si"
+    },
+    {
+        "word":"heritage",
+        "definition":[
+            "the traditions, achievements, beliefs, etc., that are part of the history of a group or nation\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8her\u0259t\u026a\u02a4"
+    },
+    {
+        "word":"hesitate",
+        "definition":[
+            "to stop briefly before you do something especially because you are nervous or unsure about what to do",
+            "to be unwilling to do something because of doubt or uncertainty"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8h\u025bz\u0259\u02ccte\u026at"
+    },
+    {
+        "word":"heuristic",
+        "definition":[
+            "using experience to learn and improve"
+        ],
+        "type":"adjective",
+        "ipa":"hj\u028a\u02c8r\u026ast\u026ak"
+    },
+    {
+        "word":"Himalayan",
+        "definition":[
+            "{bc} mountains in Asia"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02cch\u026am\u0259\u02c8lej\u0259z"
+    },
+    {
+        "word":"hirsute",
+        "definition":[
+            "having a lot of hair especially on the face or body : hairy"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8h\u025a\u02ccsu\u02d0t"
+    },
+    {
+        "word":"Hispaniola",
+        "definition":[
+            "island divided between Haiti and the Dominican Republic"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02cch\u026asp\u0259n\u02c8jo\u028al\u0259"
+    },
+    {
+        "word":"hokum",
+        "definition":[
+            "foolish or untrue words or ideas : nonsense",
+            "writing, music, etc., that is too dramatic or sentimental and not very original"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ho\u028ak\u0259m"
+    },
+    {
+        "word":"Honolulu",
+        "definition":[
+            "U.S. city, Hawaii"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02cch\u0251\u02d0n\u0259\u02c8lu\u02d0lu"
+    },
+    {
+        "word":"hooey",
+        "definition":[
+            "foolish talk or writing : nonsense"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8hu\u02d0wi"
+    },
+    {
+        "word":"hummock",
+        "definition":[
+            "a small hill"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8h\u028cm\u0259k"
+    },
+    {
+        "word":"humus",
+        "definition":[
+            "a brown or black material in soil that is formed when plants and animals decay"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8hju\u02d0m\u0259s"
+    },
+    {
+        "word":"hurtle",
+        "definition":[
+            "to move or fall with great speed and force \u2014often used figuratively",
+            "to cause (something or someone) to move or go with great speed and force : hurl"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8h\u025atl\u031f"
+    },
+    {
+        "word":"hymnal",
+        "definition":[
+            "a book of hymns"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8h\u026amn\u0259l"
+    },
+    {
+        "word":"ignoble",
+        "definition":[
+            "not deserving respect : not noble or honorable"
+        ],
+        "type":"adjective",
+        "ipa":"\u026ag\u02c8no\u028ab\u0259l"
+    },
+    {
+        "word":"immoderate",
+        "definition":[
+            "going beyond reasonable limits : not moderate"
+        ],
+        "type":"adjective",
+        "ipa":"\u026a\u02c8m\u0251\u02d0d\u0259r\u0259t"
+    },
+    {
+        "word":"impeccable",
+        "definition":[
+            "free from fault or error"
+        ],
+        "type":"adjective",
+        "ipa":"\u026am\u02c8p\u025bk\u0259b\u0259l"
+    },
+    {
+        "word":"impenetrable",
+        "definition":[
+            "impossible to pass or see through",
+            "impossible to understand"
+        ],
+        "type":"adjective",
+        "ipa":"\u026am\u02c8p\u025bn\u0259tr\u0259b\u0259l"
+    },
+    {
+        "word":"impertinent",
+        "definition":[
+            "rude and showing a lack of respect"
+        ],
+        "type":"adjective",
+        "ipa":"\u026am\u02c8p\u025atn\u0329\u0259nt"
+    },
+    {
+        "word":"impugn",
+        "definition":[
+            "to criticize (a person's character, intentions, etc.) by suggesting that someone is not honest and should not be trusted"
+        ],
+        "type":"verb",
+        "ipa":"\u026am\u02c8pju\u02d0n"
+    },
+    {
+        "word":"inadvertent",
+        "definition":[
+            "not intended or planned : accidental"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u026an\u0259d\u02c8v\u025at\u0259nt"
+    },
+    {
+        "word":"incarcerated",
+        "definition":[
+            "to put (someone) in prison : imprison\u2014usually used as (be) incarcerated"
+        ],
+        "type":"verb",
+        "ipa":"\u026an\u02c8k\u0251\u025as\u0259\u02ccre\u026at"
+    },
+    {
+        "word":"incessant",
+        "definition":[
+            "continuing without stopping : not stopping\u2014used to describe something that is unpleasant or annoying"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8s\u025bsn\u0329t"
+    },
+    {
+        "word":"inchoate",
+        "definition":[
+            "not completely formed or developed yet : vague"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8kow\u0259t"
+    },
+    {
+        "word":"incomprehensible",
+        "definition":[
+            "impossible to understand : not comprehensible"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02cck\u0251\u02d0mpr\u026a\u02c8h\u025bns\u0259b\u0259l"
+    },
+    {
+        "word":"inconceivable",
+        "definition":[
+            "impossible to imagine or believe : not conceivable"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u026ank\u0259n\u02c8si\u02d0v\u0259b\u0259l"
+    },
+    {
+        "word":"incongruous",
+        "definition":[
+            "strange because of not agreeing with what is usual or expected"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8k\u0251\u02d0\u014bgr\u0259w\u0259s"
+    },
+    {
+        "word":"increments",
+        "definition":[
+            "a usually small amount or degree by which something is made larger or greater"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u026a\u014bkr\u0259m\u0259nt"
+    },
+    {
+        "word":"ineffective",
+        "definition":[
+            "not producing or having the effect you want : not effective"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u026an\u0259\u02c8f\u025bkt\u026av"
+    },
+    {
+        "word":"inevitable",
+        "definition":[
+            "sure to happen"
+        ],
+        "type":"adjective",
+        "ipa":"\u026a\u02c8n\u025bv\u0259t\u0259b\u0259l"
+    },
+    {
+        "word":"inexorably",
+        "definition":[
+            "not able to be stopped or changed"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8\u025bks\u0259r\u0259b\u0259l"
+    },
+    {
+        "word":"infectious",
+        "definition":[
+            "capable of causing infection",
+            "capable of being passed to someone else by germs that enter the body",
+            "suffering from a disease that can be spread to other people by germs"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8f\u025bk\u0283\u0259s"
+    },
+    {
+        "word":"inglenook",
+        "definition":[
+            "a space with a seat by the side of a large open fireplace"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u026a\u014bg\u0259l\u02ccn\u028ak"
+    },
+    {
+        "word":"inheritance",
+        "definition":[
+            "money, property, etc., that is received from someone when that person dies",
+            "something from the past that is still important or valuable",
+            "the act of inheriting something"
+        ],
+        "type":"noun",
+        "ipa":"\u026an\u02c8her\u0259t\u0259ns"
+    },
+    {
+        "word":"insouciance",
+        "definition":[
+            "a relaxed and calm state : a feeling of not worrying about anything"
+        ],
+        "type":"noun",
+        "ipa":"\u026an\u02c8su\u02d0sij\u0259ns"
+    },
+    {
+        "word":"instinctive",
+        "definition":[
+            "relating to or based on instinct : based on feelings or desires that do not come from thinking or learning"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8st\u026a\u014bkt\u026av"
+    },
+    {
+        "word":"insurance",
+        "definition":[
+            "an agreement in which a person makes regular payments to a company and the company promises to pay money if the person is injured or dies, or to pay money equal to the value of something (such as a house or car) if it is damaged, lost, or stolen",
+            "the amount of money a person regularly pays an insurance company as part of an insurance agreement",
+            "the amount of money that a person receives from an insurance company"
+        ],
+        "type":"noun",
+        "ipa":"\u026an\u02c8\u0283\u025ar\u0259ns"
+    },
+    {
+        "word":"intentionally",
+        "definition":[
+            "done in a way that is planned or intended : deliberate"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8t\u025bn\u0283\u0259nl\u031f"
+    },
+    {
+        "word":"intercede",
+        "definition":[
+            "to try to help settle an argument or disagreement between two or more people or groups : to speak to someone in order to defend or help another person"
+        ],
+        "type":"verb",
+        "ipa":"\u02cc\u026ant\u025a\u02c8si\u02d0d"
+    },
+    {
+        "word":"internecine",
+        "definition":[
+            "occurring between members of the same country, group, or organization"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u026ant\u025a\u02c8n\u025b\u02ccsi\u02d0n"
+    },
+    {
+        "word":"interpolated",
+        "definition":[
+            "to put (something) between other things or parts; especially : to put (words) into a piece of writing or a conversation"
+        ],
+        "type":"verb",
+        "ipa":"\u026an\u02c8t\u025ap\u0259\u02ccle\u026at"
+    },
+    {
+        "word":"interstices",
+        "definition":[
+            "a small space that lies between things : a small break or gap in something\u2014usually plural"
+        ],
+        "type":"noun",
+        "ipa":"\u026an\u02c8t\u025ast\u0259s"
+    },
+    {
+        "word":"intestine",
+        "definition":[
+            "a long tube in the body that helps digest food after it leaves the stomach"
+        ],
+        "type":"noun",
+        "ipa":"\u026an\u02c8t\u025bst\u0259n"
+    },
+    {
+        "word":"intimation",
+        "definition":[
+            "to say or suggest (something) in an indirect way"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8\u026ant\u0259\u02ccme\u026at"
+    },
+    {
+        "word":"intolerance",
+        "definition":[
+            "not willing to allow or accept something\u2014often + of",
+            "not willing to allow some people to have equality, freedom, or other social rights",
+            "unable to take a certain substance into the body without becoming sick \u2014often + of"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8t\u0251\u02d0l\u0259r\u0259nt"
+    },
+    {
+        "word":"intoxicating",
+        "definition":[
+            "causing intoxication; especially : able to make someone drunk",
+            "causing someone to have strong feelings of excitement or pleasure"
+        ],
+        "type":"adjective",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"intriguing",
+        "definition":[
+            "extremely interesting : fascinating"
+        ],
+        "type":"adjective",
+        "ipa":"\u026an\u02c8tri\u02d0g\u026a\u014b"
+    },
+    {
+        "word":"inveighed",
+        "definition":[
+            "{it}formal{\/it} {bc} to protest or complain about (something or someone) very strongly"
+        ],
+        "type":"verb",
+        "ipa":"\u026an\u02c8ve\u026a"
+    },
+    {
+        "word":"irreverent",
+        "definition":[
+            "having or showing a lack of respect for someone or something that is usually treated with respect : treating someone or something in a way that is not serious or respectful"
+        ],
+        "type":"adjective",
+        "ipa":"\u026a\u02c8r\u025bv\u0259r\u0259nt"
+    },
+    {
+        "word":"irreversible",
+        "definition":[
+            "impossible to change back to a previous condition or state"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccir\u026a\u02c8v\u025as\u0259b\u0259l"
+    },
+    {
+        "word":"Jacobean",
+        "definition":[
+            "of or relating to James I of England or the time (1603-25) when he was king"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u02a4\u00e6k\u0259\u02c8bi\u02d0j\u0259n"
+    },
+    {
+        "word":"jauntily",
+        "definition":[
+            "lively in manner or appearance : having or suggesting a lively and confident quality"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8\u02a4\u0251\u02d0nti"
+    },
+    {
+        "word":"Jesuit",
+        "definition":[
+            "a man who is a member of a religious group called the Roman Catholic Society of Jesus"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u02a4\u025bzuw\u0259t"
+    },
+    {
+        "word":"jodhpurs",
+        "definition":[
+            "tight pants that are worn for horseback riding"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u02a4\u0251\u02d0dp\u025az"
+    },
+    {
+        "word":"Judaism",
+        "definition":[
+            "the religion developed among the ancient Hebrews that stresses belief in God and faithfulness to the laws of the Torah : the religion of the Jewish people"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u02a4u\u02d0di\u02cc\u026az\u0259m"
+    },
+    {
+        "word":"julienne",
+        "definition":[
+            "cut into long, thin strips"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u02a4u\u02d0li\u02c8\u025bn"
+    },
+    {
+        "word":"Kilimanjaro",
+        "definition":[
+            "mountain in Tanzania"
+        ],
+        "type":"No word type available",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"knickerbockers",
+        "definition":[
+            "knickers"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8n\u026ak\u025a\u02ccb\u0251\u02d0k\u025az"
+    },
+    {
+        "word":"Korea",
+        "definition":[
+            "area of eastern Asia",
+            "North Korea and South Korea"
+        ],
+        "type":"No word type available",
+        "ipa":"k\u0259\u02c8rij\u0259"
+    },
+    {
+        "word":"lachrymose",
+        "definition":[
+            "tending to cause tears : mournful",
+            "tending to cry often : tearful"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8l\u00e6kr\u0259\u02ccmo\u028as"
+    },
+    {
+        "word":"lacrosse",
+        "definition":[
+            "an outdoor game in which players use long-handled sticks with nets for catching, throwing, and carrying the ball"
+        ],
+        "type":"noun",
+        "ipa":"l\u0259\u02c8kr\u0251\u02d0s"
+    },
+    {
+        "word":"lama",
+        "definition":[
+            "a Buddhist priest of Tibet or Mongolia"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8la\u02d0m\u0259"
+    },
+    {
+        "word":"laryngitis",
+        "definition":[
+            "a disease in which your throat and larynx become sore so that it is difficult to talk"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccler\u0259n\u02c8\u02a4a\u026at\u0259s"
+    },
+    {
+        "word":"lassitude",
+        "definition":[
+            "the condition of being tired : lack of physical or mental energy"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u00e6s\u0259\u02cctu\u02d0d"
+    },
+    {
+        "word":"leach",
+        "definition":[
+            "to remove (a chemical, a metal, etc.) from a substance by the action of a liquid passing through the substance : to release (a chemical, a metal, etc.) when a liquid passes through",
+            "to be removed from a substance by a liquid passing through the substance"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8li\u02d0t\u0283"
+    },
+    {
+        "word":"leonine",
+        "definition":[
+            "of, relating to, or resembling a lion"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8li\u02d0j\u0259\u02ccna\u026an"
+    },
+    {
+        "word":"levees",
+        "definition":[
+            "a long wall of soil built along a river to prevent flooding"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u025bvi"
+    },
+    {
+        "word":"liability",
+        "definition":[
+            "the state of being legally responsible for something : the state of being liable for something",
+            "something (such as the payment of money) for which a person or business is legally responsible \u2014usually plural",
+            "someone or something that causes problems"
+        ],
+        "type":"noun",
+        "ipa":"\u02cclaj\u0259\u02c8b\u026al\u0259ti"
+    },
+    {
+        "word":"lineage",
+        "definition":[
+            "the people who were in someone's family in past times"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u026anij\u026a\u02a4"
+    },
+    {
+        "word":"linnet",
+        "definition":[
+            "a small European bird that is a kind of finch"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u026an\u0259t"
+    },
+    {
+        "word":"linoleum",
+        "definition":[
+            "a type of material that is produced in thin sheets, has a shiny surface, and is used to cover floors and counters"
+        ],
+        "type":"noun",
+        "ipa":"l\u0259\u02c8no\u028alij\u0259m"
+    },
+    {
+        "word":"litany",
+        "definition":[
+            "a prayer in a Christian church service in which the people at the service respond to lines spoken by the person who is leading the service",
+            "a long list of complaints, problems, etc."
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u026atni"
+    },
+    {
+        "word":"litigious",
+        "definition":[
+            "too ready or eager to sue someone or something in a court of law : tending or likely to engage in lawsuits"
+        ],
+        "type":"adjective",
+        "ipa":"l\u0259\u02c8t\u026a\u02a4\u0259s"
+    },
+    {
+        "word":"littoral",
+        "definition":[
+            "of, relating to, or having a coast"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8l\u026at\u0259r\u0259l"
+    },
+    {
+        "word":"livery",
+        "definition":[
+            "the business of keeping vehicles that people can hire\u2014usually used before another noun",
+            "the colors or designs that are used on a company's products, vehicles, etc.",
+            "a special uniform worn by servants especially in the past"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8l\u026av\u0259ri"
+    },
+    {
+        "word":"lurching",
+        "definition":[
+            "to make a sudden sideways or forward motion",
+            "to move or walk in an awkward or unsteady way \u2014often used figuratively"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8l\u025at\u0283"
+    },
+    {
+        "word":"Lutheran",
+        "definition":[
+            "a member of one of the Protestant churches that follow the teachings of Martin Luther"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8lu\u02d0\u03b8\u0259r\u0259n"
+    },
+    {
+        "word":"Machiavellian",
+        "definition":[
+            "using clever lies and tricks in order to get or achieve something : clever and dishonest"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccm\u00e6kij\u0259\u02c8v\u025blij\u0259n"
+    },
+    {
+        "word":"Madagascar",
+        "definition":[
+            "island country in the Indian Ocean"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02ccm\u00e6d\u0259\u02c8g\u00e6sk\u025a"
+    },
+    {
+        "word":"Magellan",
+        "definition":[
+            "{bc} area of water that connects the Atlantic Ocean with the Pacific Ocean at the southern end of South America"
+        ],
+        "type":"No word type available",
+        "ipa":"m\u0259\u02c8\u02a4\u025bl\u0259n"
+    },
+    {
+        "word":"malign",
+        "definition":[
+            "to say bad things about (someone or something) publicly : to criticize (someone or something) harshly or unfairly"
+        ],
+        "type":"verb",
+        "ipa":"m\u0259\u02c8la\u026an"
+    },
+    {
+        "word":"mallet",
+        "definition":[
+            "a hammer with a large usually wooden head",
+            "a club used for hitting the ball in croquet or polo"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u00e6l\u0259t"
+    },
+    {
+        "word":"mandible",
+        "definition":[
+            "jawbone",
+            "either the upper or lower part of a bird's beak",
+            "a part of an insect's mouth that looks like a jaw and is often used for biting things"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u00e6nd\u0259b\u0259l"
+    },
+    {
+        "word":"marinate",
+        "definition":[
+            "to put meat or fish in a sauce for a period of time to add flavor or to make the meat or fish more tender : to soak in a marinade"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8mer\u0259\u02ccne\u026at"
+    },
+    {
+        "word":"marmalade",
+        "definition":[
+            "a sweet jelly that contains pieces of fruit"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u0251\u025am\u0259\u02ccle\u026ad"
+    },
+    {
+        "word":"marquee",
+        "definition":[
+            "a covered structure over the entrance to a building (such as a hotel or theater)",
+            "a sign over the entrance to a theater that shows the name of the show, movie, play, etc., and the names of the main performers",
+            "a large tent that is set up for an outdoor event (such as a party)"
+        ],
+        "type":"noun",
+        "ipa":"m\u0251\u025a\u02c8ki\u02d0"
+    },
+    {
+        "word":"martinet",
+        "definition":[
+            "a person who is very strict and demands obedience from others"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccm\u0251\u025at\u0259\u02c8n\u025bt"
+    },
+    {
+        "word":"massacres",
+        "definition":[
+            "the violent killing of many people",
+            "a game or competition in which one person or team easily defeats another"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u00e6s\u026ak\u025a"
+    },
+    {
+        "word":"mechanics",
+        "definition":[
+            "a science that deals with physical energy and forces and their effect on objects",
+            "the details about how something works or is done"
+        ],
+        "type":"noun",
+        "ipa":"m\u026a\u02c8k\u00e6n\u026aks"
+    },
+    {
+        "word":"meditation",
+        "definition":[
+            "the act or process of spending time in quiet thought : the act or process of meditating",
+            "an expression of a person's thoughts on something\u2014often + on or upon \u2014often plural"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccm\u025bd\u0259\u02c8te\u026a\u0283\u0259n"
+    },
+    {
+        "word":"Mediterranean",
+        "definition":[
+            "of or relating to the Mediterranean Sea or to the lands that surround it"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccm\u025bd\u0259t\u0259\u02c8re\u026anij\u0259n"
+    },
+    {
+        "word":"melee",
+        "definition":[
+            "a confused struggle or fight involving many people\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8me\u026a\u02ccle\u026a"
+    },
+    {
+        "word":"menorahs",
+        "definition":[
+            "an object that holds seven or nine candles and that is used in Jewish worship"
+        ],
+        "type":"noun",
+        "ipa":"m\u0259\u02c8nor\u0259"
+    },
+    {
+        "word":"meringue",
+        "definition":[
+            "a light, sweet mixture of egg whites and sugar that is baked and used as a topping for pies and cakes"
+        ],
+        "type":"noun",
+        "ipa":"m\u0259\u02c8r\u00e6\u014b"
+    },
+    {
+        "word":"mete",
+        "definition":[
+            "{bc} to give (something) to the people who you decide should get it {bc} to give out or distribute (something)"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8mi\u02d0t"
+    },
+    {
+        "word":"mien",
+        "definition":[
+            "a person's appearance or facial expression"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8mi\u02d0n"
+    },
+    {
+        "word":"milieu",
+        "definition":[
+            "the physical or social setting in which people live or in which something happens or develops"
+        ],
+        "type":"noun",
+        "ipa":"mil\u02c8ju\u02d0"
+    },
+    {
+        "word":"millinery",
+        "definition":[
+            "women's hats",
+            "the business of making or selling women's hats"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u026al\u0259\u02ccneri"
+    },
+    {
+        "word":"Minnesota",
+        "definition":[
+            "state of the U.S."
+        ],
+        "type":"No word type available",
+        "ipa":"\u02ccm\u026an\u0259\u02c8so\u028at\u0259"
+    },
+    {
+        "word":"miracle",
+        "definition":[
+            "an unusual or wonderful event that is believed to be caused by the power of God",
+            "a very amazing or unusual event, thing, or achievement"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8mir\u026ak\u0259l"
+    },
+    {
+        "word":"moppet",
+        "definition":[
+            "a young person : child"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8m\u0251\u02d0p\u0259t"
+    },
+    {
+        "word":"mortification",
+        "definition":[
+            "to cause (someone) to feel very embarrassed and foolish"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8mo\u025at\u025a\u02ccfa\u026a"
+    },
+    {
+        "word":"motley",
+        "definition":[
+            "made up of many different people or things"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8m\u0251\u02d0tli"
+    },
+    {
+        "word":"mountebank",
+        "definition":[
+            "a dishonest person : a person who tricks and cheats other people"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ma\u028ant\u026a\u02ccb\u00e6\u014bk"
+    },
+    {
+        "word":"moussaka",
+        "definition":[
+            "a Greek dish of ground meat (such as lamb or beef) and sliced eggplant"
+        ],
+        "type":"noun",
+        "ipa":"mu\u02c8s\u0251\u02d0k\u0259"
+    },
+    {
+        "word":"mystified",
+        "definition":[
+            "to confuse (someone) completely"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8m\u026ast\u0259\u02ccfa\u026a"
+    },
+    {
+        "word":"necromancer",
+        "definition":[
+            "the practice of talking to the spirits of dead people",
+            "the use of magic powers especially for evil purposes"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8n\u025bkr\u0259\u02ccm\u00e6nsi"
+    },
+    {
+        "word":"nefarious",
+        "definition":[
+            "evil or immoral"
+        ],
+        "type":"adjective",
+        "ipa":"ni\u02c8ferij\u0259s"
+    },
+    {
+        "word":"neophyte",
+        "definition":[
+            "a person who has just started learning or doing something : beginner \u2014often used before another noun",
+            "a person who has recently joined a religious group"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ni\u02d0j\u0259\u02ccfa\u026at"
+    },
+    {
+        "word":"niagara",
+        "definition":[
+            "waterfalls on the border of the U.S. and Canada"
+        ],
+        "type":"No word type available",
+        "ipa":"na\u026a\u02c8\u00e6gr\u0259"
+    },
+    {
+        "word":"nihilism",
+        "definition":[
+            "the belief that traditional morals, ideas, beliefs, etc., have no worth or value",
+            "the belief that a society's political and social institutions are so bad that they should be destroyed"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8naj\u0259\u02ccl\u026az\u0259m"
+    },
+    {
+        "word":"nonpareil",
+        "definition":[
+            "better than any other : having no equal"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccn\u0251\u02d0np\u0259\u02c8r\u025bl"
+    },
+    {
+        "word":"obdurate",
+        "definition":[
+            "refusing to do what other people want : not willing to change your opinion or the way you do something : stubborn"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8\u0251\u02d0bd\u0259r\u0259t"
+    },
+    {
+        "word":"obloquy",
+        "definition":[
+            "harsh or critical statements about someone",
+            "the condition of someone who lost the respect of other people"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u0251\u02d0bl\u0259kwi"
+    },
+    {
+        "word":"oeuvre",
+        "definition":[
+            "all the works that a writer, an artist, or a composer has created\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u028avr\u0259"
+    },
+    {
+        "word":"offspring",
+        "definition":[
+            "a person's child",
+            "the young of an animal or plant"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u0251\u02d0f\u02ccspr\u026a\u014b"
+    },
+    {
+        "word":"opportunity",
+        "definition":[
+            "an amount of time or a situation in which something can be done : chance"
+        ],
+        "type":"noun",
+        "ipa":"\u02cc\u0251\u02d0p\u025a\u02c8tu\u02d0n\u0259ti"
+    },
+    {
+        "word":"orchids",
+        "definition":[
+            "a plant with flowers that are brightly colored and that have unusual shapes",
+            "a light purple color"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8o\u025ak\u0259d"
+    },
+    {
+        "word":"oriole",
+        "definition":[
+            "a colorful North American bird that has an orange or yellow body with black wings",
+            "a European bird"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ori\u02cco\u028al"
+    },
+    {
+        "word":"outlandish",
+        "definition":[
+            "very strange or unusual : extremely different from what is normal or expected"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cca\u028at\u02c8l\u00e6nd\u026a\u0283"
+    },
+    {
+        "word":"outre",
+        "definition":[
+            "very strange, unusual, or shocking : bizarre"
+        ],
+        "type":"adjective",
+        "ipa":"u\u02c8tre\u026a"
+    },
+    {
+        "word":"padre",
+        "definition":[
+            "a Christian priest",
+            "a Christian clergyman who works in the military"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u02d0dre\u026a"
+    },
+    {
+        "word":"palaver",
+        "definition":[
+            "talk that is not important or meaningful : nonsense",
+            "excitement and activity caused by something that is not important"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8l\u00e6v\u025a"
+    },
+    {
+        "word":"palindrome",
+        "definition":[
+            "a word, phrase, or number that reads the same backward or forward"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u00e6l\u0259n\u02ccdro\u028am"
+    },
+    {
+        "word":"pallid",
+        "definition":[
+            "very pale in a way that suggests poor health",
+            "dull and uninteresting"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u00e6l\u0259d"
+    },
+    {
+        "word":"palpable",
+        "definition":[
+            "obvious and noticeable"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u00e6lp\u0259b\u0259l"
+    },
+    {
+        "word":"palsy",
+        "definition":[
+            "a condition that causes paralysis in part of your body"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u02d0lzi"
+    },
+    {
+        "word":"pamphlet",
+        "definition":[
+            "a small, thin book with no cover or only a paper cover that has information about a particular subject"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u00e6mfl\u0259t"
+    },
+    {
+        "word":"panegyric",
+        "definition":[
+            "something (such as a speech or a piece of writing) that praises someone or something\u2014often + to"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccp\u00e6n\u0259\u02c8\u02a4ir\u026ak"
+    },
+    {
+        "word":"parachuted",
+        "definition":[
+            "to jump from an aircraft using a parachute",
+            "to drop (someone or something) from an aircraft using a parachute"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"paraffin",
+        "definition":[
+            "a soft, waxy substance that is usually made from petroleum or coal and is used in candles and other products \u2014called also paraffin wax",
+            "kerosene"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8per\u0259f\u0259n"
+    },
+    {
+        "word":"paralysis",
+        "definition":[
+            "a condition in which you are unable to move or feel all or part of your body",
+            "a state of being unable to function, act, or move"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8r\u00e6l\u0259s\u0259s"
+    },
+    {
+        "word":"parchment",
+        "definition":[
+            "paper made from the skin of a sheep or goat",
+            "a document written on parchment",
+            "strong and thick paper; especially, chiefly US : strong, tough paper that is used by cooks \u2014called also parchment paper"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u025at\u0283m\u0259nt"
+    },
+    {
+        "word":"parenthetical",
+        "definition":[
+            "included or added to give information which is not directly related to the main subject that is being discussed"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccper\u0259n\u02c8\u03b8\u025bt\u026ak\u0259l"
+    },
+    {
+        "word":"parishioner",
+        "definition":[
+            "a person who goes to a particular local church : a person who belongs to a parish"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8r\u026a\u0283\u0259n\u025a"
+    },
+    {
+        "word":"paroxysm",
+        "definition":[
+            "a sudden attack or increase of symptoms of a disease (such as pain, coughing, shaking, etc.) that often occurs again and again\u2014usually + of",
+            "a sudden strong feeling or expression of emotion that cannot be controlled"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8per\u0259k\u02ccs\u026az\u0259m"
+    },
+    {
+        "word":"parquet",
+        "definition":[
+            "a surface (such as a floor) made of small pieces of wood that fit together to form a pattern\u2014often used before another noun"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u025a\u02ccke\u026a"
+    },
+    {
+        "word":"pastiche",
+        "definition":[
+            "something (such as a piece of writing, music, etc.) that imitates the style of someone or something else",
+            "a piece of writing, music, etc., that is made up of selections from different works",
+            "a mixture of different things"
+        ],
+        "type":"noun",
+        "ipa":"p\u00e6\u02c8sti\u02d0\u0283"
+    },
+    {
+        "word":"pastrami",
+        "definition":[
+            "highly seasoned smoked beef that is usually eaten in sandwiches"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8str\u0251\u02d0mi"
+    },
+    {
+        "word":"patois",
+        "definition":[
+            "a form of a language that is spoken only in a particular area and that is different from the main form of the same language"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u00e6\u02cctw\u0251\u02d0"
+    },
+    {
+        "word":"penchant",
+        "definition":[
+            "a strong liking for something or a strong tendency to behave in a certain way\u2014usually + for"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u025bnt\u0283\u0259nt"
+    },
+    {
+        "word":"penicillin",
+        "definition":[
+            "a medicine that is used to kill harmful bacteria"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccp\u025bn\u0259\u02c8s\u026al\u0259n"
+    },
+    {
+        "word":"penurious",
+        "definition":[
+            "very poor"
+        ],
+        "type":"adjective",
+        "ipa":"p\u0259\u02c8n\u025arij\u0259s"
+    },
+    {
+        "word":"perdition",
+        "definition":[
+            "the state of being in hell forever as punishment after death : damnation \u2014usually used figuratively"
+        ],
+        "type":"noun",
+        "ipa":"p\u025a\u02c8d\u026a\u0283\u0259n"
+    },
+    {
+        "word":"periodically",
+        "definition":[
+            "happening regularly over a period of time"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccpiri\u02c8\u0251\u02d0d\u026ak"
+    },
+    {
+        "word":"permanence",
+        "definition":[
+            "lasting or continuing for a very long time or forever : not temporary or changing"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u025am\u0259n\u0259nt"
+    },
+    {
+        "word":"peroxide",
+        "definition":[
+            "a chemical that is used chiefly to kill bacteria or to make hair lighter in color"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8r\u0251\u02d0k\u02ccsa\u026ad"
+    },
+    {
+        "word":"petulance",
+        "definition":[
+            "having or showing the attitude of people who become angry and annoyed when they do not get what they want"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u025bt\u0283\u0259l\u0259nt"
+    },
+    {
+        "word":"phenomenal",
+        "definition":[
+            "very good or great : unusual in a way that is very impressive"
+        ],
+        "type":"adjective",
+        "ipa":"f\u026a\u02c8n\u0251\u02d0m\u0259nl\u031f"
+    },
+    {
+        "word":"pill",
+        "definition":[
+            "a small, rounded object that you swallow and that contains medicine, vitamins, etc.",
+            "a pill that a woman takes so that she will not become pregnant : a contraceptive in pill form",
+            "an annoying person\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u026al"
+    },
+    {
+        "word":"pillage",
+        "definition":[
+            "to take things from (a place, such as a city or town) by force especially during a war : to loot or plunder (a place)"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8p\u026al\u026a\u02a4"
+    },
+    {
+        "word":"pinioned",
+        "definition":[
+            "to tie up (someone's arms or legs) very tightly"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8p\u026anj\u0259n"
+    },
+    {
+        "word":"pirouetted",
+        "definition":[
+            "a full turn on the front of one foot in ballet"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccpir\u0259\u02c8w\u025bt"
+    },
+    {
+        "word":"piteously",
+        "definition":[
+            "deserving or causing feelings of sympathy or pity"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u026atij\u0259s"
+    },
+    {
+        "word":"pitons",
+        "definition":[
+            "a pointed piece of metal used in rock climbing that is hammered into a crack in the rock in order to hold the rope which is attached to the climber"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8pi\u02d0\u02cct\u0251\u02d0n"
+    },
+    {
+        "word":"plagiarism",
+        "definition":[
+            "the act of using another person's words or ideas without giving credit to that person : the act of plagiarizing something"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ple\u026a\u02a4\u0259\u02ccr\u026az\u0259m"
+    },
+    {
+        "word":"playwright",
+        "definition":[
+            "a person who writes plays : dramatist"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ple\u026a\u02ccra\u026at"
+    },
+    {
+        "word":"plenipotentiary",
+        "definition":[
+            "a person (such as a diplomat) who has complete power to do business for a government"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccpl\u025bn\u0259p\u0259\u02c8t\u025bn\u0283\u0259ri"
+    },
+    {
+        "word":"plumage",
+        "definition":[
+            "the feathers that cover the body of a bird"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8plu\u02d0m\u026a\u02a4"
+    },
+    {
+        "word":"polemic",
+        "definition":[
+            "a strong written or spoken attack against someone else's opinions, beliefs, practices, etc.",
+            "the art or practice of using language to defend or harshly criticize something or someone"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02c8l\u025bm\u026ak"
+    },
+    {
+        "word":"pompadour",
+        "definition":[
+            "a hairstyle worn especially by men in which the hair is combed into a high mound at the front of the head \u2014called also (British) quiff"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u02d0mp\u0259\u02ccdo\u025a"
+    },
+    {
+        "word":"pompeii",
+        "definition":[
+            "city in ancient Italy"
+        ],
+        "type":"No word type available",
+        "ipa":"p\u0251m\u02c8pe\u026a"
+    },
+    {
+        "word":"Ponzi",
+        "definition":[
+            "pyramid scheme"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8p\u0251\u02d0nzi-"
+    },
+    {
+        "word":"porcine",
+        "definition":[
+            "of, relating to, or like a pig"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8po\u025a\u02ccsa\u026an"
+    },
+    {
+        "word":"porcupine",
+        "definition":[
+            "a small animal that has very stiff, sharp parts (called quills) all over its body"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8po\u025akj\u0259\u02ccpa\u026an"
+    },
+    {
+        "word":"portmanteau",
+        "definition":[
+            "a large suitcase that opens into two parts"
+        ],
+        "type":"noun",
+        "ipa":"po\u025at\u02c8m\u00e6nto\u028a"
+    },
+    {
+        "word":"potentialities",
+        "definition":[
+            "a quality that can be developed to make someone or something better",
+            "a chance or possibility that something will happen or exist in the future\u2014usually singular"
+        ],
+        "type":"noun",
+        "ipa":"p\u0259\u02cct\u025bn\u0283i\u02c8\u00e6l\u0259ti"
+    },
+    {
+        "word":"poultice",
+        "definition":[
+            "a soft, usually heated substance that is spread on cloth and then placed on the skin to heal a sore or reduce pain"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8po\u028alt\u0259s"
+    },
+    {
+        "word":"precariously",
+        "definition":[
+            "not safe, strong, or steady"
+        ],
+        "type":"adjective",
+        "ipa":"pr\u026a\u02c8kerij\u0259s"
+    },
+    {
+        "word":"predilection",
+        "definition":[
+            "a natural liking for something : a tendency to do or to be attracted to something \u2014often + for"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccpr\u025bd\u0259\u02c8l\u025bk\u0283\u0259n"
+    },
+    {
+        "word":"prescient",
+        "definition":[
+            "having or showing an ability to know what will happen before it does"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8pr\u025b\u0283ij\u0259nt"
+    },
+    {
+        "word":"prestigious",
+        "definition":[
+            "the respect and admiration that someone or something gets for being successful or important"
+        ],
+        "type":"noun",
+        "ipa":"pr\u025b\u02c8sti\u02d0\u0292"
+    },
+    {
+        "word":"pretentious",
+        "definition":[
+            "having or showing the unpleasant quality of people who want to be regarded as more impressive, successful, or important than they really are"
+        ],
+        "type":"adjective",
+        "ipa":"pr\u026a\u02c8t\u025bn\u0283\u0259s"
+    },
+    {
+        "word":"primordial",
+        "definition":[
+            "existing from the beginning of time : very ancient"
+        ],
+        "type":"adjective",
+        "ipa":"pr\u026a\u02c8mo\u025adij\u0259l"
+    },
+    {
+        "word":"prioress",
+        "definition":[
+            "a nun who is head of a religious house or order"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8praj\u0259r\u0259s"
+    },
+    {
+        "word":"proclamation",
+        "definition":[
+            "the act of saying something in a public, official, or definite way : the act of proclaiming something",
+            "an official statement or announcement made by a person in power or by a government"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccpr\u0251\u02d0kl\u0259\u02c8me\u026a\u0283\u0259n"
+    },
+    {
+        "word":"proctors",
+        "definition":[
+            "to watch students who are taking an examination"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8pr\u0251\u02d0kt\u025a"
+    },
+    {
+        "word":"proffered",
+        "definition":[
+            "to offer or give (something) to someone"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8pr\u0251\u02d0f\u025a"
+    },
+    {
+        "word":"profiterole",
+        "definition":[
+            "cream puff"
+        ],
+        "type":"noun",
+        "ipa":"pr\u0259\u02c8f\u026at\u0259\u02ccro\u028al"
+    },
+    {
+        "word":"profligacy",
+        "definition":[
+            "carelessly and foolishly wasting money, materials, etc. : very wasteful"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8pr\u0251\u02d0fl\u026ag\u0259t"
+    },
+    {
+        "word":"profusion",
+        "definition":[
+            "a large amount of something \u2014often + of"
+        ],
+        "type":"noun",
+        "ipa":"pr\u0259\u02c8fju\u02d0\u0292\u0259n"
+    },
+    {
+        "word":"propane",
+        "definition":[
+            "a colorless gas that is used for cooking and heating"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8pro\u028a\u02ccpe\u026an"
+    },
+    {
+        "word":"propensity",
+        "definition":[
+            "a strong natural tendency to do something"
+        ],
+        "type":"noun",
+        "ipa":"pr\u0259\u02c8p\u025bns\u0259ti"
+    },
+    {
+        "word":"proportionate",
+        "definition":[
+            "proportional \u2014often + to"
+        ],
+        "type":"adjective",
+        "ipa":"pr\u0259\u02c8po\u025a\u0283\u0259n\u0259t"
+    },
+    {
+        "word":"propound",
+        "definition":[
+            "to suggest (an idea, theory, etc.) to a person or group of people to consider : propose"
+        ],
+        "type":"verb",
+        "ipa":"pr\u0259\u02c8pa\u028and"
+    },
+    {
+        "word":"proscenium",
+        "definition":[
+            "the part of a stage that is in front of the curtain"
+        ],
+        "type":"noun",
+        "ipa":"pro\u028a\u02c8si\u02d0nij\u0259m"
+    },
+    {
+        "word":"protruding",
+        "definition":[
+            "to stick out"
+        ],
+        "type":"verb",
+        "ipa":"pro\u028a\u02c8tru\u02d0d"
+    },
+    {
+        "word":"pseudonymous",
+        "definition":[
+            "a name that someone (such as a writer) uses instead of his or her real name"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8su\u02d0d\u0259\u02ccn\u026am"
+    },
+    {
+        "word":"psoriasis",
+        "definition":[
+            "a skin disease that causes areas of your skin to become red and rough and to fall off"
+        ],
+        "type":"noun",
+        "ipa":"s\u0259\u02c8raj\u0259s\u0259s"
+    },
+    {
+        "word":"psychiatrist",
+        "definition":[
+            "a doctor who treats mental or emotional disorders : a doctor of psychiatry"
+        ],
+        "type":"noun",
+        "ipa":"sa\u026a\u02c8kaj\u0259tr\u026ast"
+    },
+    {
+        "word":"pulmonary",
+        "definition":[
+            "relating to the lungs"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8p\u028alm\u0259\u02ccneri"
+    },
+    {
+        "word":"pusillanimous",
+        "definition":[
+            "weak and afraid of danger : cowardly"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccpju\u02d0s\u0259\u02c8l\u00e6n\u0259m\u0259s"
+    },
+    {
+        "word":"putrefaction",
+        "definition":[
+            "the process or result of decaying"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccpju\u02d0tr\u0259\u02c8f\u00e6k\u0283\u0259n"
+    },
+    {
+        "word":"Pyrenees",
+        "definition":[
+            "{bc} mountains on the border of France and Spain"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8pir\u0259\u02ccni\u02d0z"
+    },
+    {
+        "word":"quantum",
+        "definition":[
+            "the smallest amount of many forms of energy (such as light)"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kw\u0251\u02d0nt\u0259m"
+    },
+    {
+        "word":"quatrains",
+        "definition":[
+            "a poem or verse that has four lines"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kw\u0251\u02d0\u02cctre\u026an"
+    },
+    {
+        "word":"querulous",
+        "definition":[
+            "complaining in an annoyed way"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8kwe\u025aj\u0259l\u0259s"
+    },
+    {
+        "word":"queue",
+        "definition":[
+            "a line of people who are waiting for something",
+            "a series of instructions that are stored in a computer so that they can be processed later"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8kju\u02d0"
+    },
+    {
+        "word":"radicchio",
+        "definition":[
+            "a plant which has reddish or green leaves that have a bitter taste and that are eaten in salads"
+        ],
+        "type":"noun",
+        "ipa":"r\u00e6\u02c8d\u026akijo\u028a"
+    },
+    {
+        "word":"raillery",
+        "definition":[
+            "friendly joking about or with somebody"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8re\u026al\u0259ri"
+    },
+    {
+        "word":"ransacked",
+        "definition":[
+            "to search (a place) for something in a way that causes disorder or damage"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8r\u00e6n\u02ccs\u00e6k"
+    },
+    {
+        "word":"rapprochement",
+        "definition":[
+            "the development of friendlier relations between countries or groups of people who have been enemies"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccr\u00e6\u02ccpro\u028a\u0283\u02c8m\u0251\u02d0nt"
+    },
+    {
+        "word":"Rastafarian",
+        "definition":[
+            "a member of a religious movement among black Jamaicans which teaches that black people will eventually return to Africa and which worships Haile Selassie, the former Emperor of Ethiopia"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccr\u0251\u02d0st\u0259\u02c8f\u0251rij\u0259n"
+    },
+    {
+        "word":"realpolitik",
+        "definition":[
+            "a system of politics based on a country's situation and its needs rather than on ideas about what is morally right and wrong"
+        ],
+        "type":"noun",
+        "ipa":"re\u026a\u02c8\u0251\u02d0l\u02ccpo\u028al\u026a\u02ccti\u02d0k"
+    },
+    {
+        "word":"redound",
+        "definition":[
+            "to have a particular result\u2014used especially to describe how something affects someone or something or affects the opinion that people have about someone or something\u2014+ to"
+        ],
+        "type":"verb",
+        "ipa":"r\u026a\u02c8da\u028and"
+    },
+    {
+        "word":"refectory",
+        "definition":[
+            "a large room where meals are served at a place (such as a seminary or monastery) where many people live"
+        ],
+        "type":"noun",
+        "ipa":"r\u026a\u02c8f\u025bkt\u0259ri"
+    },
+    {
+        "word":"referral",
+        "definition":[
+            "the act of sending someone to another person or place for treatment, help, advice, etc."
+        ],
+        "type":"noun",
+        "ipa":"r\u026a\u02c8f\u025ar\u0259l"
+    },
+    {
+        "word":"reflexology",
+        "definition":[
+            "a method of relieving pain or curing illness by pressing on particular parts of a person's hands or feet"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccri\u02d0\u02ccfl\u025bk\u02c8s\u0251\u02d0l\u0259\u02a4i"
+    },
+    {
+        "word":"reluctant",
+        "definition":[
+            "feeling or showing doubt about doing something : not willing or eager to do something"
+        ],
+        "type":"adjective",
+        "ipa":"r\u026a\u02c8l\u028ckt\u0259nt"
+    },
+    {
+        "word":"renal",
+        "definition":[
+            "relating to or involving the kidneys"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8ri\u02d0nl\u031f"
+    },
+    {
+        "word":"repartee",
+        "definition":[
+            "conversation in which clever statements and replies are made quickly"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccr\u025bp\u025a\u02c8ti\u02d0"
+    },
+    {
+        "word":"repast",
+        "definition":[
+            "meal"
+        ],
+        "type":"noun",
+        "ipa":"r\u026a\u02c8p\u00e6st"
+    },
+    {
+        "word":"reprobate",
+        "definition":[
+            "a person who behaves in a morally wrong way"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u025bpr\u0259\u02ccbe\u026at"
+    },
+    {
+        "word":"repugnance",
+        "definition":[
+            "a strong feeling of dislike or disgust"
+        ],
+        "type":"noun",
+        "ipa":"r\u026a\u02c8p\u028cgn\u0259ns"
+    },
+    {
+        "word":"requisites",
+        "definition":[
+            "something that is needed for a particular purpose"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"reservoir",
+        "definition":[
+            "a usually artificial lake that is used to store a large supply of water for use in people's homes, in businesses, etc.",
+            "a place (such as a part of a machine) where a liquid is stored",
+            "an extra supply of something"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u025bz\u0259\u02ccvw\u0251\u025a"
+    },
+    {
+        "word":"resinous",
+        "definition":[
+            "a yellow or brown sticky substance that comes from some trees and that is used to make various products",
+            "an artificial substance that is similar to natural resins and that is used to make plastics"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u025bzn\u0329"
+    },
+    {
+        "word":"reveille",
+        "definition":[
+            "a signal given on a musical instrument (such as a bugle or drum) in the early morning to call soldiers or sailors to duty"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u025bv\u0259li"
+    },
+    {
+        "word":"rhetorical",
+        "definition":[
+            "of, relating to, or concerned with the art of speaking or writing formally and effectively especially as a way to persuade or influence people",
+            "asked in order to make a statement rather than to get an answer"
+        ],
+        "type":"adjective",
+        "ipa":"r\u026a\u02c8tor\u026ak\u0259l"
+    },
+    {
+        "word":"rheumatic",
+        "definition":[
+            "a disease that causes stiffness and pain in the muscles and swelling and pain in the joints"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ru\u02d0m\u0259\u02cct\u026az\u0259m"
+    },
+    {
+        "word":"rhizome",
+        "definition":[
+            "a thick plant stem that grows underground and has shoots and roots growing from it"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ra\u026a\u02cczo\u028am"
+    },
+    {
+        "word":"rococo",
+        "definition":[
+            "of or relating to a style of artistic expression that involves fancy curved forms and much decoration and was popular in the 18th century"
+        ],
+        "type":"adjective",
+        "ipa":"r\u0259\u02c8ko\u028ako\u028a"
+    },
+    {
+        "word":"roiling",
+        "definition":[
+            "to upset (someone or something) very much : to cause (someone or something) to become very agitated or disturbed",
+            "to move in a violent and confused way \u2014often used figuratively"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8roj\u0259l"
+    },
+    {
+        "word":"Rorschach",
+        "definition":[
+            "a personality and intelligence test in which someone looks at ink blots of different shapes and then describes what the shapes look like"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ro\u025a\u02cc\u0283\u0251\u02d0k-"
+    },
+    {
+        "word":"Rubicon",
+        "definition":[
+            "{bc} a limit or point that you reach when the results of your actions cannot be changed"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ru\u02d0b\u026a\u02cck\u0251\u02d0n"
+    },
+    {
+        "word":"rummages",
+        "definition":[
+            "to search for something especially by moving and looking through the contents of a place"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8r\u028cm\u026a\u02a4"
+    },
+    {
+        "word":"russet",
+        "definition":[
+            "a reddish-brown color"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u028cs\u0259t"
+    },
+    {
+        "word":"Ryukyu",
+        "definition":[
+            "Japanese islands in the Pacific Ocean"
+        ],
+        "type":"No word type available",
+        "ipa":"ri\u02c8ju\u02d0kju"
+    },
+    {
+        "word":"Sagittarius",
+        "definition":[
+            "the ninth sign of the zodiac : the sign that comes between Scorpio and Capricorn and that has a centaur shooting a bow and arrow as its symbol",
+            "a person born under the sign Sagittarius : a person born between November 22 and December 21"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccs\u00e6\u02a4\u0259\u02c8teri\u0259s"
+    },
+    {
+        "word":"Sahel",
+        "definition":[
+            "{bc} southern part of the Sahara"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8s\u00e6h\u026al"
+    },
+    {
+        "word":"sanguine",
+        "definition":[
+            "confident and hopeful"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u00e6\u014bgw\u0259n"
+    },
+    {
+        "word":"satiety",
+        "definition":[
+            "a feeling or condition of being full after eating food"
+        ],
+        "type":"noun",
+        "ipa":"s\u0259\u02c8taj\u0259ti"
+    },
+    {
+        "word":"saturnine",
+        "definition":[
+            "very serious and unhappy"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u00e6t\u025a\u02ccna\u026an"
+    },
+    {
+        "word":"scabbard",
+        "definition":[
+            "a protective case for a sword that covers the blade"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sk\u00e6b\u025ad"
+    },
+    {
+        "word":"scallion",
+        "definition":[
+            "green onion"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sk\u00e6lj\u0259n"
+    },
+    {
+        "word":"scourge",
+        "definition":[
+            "someone or something that causes a great amount of trouble or suffering",
+            "a whip that was used to punish people in the past"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sk\u025a\u02a4"
+    },
+    {
+        "word":"scurrilous",
+        "definition":[
+            "said or done unfairly to make people have a bad opinion of someone"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8sk\u025ar\u0259l\u0259s"
+    },
+    {
+        "word":"scuttlebutt",
+        "definition":[
+            "talk or stories about someone that may not be true"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sk\u028ctl\u031f\u02ccb\u028ct"
+    },
+    {
+        "word":"sebaceous",
+        "definition":[
+            "producing an oily substance in the body"
+        ],
+        "type":"adjective",
+        "ipa":"s\u026a\u02c8be\u026a\u0283\u0259s"
+    },
+    {
+        "word":"seine",
+        "definition":[
+            "{bc} river in France"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8se\u026an"
+    },
+    {
+        "word":"semaphore",
+        "definition":[
+            "a system used for sending signals by using two flags that are held in your hands"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u025bm\u0259\u02ccfo\u025a"
+    },
+    {
+        "word":"semblance",
+        "definition":[
+            "the state of being somewhat like something but not truly or fully the same thing\u2014usually + of"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u025bmbl\u0259ns"
+    },
+    {
+        "word":"senile",
+        "definition":[
+            "showing a loss of mental ability (such as memory) in old age"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8si\u02d0\u02ccnaj\u0259l"
+    },
+    {
+        "word":"sepulchral",
+        "definition":[
+            "very sad and serious : very dismal or gloomy",
+            "of or relating to a sepulchre"
+        ],
+        "type":"adjective",
+        "ipa":"s\u0259\u02c8p\u028clkr\u0259l"
+    },
+    {
+        "word":"sequoia",
+        "definition":[
+            "a very tall evergreen tree that grows in California"
+        ],
+        "type":"noun",
+        "ipa":"s\u026a\u02c8kwoj\u0259"
+    },
+    {
+        "word":"Sherpa",
+        "definition":[
+            "a member of a people who live in the Himalayas and who are often hired to help guide mountain climbers and carry their equipment"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"sibilant",
+        "definition":[
+            "making or having a sound like the letters s or sh"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u026ab\u0259l\u0259nt"
+    },
+    {
+        "word":"silhouetted",
+        "definition":[
+            "to make (someone or something) appear as a dark shape in front of a light background\u2014often used as (be) silhouetted"
+        ],
+        "type":"verb",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"Sinai",
+        "definition":[
+            "{bc} land between the Red Sea and the Mediterranean Sea"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8sa\u026a\u02ccna\u026a"
+    },
+    {
+        "word":"sinewy",
+        "definition":[
+            "having strong and lean muscles \u2014sometimes used figuratively",
+            "tough and difficult to cut or chew"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u026anj\u0259wi"
+    },
+    {
+        "word":"Singapore",
+        "definition":[
+            "island country in Asia"
+        ],
+        "type":"No word type available",
+        "ipa":"\u02c8s\u026a\u014b\u0259\u02ccpo\u025a"
+    },
+    {
+        "word":"sinuously",
+        "definition":[
+            "having many twists and turns",
+            "moving and bending in a smooth and attractive way"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u026anj\u0259w\u0259s"
+    },
+    {
+        "word":"Sioux",
+        "definition":[
+            "a member of a Native American people originally from the north central U.S."
+        ],
+        "type":"noun",
+        "ipa":"\u02c8su\u02d0"
+    },
+    {
+        "word":"smelters",
+        "definition":[
+            "a machine used for smelting metal"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sm\u025blt\u025a"
+    },
+    {
+        "word":"solace",
+        "definition":[
+            "someone or something that gives a feeling of comfort to a person who is sad, depressed, etc. : a source of comfort \u2014often + in"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u0251\u02d0l\u0259s"
+    },
+    {
+        "word":"solecism",
+        "definition":[
+            "a mistake in speech or writing",
+            "an impolite or improper way of behaving"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u0251\u02d0l\u0259\u02ccs\u026az\u0259m"
+    },
+    {
+        "word":"somnolent",
+        "definition":[
+            "tired and ready to fall asleep : sleepy \u2014sometimes used figuratively",
+            "causing a person to fall asleep : very boring"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8s\u0251\u02d0mn\u0259l\u0259nt"
+    },
+    {
+        "word":"sophomore",
+        "definition":[
+            "a student in the second year of high school or college \u2014often used before another noun"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u0251\u02d0f\u02ccmo\u025a"
+    },
+    {
+        "word":"sorghum",
+        "definition":[
+            "a kind of tropical grass that is grown for food; also : the grain that grows on this grass"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8so\u025ag\u0259m"
+    },
+    {
+        "word":"sphinx",
+        "definition":[
+            "a creature with the body of a lion and the head of a person; also : something (such as a statue) in the shape of a sphinx"
+        ],
+        "type":"noun",
+        "ipa":"No IPA available"
+    },
+    {
+        "word":"squadron",
+        "definition":[
+            "a military unit consisting of soldiers, ships, or aircraft"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8skw\u0251\u02d0dr\u0259n"
+    },
+    {
+        "word":"stalagmite",
+        "definition":[
+            "a pointed piece of rock that sticks up from the floor of a cave and that is formed by dripping water which contains minerals"
+        ],
+        "type":"noun",
+        "ipa":"st\u0259\u02c8l\u00e6g\u02ccma\u026at"
+    },
+    {
+        "word":"stalemate",
+        "definition":[
+            "a contest, dispute, competition, etc., in which neither side can gain an advantage or win",
+            "a situation in chess in which a player cannot successfully move any of the pieces and neither player can win"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8ste\u026al\u02ccme\u026at"
+    },
+    {
+        "word":"stanchion",
+        "definition":[
+            "a strong, upright pole that is used to support something"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8st\u00e6nt\u0283\u0259n"
+    },
+    {
+        "word":"stealthily",
+        "definition":[
+            "quiet and secret in order to avoid being noticed"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8st\u025bl\u03b8i"
+    },
+    {
+        "word":"stevedore",
+        "definition":[
+            "a person whose job is to load and unload ships at a port : longshoreman"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sti\u02d0v\u0259\u02ccdo\u025a"
+    },
+    {
+        "word":"stevedores",
+        "definition":[
+            "a person whose job is to load and unload ships at a port : longshoreman"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8sti\u02d0v\u0259\u02ccdo\u025a"
+    },
+    {
+        "word":"stirrups",
+        "definition":[
+            "one of two loops that are attached to a saddle for the rider's feet"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8st\u025ar\u0259p"
+    },
+    {
+        "word":"strenuous",
+        "definition":[
+            "requiring or showing great energy and effort"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8str\u025bnj\u0259w\u0259s"
+    },
+    {
+        "word":"strife",
+        "definition":[
+            "very angry or violent disagreement between two or more people or groups"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8stra\u026af"
+    },
+    {
+        "word":"strychnine",
+        "definition":[
+            "a poisonous substance that can be used in very small amounts as a medicine"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8str\u026ak\u02ccna\u026an"
+    },
+    {
+        "word":"substantial",
+        "definition":[
+            "large in amount, size, or number",
+            "strongly made : sturdy",
+            "enough to satisfy hunger"
+        ],
+        "type":"adjective",
+        "ipa":"s\u0259b\u02c8st\u00e6n\u0283\u0259l"
+    },
+    {
+        "word":"suffused",
+        "definition":[
+            "to spread over or fill (something) \u2014usually used as (be) suffused"
+        ],
+        "type":"verb",
+        "ipa":"s\u0259\u02c8fju\u02d0z"
+    },
+    {
+        "word":"supercilious",
+        "definition":[
+            "having or showing the proud and unpleasant attitude of people who think that they are better or more important than other people"
+        ],
+        "type":"adjective",
+        "ipa":"\u02ccsu\u02d0p\u025a\u02c8s\u026alij\u0259s"
+    },
+    {
+        "word":"superintendent",
+        "definition":[
+            "a person who directs or manages a place, department, organization, etc.",
+            "a high rank in a police department or a person who has this rank",
+            "a person who is in charge of cleaning, maintaining, and repairing a building \u2014called also (informal) super"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccsu\u02d0p\u025a\u026an\u02c8t\u025bnd\u0259nt"
+    },
+    {
+        "word":"surfeit",
+        "definition":[
+            "an amount that is too much or more than you need\u2014+ of"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u025af\u0259t"
+    },
+    {
+        "word":"surgeon",
+        "definition":[
+            "a doctor who performs operations that involve cutting into someone's body in order to repair or remove damaged or diseased parts : a doctor who performs surgery"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u025a\u02a4\u0259n"
+    },
+    {
+        "word":"swankiest",
+        "definition":[
+            "very fashionable and expensive"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8sw\u00e6\u014bki"
+    },
+    {
+        "word":"sylph",
+        "definition":[
+            "a thin and graceful woman or girl"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u026alf"
+    },
+    {
+        "word":"synod",
+        "definition":[
+            "a formal meeting of church leaders",
+            "a group of church leaders who are in charge of making decisions and laws related to the church"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8s\u026an\u0259d"
+    },
+    {
+        "word":"tapirs",
+        "definition":[
+            "an animal that is like a pig with a long nose and short legs and that lives in tropical America and Southeast Asia"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8te\u026ap\u025a"
+    },
+    {
+        "word":"tarpaulin",
+        "definition":[
+            "a large piece of waterproof material (such as plastic or canvas) that is used to cover things and keep them dry"
+        ],
+        "type":"noun",
+        "ipa":"t\u0251\u025a\u02c8p\u0251\u02d0l\u0259n"
+    },
+    {
+        "word":"taxidermy",
+        "definition":[
+            "the skill, activity, or job of preparing, stuffing, and mounting the skins of dead animals so that they look like they did when they were alive"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u00e6ks\u0259\u02ccd\u025ami"
+    },
+    {
+        "word":"Teflon",
+        "definition":[
+            "\u2014used for a substance that is used especially for nonstick coatings on cooking pans"
+        ],
+        "type":"trademark",
+        "ipa":"\u02c8t\u025b\u02ccfl\u0251\u02d0n"
+    },
+    {
+        "word":"temblor",
+        "definition":[
+            "earthquake"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u025bmbl\u025a"
+    },
+    {
+        "word":"tenon",
+        "definition":[
+            "an end of a piece of wood that is cut into a special shape to fit into a hole (called a mortise) in another piece of wood and form a strong joint"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u025bn\u0259n"
+    },
+    {
+        "word":"testosterone",
+        "definition":[
+            "a substance (called a hormone) that occurs naturally in men and male animals",
+            "qualities (such as noticeable strength and aggressiveness) that agree with traditional ideas about what men are like"
+        ],
+        "type":"noun",
+        "ipa":"t\u025b\u02c8st\u0251\u02d0st\u0259\u02ccro\u028an"
+    },
+    {
+        "word":"Teutonic",
+        "definition":[
+            "thought to be typical of German people",
+            "relating to Germany, Germans, or the German language",
+            "relating to an ancient people who lived in northern Europe"
+        ],
+        "type":"adjective",
+        "ipa":"tu\u02c8t\u0251\u02d0n\u026ak"
+    },
+    {
+        "word":"therapeutic",
+        "definition":[
+            "producing good effects on your body or mind",
+            "of or relating to the treatment of illness"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u03b8er\u0259\u02c8pju\u02d0t\u026ak"
+    },
+    {
+        "word":"thoroughfare",
+        "definition":[
+            "a main road"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u03b8\u025ar\u0259\u02ccfe\u025a"
+    },
+    {
+        "word":"threnody",
+        "definition":[
+            "a song or poem that expresses sorrow for someone who is dead"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u03b8r\u025bn\u0259di"
+    },
+    {
+        "word":"throes",
+        "definition":[
+            "painful emotions, sensations, or feelings"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8\u03b8ro\u028az"
+    },
+    {
+        "word":"toreador",
+        "definition":[
+            "someone who fights bulls in a bullfight : bullfighter"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8torij\u0259\u02ccdo\u025a"
+    },
+    {
+        "word":"torpid",
+        "definition":[
+            "having or showing very little energy or movement : not active"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8to\u025ap\u0259d"
+    },
+    {
+        "word":"torturous",
+        "definition":[
+            "causing great pain or suffering"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8to\u025at\u0283\u0259r\u0259s"
+    },
+    {
+        "word":"traitorous",
+        "definition":[
+            "a person who is not loyal to his or her own country, friends, etc. : a person who betrays a country or group of people by helping or supporting an enemy"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8tre\u026at\u025a"
+    },
+    {
+        "word":"transept",
+        "definition":[
+            "the shorter area that goes across and sticks out from the long part of a church and that gives the church the shape of a cross when it is viewed from above"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8tr\u00e6n\u02ccs\u025bpt"
+    },
+    {
+        "word":"transgressions",
+        "definition":[
+            "to do something that is not allowed : to disobey a command or law"
+        ],
+        "type":"verb",
+        "ipa":"tr\u00e6ns\u02c8gr\u025bs"
+    },
+    {
+        "word":"translucent",
+        "definition":[
+            "not completely clear or transparent but clear enough to allow light to pass through"
+        ],
+        "type":"adjective",
+        "ipa":"tr\u00e6ns\u02c8lu\u02d0sn\u0329t"
+    },
+    {
+        "word":"treacherous",
+        "definition":[
+            "not able to be trusted : showing that someone cannot be trusted",
+            "very dangerous and difficult to deal with"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8tr\u025bt\u0283\u0259r\u0259s"
+    },
+    {
+        "word":"tribulations",
+        "definition":[
+            "unhappiness, pain, or suffering",
+            "an experience that causes someone to suffer"
+        ],
+        "type":"noun",
+        "ipa":"\u02cctr\u026abj\u0259\u02c8le\u026a\u0283\u0259n"
+    },
+    {
+        "word":"trough",
+        "definition":[
+            "a long, shallow container from which animals (such as cows, pigs, horses, etc.) eat or drink",
+            "a period in which there is little economic activity and prices are usually low",
+            "a long, low area between waves or hills"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8tr\u0251\u02d0f"
+    },
+    {
+        "word":"truculently",
+        "definition":[
+            "easily annoyed or angered and likely to argue"
+        ],
+        "type":"adjective",
+        "ipa":"\u02c8tr\u028ckj\u0259l\u0259nt"
+    },
+    {
+        "word":"tumultuous",
+        "definition":[
+            "loud, excited, and emotional",
+            "involving a lot of violence, confusion, or disorder"
+        ],
+        "type":"adjective",
+        "ipa":"t\u028a\u02c8m\u028clt\u0283\u0259w\u0259s"
+    },
+    {
+        "word":"tussock",
+        "definition":[
+            "a small area that is covered with long thick grass"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8t\u028cs\u0259k"
+    },
+    {
+        "word":"unscrupulous",
+        "definition":[
+            "not honest or fair : doing things that are wrong, dishonest, or illegal"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u028cn\u02c8skru\u02d0pj\u0259l\u0259s"
+    },
+    {
+        "word":"unsportsmanlike",
+        "definition":[
+            "not fair, respectful, and polite toward other players when participating in a sport : not sportsmanlike"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u028cn\u02c8spo\u025atsm\u0259n\u02ccla\u026ak"
+    },
+    {
+        "word":"unsullied",
+        "definition":[
+            "not harmed or damaged in any way"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u028cn\u02c8s\u028clid"
+    },
+    {
+        "word":"unwonted",
+        "definition":[
+            "not normal, usual, or expected"
+        ],
+        "type":"adjective",
+        "ipa":"\u02cc\u028cn\u02c8w\u0251\u02d0nt\u0259d"
+    },
+    {
+        "word":"Vancouver",
+        "definition":[
+            "U.S. city, Washington",
+            "island in British Columbia, Canada",
+            "city in British Columbia, Canada"
+        ],
+        "type":"No word type available",
+        "ipa":"v\u00e6n\u02c8ku\u02d0v\u025a"
+    },
+    {
+        "word":"verisimilitude",
+        "definition":[
+            "the quality of seeming real"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccver\u0259s\u0259\u02c8m\u026al\u0259\u02cctu\u02d0d"
+    },
+    {
+        "word":"vermicelli",
+        "definition":[
+            "a type of pasta that is like spaghetti but thinner"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccv\u025am\u0259\u02c8t\u0283\u025bli"
+    },
+    {
+        "word":"vestigial",
+        "definition":[
+            "remaining in a form that is not fully developed or able to function",
+            "remaining as the last small part of something that existed before"
+        ],
+        "type":"adjective",
+        "ipa":"v\u025b\u02c8st\u026a\u02a4ij\u0259l"
+    },
+    {
+        "word":"vicissitudes",
+        "definition":[
+            "the many changes or problems that happen over time\u2014often + of"
+        ],
+        "type":"noun",
+        "ipa":"v\u0259\u02c8s\u026as\u0259\u02cctu\u02d0dz"
+    },
+    {
+        "word":"vinaigrette",
+        "definition":[
+            "a mixture of oil, vinegar, and seasonings that is used especially as a salad dressing"
+        ],
+        "type":"noun",
+        "ipa":"\u02ccv\u026an\u026a\u02c8gr\u025bt"
+    },
+    {
+        "word":"vitiate",
+        "definition":[
+            "to make (something) less effective : to ruin or spoil (something)"
+        ],
+        "type":"verb",
+        "ipa":"\u02c8v\u026a\u0283i\u02cce\u026at"
+    },
+    {
+        "word":"vociferous",
+        "definition":[
+            "expressing feelings or opinions in a very loud or forceful way : expressed in a very loud or forceful way"
+        ],
+        "type":"adjective",
+        "ipa":"vo\u028a\u02c8s\u026af\u0259r\u0259s"
+    },
+    {
+        "word":"voluminous",
+        "definition":[
+            "very large : containing a lot of space",
+            "using large amounts of fabric : very full",
+            "having very many words or pages"
+        ],
+        "type":"adjective",
+        "ipa":"v\u0259\u02c8lu\u02d0m\u0259n\u0259s"
+    },
+    {
+        "word":"wapiti",
+        "definition":[
+            "elk"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8w\u0251\u02d0p\u0259ti"
+    },
+    {
+        "word":"warden",
+        "definition":[
+            "a person who is in charge of or takes care of something",
+            "an official who is in charge of a prison \u2014called also (British) governor",
+            "any one of various officials at a British college"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8wo\u025adn\u0329"
+    },
+    {
+        "word":"wassail",
+        "definition":[
+            "a hot alcoholic drink that is traditionally served in a large bowl especially at Christmastime"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8w\u0251\u02d0s\u0259l"
+    },
+    {
+        "word":"whippoorwill",
+        "definition":[
+            "a bird of eastern North America that is active at night and has a loud call which sounds like its name"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8w\u026ap\u025a\u02ccw\u026al"
+    },
+    {
+        "word":"wrath",
+        "definition":[
+            "extreme anger \u2014sometimes used figuratively"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8r\u00e6\u03b8"
+    },
+    {
+        "word":"zydeco",
+        "definition":[
+            "a type of lively popular music originally from southern Louisiana"
+        ],
+        "type":"noun",
+        "ipa":"\u02c8za\u026ad\u0259\u02ccko\u028a"
+    }
+]
