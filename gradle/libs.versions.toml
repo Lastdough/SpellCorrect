@@ -16,7 +16,7 @@ gson = "2.11.0"
 datastorePreferences = "1.1.1"
 navigationCompose = "2.7.7"
 coreSplashscreen = "1.0.1"
-materialIconsExtended = "1.7.0-beta06"
+materialIconsExtended = "1.7.0-beta07"
 
 
 [libraries]
