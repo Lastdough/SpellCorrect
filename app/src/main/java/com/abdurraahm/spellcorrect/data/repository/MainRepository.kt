@@ -28,6 +28,10 @@ interface MainRepository {
     fun exerciseStart(section: Section): Flow<List<WordEntry>>
     fun exerciseResume(section: Section): Flow<List<WordEntry>>
     suspend fun exerciseEnd(section: Section, currentIndex: Int)
+    suspend fun nextLastIndexed(section: Section)
+    suspend fun previousLastIndexed(section: Section)
+    fun getLastIndexed(section: Section): Flow<Int>
+    suspend fun saveLastIndexed(index: Int, section: Section)
 
     fun reviewType(section: Section): List<WordEntry>
     fun reviewListen(section: Section): List<WordEntry>

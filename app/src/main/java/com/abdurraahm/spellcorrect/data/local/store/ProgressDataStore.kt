@@ -6,6 +6,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.abdurraahm.spellcorrect.data.local.model.Section
@@ -34,7 +35,7 @@ class ProgressDataStore @Inject constructor(
     fun getLastSeed(section: Section): Flow<Long> {
         return context.dataStore.data
             .catch { exception ->
-                Log.e("WordEntry Data Store", "$exception")
+                Log.e("Progress Data Store", "$exception")
                 emit(emptyPreferences())
             }
             .map { preferences ->
@@ -46,20 +47,66 @@ class ProgressDataStore @Inject constructor(
         return stringPreferencesKey("${section.name}_progress")
     }
 
-    suspend fun saveLastIndex(index: Int, section: Section) {
+    suspend fun saveLastIndexed(index: Int, section: Section) {
         context.dataStore.edit { preferences ->
             preferences[progressKeyForSection(section)] = index.toString()
         }
     }
 
-    fun getLastIndex(section: Section): Flow<Int> {
+    fun getLastIndexed(section: Section): Flow<Int> {
         return context.dataStore.data
             .catch { exception ->
-                Log.e("WordEntry Data Store", "$exception")
+                Log.e("Progress Data Store", "$exception")
                 emit(emptyPreferences())
             }
             .map { preferences ->
                 preferences[progressKeyForSection(section)]?.toInt() ?: 0
+            }
+    }
+
+    private fun historyKeyForSection(section: Section): Preferences.Key<String> {
+        return stringPreferencesKey("${section.name}_history")
+    }
+
+    suspend fun saveHistory(seenWords: Set<Int>, section: Section) {
+        context.dataStore.edit { preferences ->
+            val serializedSet = seenWords.joinToString(",") // Serialize the set to a string
+            preferences[historyKeyForSection(section)] = serializedSet
+        }
+    }
+
+    fun getHistory(section: Section): Flow<Set<Int>> {
+        return context.dataStore.data
+            .catch { exception ->
+                Log.e("Progress Data Store", "$exception")
+                emit(emptyPreferences())
+            }
+            .map { preferences ->
+                val serializedSet = preferences[historyKeyForSection(section)] ?: ""
+                if (serializedSet.isEmpty()) {
+                    emptySet()
+                } else {
+                    serializedSet.split(",").map { it.toInt() }.toSet() // Deserialize the string to a set
+                }
+            }
+    }
+
+    private val wordHistoryCount = intPreferencesKey("words_shown_count")
+
+    suspend fun saveWordsShownCount(count: Int, section: Section) {
+        context.dataStore.edit { preferences ->
+            preferences[wordHistoryCount] = count
+        }
+    }
+
+    fun getWordsShownCount(section: Section): Flow<Int> {
+        return context.dataStore.data
+            .catch { exception ->
+                Log.e("Progress Data Store", "$exception")
+                emit(emptyPreferences())
+            }
+            .map { preferences ->
+                preferences[wordHistoryCount] ?: 0
             }
     }
 }

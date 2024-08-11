@@ -3,9 +3,7 @@ package com.abdurraahm.spellcorrect.ui.screen.flashcard
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.abdurraahm.spellcorrect.data.local.model.Section
-import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.ui.state.UiState
@@ -93,15 +91,24 @@ class FlashViewModel @Inject constructor(
 
     fun endExercise(section: Section) {
         viewModelScope.launch(Dispatchers.IO) {
+            val listSize = mainRepository.getSectionListSize(section).first().toFloat()
+            val shownWordSize = seenWords.size.toFloat()
+            val currentProgress = (shownWordSize/ listSize)
+            val currentShownWords = seenWords.toSet()
+            saveProgress(section.ordinal, currentProgress, currentShownWords)
             mainRepository.getLastIndexed(section).collect { i ->
                 mainRepository.exerciseEnd(section, i)
             }
         }
     }
 
-    fun updateSectionData(sectionData: SectionData) {
+    private fun saveProgress(sectionId: Int, newProgress: Float, newShownWordSet: Set<Int>) {
         viewModelScope.launch(Dispatchers.IO) {
-            mainRepository.updateSectionData(sectionData)
+            mainRepository.updateSectionDataId(
+                sectionId = sectionId,
+                newProgress = newProgress,
+                newShownWordSet = newShownWordSet
+            )
         }
     }
 }

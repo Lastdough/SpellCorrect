@@ -130,6 +130,29 @@ class MainRepositoryImpl @Inject constructor(
         emit(shuffledList)
     }
 
+    override fun getLastIndexed(section: Section): Flow<Int> =
+        progressDataStore.getLastIndexed(section = section)
+
+    override suspend fun saveLastIndexed(index: Int, section: Section) =
+        progressDataStore.saveLastIndexed(index, section)
+
+
+    override suspend fun nextLastIndexed(section: Section) {
+        progressDataStore.getLastIndexed(section).collect { i ->
+            progressDataStore.saveLastIndexed(index = i + 1, section = section)
+        }
+    }
+
+    override suspend fun previousLastIndexed(section: Section) {
+        progressDataStore.getLastIndexed(section).collect { i ->
+            progressDataStore.saveLastIndexed(index = i - 1, section = section)
+        }
+    }
+
+    override suspend fun exerciseEnd(section: Section, currentIndex: Int) =
+        progressDataStore.saveLastIndexed(index = currentIndex, section = section)
+
+
     override fun reviewType(section: Section): List<WordEntry> {
         TODO("Not yet implemented")
     }
