@@ -153,7 +153,7 @@ private fun HomeContent(
                         showSectionBottomSheetMap[section.partSection] = false
                     },
                     title = "Section ${section.partInRomanNumeral}",
-                    buttonData = SectionBottomSheetButtonData(
+                    buttonData = sectionBottomSheetButtonData(
                         showSectionBottomSheetMap = showSectionBottomSheetMap,
                         section = section,
                         navController = navController
@@ -171,25 +171,33 @@ private fun HomeContent(
     }
 }
 
-@Composable
-private fun SectionBottomSheetButtonData(
+private fun sectionBottomSheetButtonData(
+    modifier: Modifier = Modifier,
     showSectionBottomSheetMap: SnapshotStateMap<Section, Boolean>,
     section: SectionData,
     navController: NavHostController
-): MutableList<BottomSheetButtonData> = mutableListOf(
-    BottomSheetButtonData("Start Over") {
-        showSectionBottomSheetMap[section.partSection] = false
-        navController.navigate(
-            Screen.FlashScreen.createRoute(
-                sectionId = section.id,
-                exerciseState = Exercise.START.ordinal
-            )
-        )
-    }
-).apply {
+): MutableList<BottomSheetButtonData> = mutableListOf<BottomSheetButtonData>().apply {
     if (section.finished) {
         add(0, BottomSheetButtonData("Search Specific Word") {})
+        add(0, BottomSheetButtonData("Start Over") {
+            showSectionBottomSheetMap[section.partSection] = false
+            navController.navigate(
+                Screen.FlashScreen.createRoute(
+                    sectionId = section.id,
+                    exerciseState = Exercise.START.ordinal
+                )
+            )
+        })
     } else if (section.started) {
+        add(0, BottomSheetButtonData("Start Over") {
+            showSectionBottomSheetMap[section.partSection] = false
+            navController.navigate(
+                Screen.FlashScreen.createRoute(
+                    sectionId = section.id,
+                    exerciseState = Exercise.START.ordinal
+                )
+            )
+        })
         add(0, BottomSheetButtonData("Search Specific Word") {})
         add(0, BottomSheetButtonData("Continue Last Session") {
             showSectionBottomSheetMap[section.partSection] = false
@@ -201,6 +209,7 @@ private fun SectionBottomSheetButtonData(
             )
         })
     } else {
+        add(0, BottomSheetButtonData("Search Specific Word") {})
         add(0, BottomSheetButtonData("Start Section") {
             showSectionBottomSheetMap[section.partSection] = false
             navController.navigate(
@@ -210,6 +219,7 @@ private fun SectionBottomSheetButtonData(
                 )
             )
         })
+
     }
 }
 
