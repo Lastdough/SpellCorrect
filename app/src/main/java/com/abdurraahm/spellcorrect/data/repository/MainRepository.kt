@@ -24,6 +24,7 @@ interface MainRepository {
     // Word Entry
     fun exerciseSpecific(word: String, section: Section): WordEntry
     fun wordOfTheDay(): Flow<WordEntry>
+    fun getSectionListSize(section: Section): Flow<Int>
     fun exerciseStart(section: Section): Flow<List<WordEntry>>
     fun exerciseResume(section: Section): Flow<List<WordEntry>>
     suspend fun exerciseEnd(section: Section, currentIndex: Int)

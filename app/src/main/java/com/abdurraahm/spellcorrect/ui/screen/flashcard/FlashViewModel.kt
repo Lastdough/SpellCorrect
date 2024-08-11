@@ -31,10 +31,15 @@ class FlashViewModel @Inject constructor(
     val shuffledWords
         get() = _shuffledWords.asStateFlow()
 
-
-    private val _lastIndex = mutableIntStateOf(0) // Initial value will be overwritten
+    private val _lastIndex = mutableIntStateOf(0)
     val lastIndex
         get() = _lastIndex
+
+    private val _wordsShownCount = mutableIntStateOf(0)
+    val wordsShownCount
+        get() = _wordsShownCount
+
+    private val seenWords: MutableSet<Int> = mutableSetOf<Int>() // Set to track seen word indices
 
     fun init(section: Section) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -43,9 +48,10 @@ class FlashViewModel @Inject constructor(
         }
     }
 
-
     fun startExercise(section: Section) {
         viewModelScope.launch(Dispatchers.IO) {
+            _wordsShownCount.intValue = 1 // Reset wordsShownCount
+            _lastIndex.intValue = 0 // Reset lastIndex
             mainRepository.exerciseStart(section = section).collect { list ->
                 _shuffledWords.value = UiState.Success(list)
             }
@@ -67,6 +73,10 @@ class FlashViewModel @Inject constructor(
                 val nextIndex = (currentIndex + 1).coerceAtMost(listSize - 1) // Bound check
                 mainRepository.saveLastIndexed(index = nextIndex, section)
                 _lastIndex.intValue = nextIndex
+                if (nextIndex !in seenWords) { // Check if the word is new
+                    _wordsShownCount.intValue++
+                    seenWords.add(nextIndex) // Mark the word as seen
+                }
             }
         }
     }

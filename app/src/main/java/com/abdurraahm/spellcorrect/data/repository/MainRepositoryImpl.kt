@@ -90,6 +90,10 @@ class MainRepositoryImpl @Inject constructor(
         }
     }.flowOn(Dispatchers.IO)
 
+    override fun getSectionListSize(section: Section) = flow {
+        emit(wordEntryLocalDataSource.sectionEntry(section).first().size)
+    }
+
     override fun exerciseSpecific(word: String, section: Section): WordEntry {
         TODO("Not yet implemented")
     }
@@ -97,7 +101,7 @@ class MainRepositoryImpl @Inject constructor(
     override fun exerciseStart(section: Section): Flow<List<WordEntry>> = flow {
         val seed = seedGenerator.generate()
         progressDataStore.saveSeed(seed = seed, section = section)
-        progressDataStore.saveLastIndex(index = 0, section = section)
+        progressDataStore.saveLastIndexed(index = 0, section = section)
         val randomSeeded = Random(seed)
         val list = wordEntryLocalDataSource.sectionEntry(section).first()
         val shuffledList = list.shuffled(randomSeeded)
@@ -114,17 +118,16 @@ class MainRepositoryImpl @Inject constructor(
      * val secondHalf = shuffledList.subList(lastIndex, shuffledList.lastIndex)
      *
      * shuffledList = secondHalf + firstHalf
+     *
+     * val lastIndexed = progressDataStore.getLastIndexed(section).first()
+     *
+     * Collections.rotate(shuffledList, -lastIndexed)
      */
-    override suspend fun exerciseEnd(section: Section, currentIndex: Int) =
-        progressDataStore.saveLastIndex(index = currentIndex, section = section)
-
     override fun exerciseResume(section: Section): Flow<List<WordEntry>> = flow {
         val seed = progressDataStore.getLastSeed(section).first()
-        val lastIndex = progressDataStore.getLastIndex(section).first()
         val randomSeeded = Random(seed)
         val list = wordEntryLocalDataSource.sectionEntry(section).first()
         val shuffledList = list.shuffled(randomSeeded)
-        Collections.rotate(shuffledList, -lastIndex)
         emit(shuffledList)
     }
 

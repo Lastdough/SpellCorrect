@@ -79,13 +79,15 @@ fun FlashScreen(
                     flashViewModel.nextLastIndexed(section)
                 },
                 onBackButtonClicked = {
-
+                    navController.navigateUp()
+                    flashViewModel.endExercise(section = section)
                 },
                 onDefinitionClicked = {
                     flashViewModel.speak(word.fullDescription)
                 },
                 currentIndex = index,
                 lastIndex = list.lastIndex,
+                i = flashViewModel.wordsShownCount.intValue
             )
             BackHandler {
                 navController.navigateUp()
@@ -107,7 +109,8 @@ private fun FlashContent(
     onBackButtonClicked: () -> Unit,
     currentIndex: Int,
     lastIndex: Int,
-    onDefinitionClicked: () -> Unit
+    onDefinitionClicked: () -> Unit,
+    i: Int
 ) {
     Scaffold(modifier = modifier) {
         // Content
@@ -118,6 +121,7 @@ private fun FlashContent(
                 .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            Text(text = "${i}")
             Column() {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(text = word.wordFirstLetterCapitalized)
@@ -183,6 +187,7 @@ private fun FlashContentPreview() {
             onBackButtonClicked = {},
             currentIndex = 0,
             lastIndex = 0,
+            i = 1,
         )
     }
 }
