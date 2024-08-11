@@ -36,6 +36,6 @@ interface MainRepository {
     fun totalSectionInDB(): Int
     fun sectionInDB(): Flow<List<SectionData>>
     fun getSectionDataById(id: Int): Flow<SectionData>
-    suspend fun updateSectionData(sectionData: SectionData)
+    suspend fun updateSectionDataId(sectionId: Int, newProgress: Float, newShownWordSet: Set<Int>)
 }
 

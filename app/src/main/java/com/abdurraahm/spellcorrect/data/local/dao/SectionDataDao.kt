@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.data.local.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
@@ -19,4 +20,7 @@ interface SectionDataDao {
 
     @Update
     suspend fun updateSectionData(data: SectionData)
+
+    @Insert
+    suspend fun insertSectionData(sectionData: SectionData)
 }

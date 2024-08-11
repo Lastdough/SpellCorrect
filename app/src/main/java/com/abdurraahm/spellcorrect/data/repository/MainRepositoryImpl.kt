@@ -23,7 +23,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import java.util.Collections
 import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -149,6 +148,15 @@ class MainRepositoryImpl @Inject constructor(
     override fun getSectionDataById(id: Int): Flow<SectionData> =
         sectionDataDao.getSectionDataById(id)
 
-    override suspend fun updateSectionData(sectionData: SectionData) =
+    override suspend fun updateSectionDataId(
+        sectionId: Int,
+        newProgress: Float,
+        newShownWordSet: Set<Int>
+    ) {
+        val sectionData = getSectionDataById(id = sectionId).first().copy(
+            progress = newProgress,
+            shownWord = newShownWordSet
+        )
         sectionDataDao.updateSectionData(sectionData)
+    }
 }
