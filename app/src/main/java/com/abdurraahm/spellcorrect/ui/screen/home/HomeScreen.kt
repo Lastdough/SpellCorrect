@@ -106,34 +106,26 @@ fun HomeScreen(
                             },
                             title = "Section ${section.partInRomanNumeral}", // Or any other relevant title
                             buttonData = mutableListOf(
-                                BottomSheetButtonData("Search Specific Word") {}
+                                BottomSheetButtonData("Start Over") {
+                                    showSectionBottomSheetMap[section.partSection] = false
+                                    navController.navigate(
+                                        Screen.FlashScreen.createRoute(
+                                            sectionId = section.id,
+                                            exerciseState = Exercise.START.ordinal
+                                        )
+                                    )
+                                }
                             ).apply {
                                 if (section.finished) {
-                                    add(0, BottomSheetButtonData("Start Over") {
-                                        showSectionBottomSheetMap[section.partSection] = false
-                                        navController.navigate(
-                                            Screen.FlashScreen.createRoute(
-                                                sectionId = section.id,
-                                                exerciseState = Exercise.START.ordinal
-                                            )
-                                        )
-                                    })
+                                    add(0, BottomSheetButtonData("Search Specific Word") {})
                                 } else if (section.started) {
+                                    add(0, BottomSheetButtonData("Search Specific Word") {})
                                     add(0, BottomSheetButtonData("Continue Last Session") {
                                         showSectionBottomSheetMap[section.partSection] = false
                                         navController.navigate(
                                             Screen.FlashScreen.createRoute(
                                                 sectionId = section.id,
                                                 exerciseState = Exercise.RESUME.ordinal
-                                            )
-                                        )
-                                    })
-                                    add(0, BottomSheetButtonData("Start Over") {
-                                        showSectionBottomSheetMap[section.partSection] = false
-                                        navController.navigate(
-                                            Screen.FlashScreen.createRoute(
-                                                sectionId = section.id,
-                                                exerciseState = Exercise.START.ordinal
                                             )
                                         )
                                     })

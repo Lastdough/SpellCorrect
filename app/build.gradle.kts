@@ -108,4 +108,7 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.paging)
+
+    // Flippable
+    implementation(libs.flippable)
 }

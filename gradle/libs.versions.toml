@@ -17,6 +17,7 @@ datastorePreferences = "1.1.1"
 navigationCompose = "2.7.7"
 coreSplashscreen = "1.0.1"
 materialIconsExtended = "1.7.0-beta07"
+flippable = "1.5.4"
 
 
 [libraries]
@@ -52,6 +53,7 @@ androidx-datastore-preferences = { group = "androidx.datastore", name = "datasto
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "materialIconsExtended" }
+flippable = { group = "com.wajahatkarim", name = "flippable", version.ref = "flippable" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -50,8 +50,8 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    // Masalah asalnya dari
-    // Realita != Idealita
-    // Hipotesa
-    // Pembuktian Hipotesa
 }
+// Masalah asalnya dari
+// Realita != Idealita
+// Hipotesa
+// Pembuktian Hipotesa
