@@ -55,4 +55,7 @@ data class SectionData(
 
     val started: Boolean
         get() = progress > 0F
+
+    val shownWordSize: Int
+        get() = shownWord.size
 }

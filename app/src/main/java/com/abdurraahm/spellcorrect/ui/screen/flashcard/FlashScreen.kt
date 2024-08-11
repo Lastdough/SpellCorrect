@@ -29,6 +29,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,7 +37,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -71,6 +71,9 @@ fun FlashScreen(
             Exercise.RESUME -> flashViewModel.resumeExercise(section)
         }
     }
+
+    val shownWordSize by flashViewModel.shownWordSize(section).collectAsState()
+
     val context = LocalContext.current
     when (val shuffledWords = flashViewModel.shuffledWords.collectAsState().value) {
         is UiState.Error -> {
@@ -105,7 +108,7 @@ fun FlashScreen(
                 },
                 currentIndex = index,
                 lastIndex = list.lastIndex,
-                i = flashViewModel.wordsShownCount.intValue,
+                shownWordState = shownWordSize,
                 configuration = configuration
             )
             BackHandler {
@@ -263,7 +266,7 @@ private fun FlashContent(
     currentIndex: Int,
     lastIndex: Int,
     onDefinitionClicked: () -> Unit,
-    i: Int,
+    shownWordState: UiState<Int>,
     configuration: Configuration
 ) {
     Scaffold(modifier = modifier) {
@@ -275,7 +278,13 @@ private fun FlashContent(
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
         ) {
-            //            Text(text = "${i}")
+//            when (shownWordState) {
+//                is UiState.Success -> {
+//                    Text(text = "${shownWordState.data}")
+//
+//                }
+//                else -> {}
+//            }
 //            LinearProgressIndicator(
 //                modifier = Modifier.fillMaxWidth(),
 //                progress = {  },
@@ -340,7 +349,7 @@ private fun FlashContentPreview() {
             currentIndex = 0,
             lastIndex = 1,
             onDefinitionClicked = {},
-            i = 1,
+            shownWordState = UiState.Success(1),
             configuration = configuration,
         )
     }
