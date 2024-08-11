@@ -9,6 +9,7 @@ import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.ui.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -25,7 +26,7 @@ class HomeViewModel @Inject constructor(
         get() = _wordOfTheDay.asStateFlow()
 
     fun getWordOfTheDay() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             // Trigger the flow and consume its elements using collect
             mainRepository.wordOfTheDay().collect { word ->
                 _wordOfTheDay.value = UiState.Success(word)
@@ -34,8 +35,7 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    fun setRate(newRate: Float) = mainRepository.updateRate(newRate)
-    fun speak(text: String) = mainRepository.speak(text)
+     fun speak(text: String) = mainRepository.speak(text)
 
     private val _listOfSection: MutableStateFlow<UiState<List<SectionData>>> =
         MutableStateFlow(UiState.Loading)
@@ -43,7 +43,7 @@ class HomeViewModel @Inject constructor(
         get() = _listOfSection.asStateFlow()
 
     fun getListOfSection() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mainRepository.sectionInDB().collect { data ->
                 _listOfSection.value = UiState.Success(data)
             }
