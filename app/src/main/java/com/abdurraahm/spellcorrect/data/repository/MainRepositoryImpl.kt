@@ -107,21 +107,7 @@ class MainRepositoryImpl @Inject constructor(
         emit(shuffledList)
     }
 
-    /**
-     * Collection.rotate but my implementation
-     *
-     * var shuffledList = list.shuffled(randomSeeded)
-     *
-     * val firstHalf = shuffledList.subList(0, lastIndex - 1)
-     *
-     * val secondHalf = shuffledList.subList(lastIndex, shuffledList.lastIndex)
-     *
-     * shuffledList = secondHalf + firstHalf
-     *
-     * val lastIndexed = progressDataStore.getLastIndexed(section).first()
-     *
-     * Collections.rotate(shuffledList, -lastIndexed)
-     */
+
     override fun exerciseResume(section: Section): Flow<List<WordEntry>> = flow {
         val seed = progressDataStore.getLastSeed(section).first()
         val randomSeeded = Random(seed)
@@ -183,3 +169,19 @@ class MainRepositoryImpl @Inject constructor(
         sectionDataDao.updateSectionData(sectionData)
     }
 }
+
+/**
+ * Collection.rotate but my implementation
+ *
+ * var shuffledList = list.shuffled(randomSeeded)
+ *
+ * val firstHalf = shuffledList.subList(0, lastIndex - 1)
+ *
+ * val secondHalf = shuffledList.subList(lastIndex, shuffledList.lastIndex)
+ *
+ * shuffledList = secondHalf + firstHalf
+ *
+ * val lastIndexed = progressDataStore.getLastIndexed(section).first()
+ *
+ * Collections.rotate(shuffledList, -lastIndexed)
+ */

@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -115,12 +116,26 @@ fun FlashScreen(
     }
 }
 
+fun Modifier.cardModifier(configuration: Configuration) = when (configuration.orientation) {
+    Configuration.ORIENTATION_LANDSCAPE -> {
+        this
+            .fillMaxWidth()
+            .fillMaxHeight(0.85f)
+    }
+
+    else -> {
+        this
+            .fillMaxWidth()
+            .fillMaxHeight(0.5f)
+    }
+}
+
 @Composable
 fun WordCard(
     modifier: Modifier = Modifier,
     columnModifier: Modifier = Modifier
         .padding(16.dp)
-        .fillMaxWidth(),
+        .fillMaxSize(),
     word: WordEntry,
     shape: RoundedCornerShape = RoundedCornerShape(5.dp),
     border: BorderStroke = BorderStroke(5.dp, Color(0xFF758694)),
@@ -132,15 +147,7 @@ fun WordCard(
     val controller = rememberFlipController()
 
     val flipController = remember { FlippableController() }
-    val fraction = when (configuration.orientation) {
-        Configuration.ORIENTATION_LANDSCAPE -> {
-            0.85f
-        }
 
-        else -> {
-            0.25f
-        }
-    }
 
     val fontSize = when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -172,8 +179,7 @@ fun WordCard(
                     containerColor = MaterialTheme.colorScheme.secondaryContainer
                 ),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(fraction),
+                    .cardModifier(configuration),
                 border = border,
                 content = {
                     Column(
@@ -206,8 +212,7 @@ fun WordCard(
                     containerColor = MaterialTheme.colorScheme.secondaryContainer
                 ),
                 modifier = modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(fraction),
+                    .cardModifier(configuration),
                 border = border,
                 content = {
                     Column(modifier = Modifier.padding(16.dp)) {
@@ -237,7 +242,7 @@ fun WordCard(
                                 .clickable {
                                     onDefinitionClicked()
                                 },
-                            text = word.definitionWithNumber, textAlign = TextAlign.Justify
+                            text = word.definitionWithNumber,
                         )
                     }
                 }
@@ -261,7 +266,6 @@ private fun FlashContent(
     i: Int,
     configuration: Configuration
 ) {
-
     Scaffold(modifier = modifier) {
         // Content
         Column(
@@ -269,9 +273,9 @@ private fun FlashContent(
                 .padding(it)
                 .padding(horizontal = 16.dp, vertical = 32.dp)
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.Center,
         ) {
-//            Text(text = "${i}")
+            //            Text(text = "${i}")
 //            LinearProgressIndicator(
 //                modifier = Modifier.fillMaxWidth(),
 //                progress = {  },
@@ -282,8 +286,9 @@ private fun FlashContent(
                 configuration = configuration,
                 onDefinitionClicked = onDefinitionClicked
             )
+            Spacer(modifier = modifier.padding(4.dp))
             Row(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxWidth(),
                 Arrangement.SpaceBetween
             ) {
                 IconButton(onClick = onBackButtonClicked) {
@@ -312,6 +317,7 @@ private fun FlashContent(
                     }
                 }
             }
+
         }
     }
 }

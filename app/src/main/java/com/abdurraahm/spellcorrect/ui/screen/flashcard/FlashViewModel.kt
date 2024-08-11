@@ -3,7 +3,9 @@ package com.abdurraahm.spellcorrect.ui.screen.flashcard
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.abdurraahm.spellcorrect.data.local.model.Section
+import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.ui.state.UiState
