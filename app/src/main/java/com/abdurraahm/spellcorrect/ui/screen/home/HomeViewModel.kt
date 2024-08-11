@@ -50,26 +50,8 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun updateSectionData(sectionData: SectionData) {
-        viewModelScope.launch {
-            mainRepository.updateSectionData(sectionData)
-        }
-    }
-
-    suspend fun databaseSize(): Int {
-        return mainRepository.totalSectionInDB()
-    }
-
     // Masalah asalnya dari
     // Realita != Idealita
     // Hipotesa
     // Pembuktian Hipotesa
-
-    fun startExercise(section: SectionData) {
-        mainRepository.exerciseStart(section = section.partSection)
-    }
-
-    fun resumeExercise(section: SectionData){
-        mainRepository.exerciseResume(section = section.partSection)
-    }
 }
