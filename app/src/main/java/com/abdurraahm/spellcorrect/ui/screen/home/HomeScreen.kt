@@ -29,7 +29,7 @@ import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.preview.PreviewDataSource
-import com.abdurraahm.spellcorrect.ui.component.DefaultBottomSheet
+import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomSheet
 import com.abdurraahm.spellcorrect.ui.component.SectionCard
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultBottomBar
 import com.abdurraahm.spellcorrect.ui.navigation.DefaultTopBar

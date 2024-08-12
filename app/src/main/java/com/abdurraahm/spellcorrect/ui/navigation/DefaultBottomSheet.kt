@@ -1,4 +1,4 @@
-package com.abdurraahm.spellcorrect.ui.component
+package com.abdurraahm.spellcorrect.ui.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,17 +14,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
+import com.abdurraahm.spellcorrect.ui.component.CustomButton
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun DefaultBottomSheet(
+    modifier: Modifier = Modifier,
     showBottomSheet: Boolean,
     title: String,
     onBottomSheetDismissRequest: () -> Unit,
-    buttonData: List<BottomSheetButtonData>
+    buttonData: List<BottomSheetButtonData>?
 ) {
     if (showBottomSheet) {
         ModalBottomSheet(
+            modifier = modifier,
             onDismissRequest = onBottomSheetDismissRequest,
             sheetState = rememberModalBottomSheetState(),
         ) {
@@ -39,7 +42,7 @@ fun DefaultBottomSheet(
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.headlineLarge
                 )
-                buttonData.forEach { data ->
+                buttonData?.forEach { data ->
                     CustomButton(onClick = data.onClick, text = data.text)
                 }
             }
