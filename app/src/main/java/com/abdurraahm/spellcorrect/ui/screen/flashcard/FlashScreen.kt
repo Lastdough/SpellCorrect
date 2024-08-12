@@ -39,6 +39,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -70,84 +72,123 @@ fun FlashScreen(
         when (Mode.entries[exerciseState]) {
             Mode.START -> flashViewModel.startExercise(section)
             Mode.RESUME -> flashViewModel.resumeExercise(section)
-            Mode.WORD -> { flashViewModel.displayWordOfTheDay() }
+            Mode.WORD -> flashViewModel.displayWordOfTheDay()
         }
     }
 
     val shownWordSize by flashViewModel.shownWordSize(section).collectAsState()
-
-    val context = LocalContext.current
     when (val shuffledWords = flashViewModel.shuffledWords.collectAsState().value) {
         is UiState.Error -> {}
-        UiState.Loading -> { CircularLoading() }
+        UiState.Loading -> CircularLoading()
         is UiState.Success -> {
-            val list = shuffledWords.data
-            val index = flashViewModel.lastIndex.intValue
-            val word = list[index]
+            ShuffleWordsFlash(
+                shuffledWords = shuffledWords,
+                flashViewModel = flashViewModel,
+                modifier = modifier,
+                section = section,
+                navController = navController,
+                shownWordSize = shownWordSize,
+                configuration = configuration
+            )
+        }
+        UiState.Empty -> {
+            WordOfTheDayFlash(
+                modifier = modifier,
+                navController = navController,
+                shownWordSize = shownWordSize,
+                configuration = configuration,
+                wordOfTheDayState = flashViewModel.wordOfTheDay.collectAsState().value,
+                onSpeakWord = flashViewModel::speak
+            )
+        }
+    }
+}
+
+@Composable
+private fun ShuffleWordsFlash(
+    shuffledWords: UiState.Success<List<WordEntry>>,
+    flashViewModel: FlashViewModel,
+    modifier: Modifier = Modifier,
+    section: Section,
+    navController: NavHostController,
+    shownWordSize: UiState<Int>,
+    configuration: Configuration
+) {
+    val list = shuffledWords.data
+    val index = flashViewModel.lastIndex.intValue
+    val word = list[index]
+    FlashContent(
+        modifier = modifier,
+        word = word,
+        onWordClicked = {
+            flashViewModel.speak(word.word)
+        },
+        onPreviousClicked = {
+            flashViewModel.previousLastIndexed(section)
+        },
+        onNextClicked = {
+            flashViewModel.nextLastIndexed(section)
+        },
+        onBackButtonClicked = {
+            navController.navigateUp()
+            flashViewModel.endExercise(section = section)
+        },
+        onDefinitionClicked = {
+            flashViewModel.speak(word.fullDescription)
+        },
+        currentIndex = index,
+        lastIndex = list.lastIndex,
+        shownWordState = shownWordSize,
+        configuration = configuration,
+        isAList = true
+    )
+    BackHandler {
+        navController.navigateUp()
+        flashViewModel.endExercise(section = section)
+        Log.d("Flash Screen", "FlashScreen: back in success")
+    }
+}
+
+@Composable
+private fun WordOfTheDayFlash(
+    modifier: Modifier = Modifier,
+    navController: NavHostController,
+    shownWordSize: UiState<Int>,
+    configuration: Configuration,
+    wordOfTheDayState: UiState<WordEntry>,
+    onSpeakWord: (String) -> Unit
+) {
+    when (wordOfTheDayState) {
+        UiState.Loading -> CircularLoading()
+        is UiState.Error -> {}
+        is UiState.Success -> {
             FlashContent(
                 modifier = modifier,
-                word = word,
+                word = wordOfTheDayState.data,
                 onWordClicked = {
-                    flashViewModel.speak(word.word)
+                    onSpeakWord(wordOfTheDayState.data.word)
                 },
-                onPreviousClicked = {
-                    flashViewModel.previousLastIndexed(section)
-                },
-                onNextClicked = {
-                    flashViewModel.nextLastIndexed(section)
-                },
+                onPreviousClicked = {},
+                onNextClicked = {},
                 onBackButtonClicked = {
                     navController.navigateUp()
-                    flashViewModel.endExercise(section = section)
                 },
                 onDefinitionClicked = {
-                    flashViewModel.speak(word.fullDescription)
+                    onSpeakWord(wordOfTheDayState.data.fullDescription)
                 },
-                currentIndex = index,
-                lastIndex = list.lastIndex,
+                currentIndex = 0,
+                lastIndex = 0,
                 shownWordState = shownWordSize,
-                configuration = configuration
+                configuration = configuration,
+                isAList = false
             )
             BackHandler {
                 navController.navigateUp()
-                flashViewModel.endExercise(section = section)
-                Log.d("Flash Screen", "FlashScreen: back in success")
+                Log.d("Flash Screen", "FlashScreen: back in empty")
             }
         }
 
-        UiState.Empty -> {
-            when (val wordOfTheDayState = flashViewModel.wordOfTheDay.collectAsState().value) {
-                UiState.Loading -> CircularLoading()
-                is UiState.Error -> {}
-                is UiState.Success -> {
-                    FlashContent(
-                        modifier = modifier,
-                        word = wordOfTheDayState.data,
-                        onWordClicked = {
-                            flashViewModel.speak(wordOfTheDayState.data.word)
-                        },
-                        onPreviousClicked = {},
-                        onNextClicked = {},
-                        onBackButtonClicked = {
-                            navController.navigateUp()
-                        },
-                        onDefinitionClicked = {
-                            flashViewModel.speak(wordOfTheDayState.data.fullDescription)
-                        },
-                        currentIndex = 0,
-                        lastIndex = 0,
-                        shownWordState = shownWordSize,
-                        configuration = configuration
-                    )
-                    BackHandler {
-                        navController.navigateUp()
-                        Log.d("Flash Screen", "FlashScreen: back in empty")
-                    }
-
-                }
-                UiState.Empty -> {}
-            }
-        }
+        UiState.Empty -> {}
     }
 }
 
@@ -162,6 +203,16 @@ fun Modifier.cardModifier(configuration: Configuration) = when (configuration.or
         this
             .fillMaxWidth()
             .fillMaxHeight(0.5f)
+    }
+}
+
+fun paddingHorizontal(configuration: Configuration) = when (configuration.orientation) {
+    Configuration.ORIENTATION_LANDSCAPE -> {
+        16.dp
+    }
+
+    else -> {
+        0.dp
     }
 }
 
@@ -194,18 +245,11 @@ fun WordCard(
         }
     }
 
-    val paddingHorizontal = when (configuration.orientation) {
-        Configuration.ORIENTATION_LANDSCAPE -> {
-            16.dp
-        }
 
-        else -> {
-            0.dp
-        }
-    }
 
     Flippable(
-        modifier = modifier.padding(horizontal = paddingHorizontal),
+        flipController = flipController,
+        modifier = modifier.padding(horizontal = paddingHorizontal(configuration)),
         flipOnTouch = true,
         frontSide = {
             Card(
@@ -282,7 +326,7 @@ fun WordCard(
                     }
                 }
             )
-        }, flipController = controller
+        }
     )
 }
 
@@ -297,6 +341,7 @@ private fun FlashContent(
     onBackButtonClicked: () -> Unit,
     currentIndex: Int,
     lastIndex: Int,
+    isAList: Boolean,
     onDefinitionClicked: () -> Unit,
     shownWordState: UiState<Int>,
     configuration: Configuration
@@ -310,17 +355,26 @@ private fun FlashContent(
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
         ) {
-//            when (shownWordState) {
-//                is UiState.Success -> {
-//                    Text(text = "${shownWordState.data}")
+            if (isAList) {
+//                when (shownWordState) {
+//                    is UiState.Success -> {
+//                        LinearProgressIndicator(
+//                            progress = {
+//                                shownWordState.data.toFloat() / lastIndex.toFloat()
+//                            },
+//                            modifier = Modifier
+//                                .padding(
+//                                    bottom = 16.dp,
+//                                    start = paddingHorizontal(configuration),
+//                                    end = paddingHorizontal(configuration)
+//                                )
+//                                .fillMaxWidth(),
+//                        )
+//                    }
 //
+//                    else -> {}
 //                }
-//                else -> {}
-//            }
-//            LinearProgressIndicator(
-//                modifier = Modifier.fillMaxWidth(),
-//                progress = {  },
-//            )
+            }
             WordCard(
                 word = word,
                 onWordClicked = onWordClicked,
@@ -339,22 +393,24 @@ private fun FlashContent(
                         contentDescription = null
                     )
                 }
-                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                    IconButton(onClick = onPreviousClicked, enabled = currentIndex > 0) {
-                        // Disable at first index
-                        Icon(
-                            modifier = Modifier.size(32.dp),
-                            imageVector = Icons.Outlined.SkipPrevious,
-                            contentDescription = null
-                        )
-                    }
-                    IconButton(onClick = onNextClicked, enabled = currentIndex < lastIndex) {
-                        // Disable at last index
-                        Icon(
-                            modifier = Modifier.size(32.dp),
-                            imageVector = Icons.Outlined.SkipNext,
-                            contentDescription = null
-                        )
+                if (isAList) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                        IconButton(onClick = onPreviousClicked, enabled = currentIndex > 0) {
+                            // Disable at first index
+                            Icon(
+                                modifier = Modifier.size(32.dp),
+                                imageVector = Icons.Outlined.SkipPrevious,
+                                contentDescription = null
+                            )
+                        }
+                        IconButton(onClick = onNextClicked, enabled = currentIndex < lastIndex) {
+                            // Disable at last index
+                            Icon(
+                                modifier = Modifier.size(32.dp),
+                                imageVector = Icons.Outlined.SkipNext,
+                                contentDescription = null
+                            )
+                        }
                     }
                 }
             }
@@ -363,13 +419,24 @@ private fun FlashContent(
     }
 }
 
+class IsAListProvider : PreviewParameterProvider<Boolean> {
+    override val values: Sequence<Boolean> = sequenceOf(true, false)
+}
+
 @Preview
-@Preview(
-    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape"
-)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(
+    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape",
+)
+@Preview(
+    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape",
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
 @Composable
-private fun FlashContentPreview() {
+private fun FlashContentPreview(
+    @PreviewParameter(IsAListProvider::class) isAList: Boolean
+) {
+
     SpellCorrectTheme {
         val configuration = LocalConfiguration.current
         FlashContent(
@@ -378,11 +445,12 @@ private fun FlashContentPreview() {
             onPreviousClicked = {},
             onNextClicked = {},
             onBackButtonClicked = {},
-            currentIndex = 0,
-            lastIndex = 1,
+            currentIndex = 1,
+            lastIndex = 5,
             onDefinitionClicked = {},
             shownWordState = UiState.Success(1),
             configuration = configuration,
+            isAList = isAList
         )
     }
 }
