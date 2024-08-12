@@ -3,6 +3,7 @@ package com.abdurraahm.spellcorrect.data.preview
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import com.abdurraahm.spellcorrect.R
+import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 
@@ -15,7 +16,8 @@ object PreviewDataSource {
                 "able to produce results that are correct : not making mistakes"
             ),
             type = "adjective",
-            ipa = "\u02c8\u00e6kj\u0259r\u0259t"
+            ipa = "\u02c8\u00e6kj\u0259r\u0259t",
+            section = Section.FIRST
         )
 
     @Composable

@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
-enum class Exercise {
+enum class Mode {
+    WORD,
     START,
     RESUME
 }

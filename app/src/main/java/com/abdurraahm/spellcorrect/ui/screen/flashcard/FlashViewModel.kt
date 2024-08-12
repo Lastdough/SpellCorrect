@@ -131,6 +131,23 @@ class FlashViewModel @Inject constructor(
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading
             )
+
+    val wordOfTheDay: StateFlow<UiState<WordEntry>> =
+        mainRepository.wordOfTheDay()
+            .map {
+                UiState.Success(it)
+            }
+            .flowOn(Dispatchers.IO)
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5000),
+                initialValue = UiState.Loading
+            )
+
+    fun displayWordOfTheDay() {
+        _shuffledWords.value = UiState.Empty
+    }
+
 }
 
 

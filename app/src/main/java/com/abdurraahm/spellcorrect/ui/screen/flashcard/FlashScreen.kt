@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect.ui.screen.flashcard
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
@@ -42,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.abdurraahm.spellcorrect.data.local.model.Exercise
+import com.abdurraahm.spellcorrect.data.local.model.Mode
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.preview.PreviewDataSource
@@ -66,9 +67,10 @@ fun FlashScreen(
 
     LaunchedEffect(Unit) {
         flashViewModel.init(section)
-        when (Exercise.entries[exerciseState]) {
-            Exercise.START -> flashViewModel.startExercise(section)
-            Exercise.RESUME -> flashViewModel.resumeExercise(section)
+        when (Mode.entries[exerciseState]) {
+            Mode.START -> flashViewModel.startExercise(section)
+            Mode.RESUME -> flashViewModel.resumeExercise(section)
+            Mode.WORD -> { flashViewModel.displayWordOfTheDay() }
         }
     }
 
@@ -76,13 +78,8 @@ fun FlashScreen(
 
     val context = LocalContext.current
     when (val shuffledWords = flashViewModel.shuffledWords.collectAsState().value) {
-        is UiState.Error -> {
-        }
-
-        UiState.Loading -> {
-            CircularLoading()
-        }
-
+        is UiState.Error -> {}
+        UiState.Loading -> { CircularLoading() }
         is UiState.Success -> {
             val list = shuffledWords.data
             val index = flashViewModel.lastIndex.intValue
@@ -114,6 +111,41 @@ fun FlashScreen(
             BackHandler {
                 navController.navigateUp()
                 flashViewModel.endExercise(section = section)
+                Log.d("Flash Screen", "FlashScreen: back in success")
+            }
+        }
+
+        UiState.Empty -> {
+            when (val wordOfTheDayState = flashViewModel.wordOfTheDay.collectAsState().value) {
+                UiState.Loading -> CircularLoading()
+                is UiState.Error -> {}
+                is UiState.Success -> {
+                    FlashContent(
+                        modifier = modifier,
+                        word = wordOfTheDayState.data,
+                        onWordClicked = {
+                            flashViewModel.speak(wordOfTheDayState.data.word)
+                        },
+                        onPreviousClicked = {},
+                        onNextClicked = {},
+                        onBackButtonClicked = {
+                            navController.navigateUp()
+                        },
+                        onDefinitionClicked = {
+                            flashViewModel.speak(wordOfTheDayState.data.fullDescription)
+                        },
+                        currentIndex = 0,
+                        lastIndex = 0,
+                        shownWordState = shownWordSize,
+                        configuration = configuration
+                    )
+                    BackHandler {
+                        navController.navigateUp()
+                        Log.d("Flash Screen", "FlashScreen: back in empty")
+                    }
+
+                }
+                UiState.Empty -> {}
             }
         }
     }

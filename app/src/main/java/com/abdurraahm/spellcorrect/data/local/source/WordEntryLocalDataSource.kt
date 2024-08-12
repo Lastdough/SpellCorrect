@@ -38,7 +38,11 @@ class WordEntryLocalDataSource @Inject constructor(
     }
 
     val mergedSection: Flow<List<WordEntry>> = flow {
-        val mergedSection = Section.entries.flatMap { sectionEntry(it).first() }
+        val mergedSection = Section.entries.flatMap { section ->
+            sectionEntry(section).first().map { wordEntry ->
+                wordEntry.copy(section = section) // Add section field here
+            }
+        }
         emit(mergedSection)
     }
 
@@ -47,6 +51,9 @@ class WordEntryLocalDataSource @Inject constructor(
         val entries = sectionJsonStrings[section]?.run {
             Gson().fromJson(this, listType)
         } ?: emptyList<WordEntry>()
+        entries.map { wordEntry ->
+            wordEntry.copy(section = section)
+        }
         emit(entries)
     }
 }

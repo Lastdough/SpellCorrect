@@ -4,7 +4,8 @@ data class WordEntry(
     val word: String,
     val definition: List<String>,
     val type: String,
-    val ipa: String
+    val ipa: String,
+    val section: Section
 ) {
     private fun String.capitalizeFirstLetter() =
         if (isNotEmpty()) substring(0, 1).uppercase() + substring(1) else this

@@ -50,11 +50,11 @@ fun SpellCorrectApp(
             route = Screen.FlashScreen.route,
             arguments = listOf(
                 navArgument("sectionId") { type = NavType.IntType },
-                navArgument("exerciseState") { type = NavType.IntType },
+                navArgument("mode") { type = NavType.IntType },
             ),
         ) {
             val sectionId = it.arguments?.getInt("sectionId") ?: 0
-            val exerciseState = it.arguments?.getInt("exerciseState") ?: 0
+            val exerciseState = it.arguments?.getInt("mode") ?: 0
             FlashScreen(
                 navController = navController,
                 sectionId = sectionId,

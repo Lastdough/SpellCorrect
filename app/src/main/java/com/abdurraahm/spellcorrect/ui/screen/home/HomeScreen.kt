@@ -24,7 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
-import com.abdurraahm.spellcorrect.data.local.model.Exercise
+import com.abdurraahm.spellcorrect.data.local.model.Mode
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
@@ -56,9 +56,19 @@ fun HomeScreen(
                 navController = navController,
                 wordOfTheDay = wordOfTheDayState.data,
                 listOfSection = listOfSectionState,
+                onWordOfTheDayExerciseClicked = {
+                    navController.navigate(
+                        Screen.FlashScreen.createRoute(
+                            mode = Mode.WORD.ordinal,
+                            sectionId = wordOfTheDayState.data.section.ordinal,
+                        )
+                    )
+                },
                 onSpeakWord = homeViewModel::speak // Pass the speak function
             )
         }
+
+        UiState.Empty -> TODO()
     }
 }
 
@@ -68,6 +78,7 @@ private fun HomeContent(
     navController: NavHostController,
     wordOfTheDay: WordEntry,
     listOfSection: UiState<List<SectionData>>,
+    onWordOfTheDayExerciseClicked: () -> Unit,
     onSpeakWord: (String) -> Unit
 ) {
     var showWordOfTheDayBottomSheet by remember { mutableStateOf(false) }
@@ -127,6 +138,8 @@ private fun HomeContent(
                         CircularLoading()
                     }
                 }
+
+                UiState.Empty -> TODO()
             }
         }
     }
@@ -137,8 +150,11 @@ private fun HomeContent(
         onBottomSheetDismissRequest = { showWordOfTheDayBottomSheet = false },
         title = "Today Word Of The Day\n${wordOfTheDay.wordFirstLetterCapitalized}",
         buttonData = listOf(
-            BottomSheetButtonData("More Detail") { onSpeakWord(wordOfTheDay.fullDescription) },
-            BottomSheetButtonData("Exercise") { /* Second button action */ },
+            BottomSheetButtonData("Description") { onSpeakWord(wordOfTheDay.fullDescription) },
+            BottomSheetButtonData("Exercise", onClick = {
+                showWordOfTheDayBottomSheet = false
+                onWordOfTheDayExerciseClicked()
+            }),
             BottomSheetButtonData("Review") { /* Third button action */ }
         )
     )
@@ -162,12 +178,11 @@ private fun HomeContent(
             }
         }
 
-        is UiState.Error -> {
-        }
-
+        is UiState.Error -> {}
         UiState.Loading -> {
             CircularLoading()
         }
+        UiState.Empty -> TODO()
     }
 }
 
@@ -184,7 +199,7 @@ private fun sectionBottomSheetButtonData(
             navController.navigate(
                 Screen.FlashScreen.createRoute(
                     sectionId = section.id,
-                    exerciseState = Exercise.START.ordinal
+                    mode = Mode.START.ordinal
                 )
             )
         })
@@ -194,7 +209,7 @@ private fun sectionBottomSheetButtonData(
             navController.navigate(
                 Screen.FlashScreen.createRoute(
                     sectionId = section.id,
-                    exerciseState = Exercise.START.ordinal
+                    mode = Mode.START.ordinal
                 )
             )
         })
@@ -204,7 +219,7 @@ private fun sectionBottomSheetButtonData(
             navController.navigate(
                 Screen.FlashScreen.createRoute(
                     sectionId = section.id,
-                    exerciseState = Exercise.RESUME.ordinal
+                    mode = Mode.RESUME.ordinal
                 )
             )
         })
@@ -215,7 +230,7 @@ private fun sectionBottomSheetButtonData(
             navController.navigate(
                 Screen.FlashScreen.createRoute(
                     sectionId = section.id,
-                    exerciseState = Exercise.START.ordinal
+                    mode = Mode.START.ordinal
                 )
             )
         })
@@ -232,7 +247,8 @@ private fun HomeContentPreview() {
             wordOfTheDay = PreviewDataSource.singleWord(),
             listOfSection = UiState.Success(PreviewDataSource.section().take(3)),
             navController = rememberNavController(),
-            onSpeakWord = {}
+            onSpeakWord = {},
+            onWordOfTheDayExerciseClicked = {}
         )
     }
 }
