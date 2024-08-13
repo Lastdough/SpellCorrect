@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -39,7 +40,9 @@ class HomeViewModel @Inject constructor(
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading
             )
-    fun speak(text: String) = mainRepository.speak(text)
+    fun speak(text: String) = viewModelScope.launch(Dispatchers.IO) {
+        mainRepository.speak(text)
+    }
 }
 // Masalah asalnya dari
 // Realita != Idealita
