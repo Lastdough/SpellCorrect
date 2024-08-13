@@ -16,6 +16,9 @@ import com.abdurraahm.spellcorrect.ui.screen.home.HomeScreen
 import com.abdurraahm.spellcorrect.ui.screen.more.MoreScreen
 import com.abdurraahm.spellcorrect.ui.screen.onboarding.OnBoardingScreen
 import com.abdurraahm.spellcorrect.ui.screen.review.ReviewScreen
+import com.abdurraahm.spellcorrect.ui.screen.review.listening.ListeningScreen
+import com.abdurraahm.spellcorrect.ui.screen.review.result.ResultScreen
+import com.abdurraahm.spellcorrect.ui.screen.review.speaking.SpeakingScreen
 
 @Composable
 fun SpellCorrectApp(
@@ -37,15 +40,19 @@ fun SpellCorrectApp(
                 }
             )
         }
+
         composable(Screen.Home.route) {
             HomeScreen(navController = navController)
         }
+
         composable(Screen.Review.route) {
             ReviewScreen(navController = navController)
         }
+
         composable(Screen.More.route) {
             MoreScreen(navController = navController)
         }
+
         composable(
             route = Screen.FlashScreen.route,
             arguments = listOf(
@@ -59,6 +66,41 @@ fun SpellCorrectApp(
                 navController = navController,
                 sectionId = sectionId,
                 exerciseState = exerciseState
+            )
+        }
+
+        composable(
+            route = Screen.Speaking.route,
+            arguments = listOf(
+                navArgument("sectionId") { type = NavType.IntType }
+            )
+        ) {
+            val sectionId = it.arguments?.getInt("sectionId") ?: 0
+            SpeakingScreen(navController = navController, sectionId = sectionId)
+        }
+
+        composable(
+            route = Screen.Listening.route,
+            arguments = listOf(
+                navArgument("sectionId") { type = NavType.IntType }
+            )
+        ) {
+            val sectionId = it.arguments?.getInt("sectionId") ?: 0
+            ListeningScreen(navController = navController, sectionId = sectionId)
+        }
+
+        composable(Screen.Result.route,
+            arguments = listOf(
+                navArgument("correctAnswers") { type = NavType.IntType },
+                navArgument("totalQuestions") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+            val correctAnswers = backStackEntry.arguments?.getInt("correctAnswers") ?: 0
+            val totalQuestions = backStackEntry.arguments?.getInt("totalQuestions") ?: 10
+            ResultScreen(
+                navController = navController,
+                correctAnswers = correctAnswers,
+                totalQuestions = totalQuestions,
             )
         }
     }
