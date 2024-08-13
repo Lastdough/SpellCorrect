@@ -37,7 +37,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -217,7 +216,7 @@ fun paddingHorizontal(configuration: Configuration) = when (configuration.orient
 }
 
 @Composable
-fun WordCard(
+fun FlashCard(
     modifier: Modifier = Modifier,
     columnModifier: Modifier = Modifier
         .padding(16.dp)
@@ -375,7 +374,7 @@ private fun FlashContent(
 //                    else -> {}
 //                }
             }
-            WordCard(
+            FlashCard(
                 word = word,
                 onWordClicked = onWordClicked,
                 configuration = configuration,
