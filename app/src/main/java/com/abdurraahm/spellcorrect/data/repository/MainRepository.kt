@@ -37,8 +37,8 @@ interface MainRepository {
     fun getLastIndexed(section: Section): Flow<Int>
     suspend fun saveLastIndexed(index: Int, section: Section)
 
-    fun reviewType(section: Section): List<WordEntry>
-    fun reviewListen(section: Section): List<WordEntry>
+    fun reviewSpeak(section: Section): Flow<List<WordEntry>>
+    fun reviewListen(section: Section): Flow<List<WordEntry>>
 
     // Room Database
     fun totalSectionInDB(): Int

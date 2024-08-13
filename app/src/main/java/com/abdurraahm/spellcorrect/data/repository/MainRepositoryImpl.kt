@@ -145,12 +145,27 @@ class MainRepositoryImpl @Inject constructor(
         progressDataStore.saveLastIndexed(index = currentIndex, section = section)
 
 
-    override fun reviewType(section: Section): List<WordEntry> {
-        TODO("Not yet implemented")
+    override fun reviewSpeak(section: Section): Flow<List<WordEntry>> = flow {
+//        val seed = progressDataStore.getLastSeed(section).first()
+//        if (seed == 0L){
+//            seed = seedGenerator.generate()
+//            progressDataStore.saveSeed(seed = seed, section = section)
+//        }
+        val seed = seedGenerator.generate()
+        val randomSeeded = Random(seed)
+        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val shuffledWords = list.shuffled(randomSeeded)
+        val random10Words = shuffledWords.filter { word -> word.word.length > 5 }.take(10)
+        emit(random10Words)
     }
 
-    override fun reviewListen(section: Section): List<WordEntry> {
-        TODO("Not yet implemented")
+    override fun reviewListen(section: Section): Flow<List<WordEntry>> = flow {
+        val seed = seedGenerator.generate()
+        val randomSeeded = Random(seed)
+        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val shuffledWords = list.shuffled(randomSeeded)
+        val random10Words = shuffledWords.take(10)
+        emit(random10Words)
     }
 
     // Room Database
