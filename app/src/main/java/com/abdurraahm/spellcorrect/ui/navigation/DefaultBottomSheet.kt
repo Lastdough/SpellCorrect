@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.abdurraahm.spellcorrect.data.local.model.BottomSheetButtonData
-import com.abdurraahm.spellcorrect.ui.component.CustomButton
+import com.abdurraahm.spellcorrect.ui.component.PrimaryButton
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,7 +43,7 @@ fun DefaultBottomSheet(
                     style = MaterialTheme.typography.headlineLarge
                 )
                 buttonData?.forEach { data ->
-                    CustomButton(onClick = data.onClick, text = data.text)
+                    PrimaryButton(onClick = data.onClick, text = data.text)
                 }
             }
         }
