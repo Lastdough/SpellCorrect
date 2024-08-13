@@ -1,5 +1,7 @@
 package com.abdurraahm.spellcorrect.di
 
+import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.speech.tts.TextToSpeech
 import androidx.room.Room
@@ -12,10 +14,12 @@ import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.repository.MainRepository
 import com.abdurraahm.spellcorrect.data.repository.MainRepositoryImpl
 import com.abdurraahm.spellcorrect.data.service.SeedGenerator
+import com.abdurraahm.spellcorrect.data.service.SpeechToTextManager
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -56,6 +60,27 @@ object AppModule {
         @ApplicationContext context: Context
     ): ProgressDataStore = ProgressDataStore(context)
 
+    @Provides
+    @ApplicationContext
+    fun provideApplication(application: Application): Application {
+        return application
+    }
+
+    @Provides
+    @ActivityContext
+    fun provideActivity(activity: Activity): Activity {
+        return activity
+    }
+
+    @Provides
+    @Singleton
+    @ApplicationContext
+    fun provideSpeechToTextManager(
+        @ApplicationContext application: Application
+    ): SpeechToTextManager {
+        return SpeechToTextManager(application)
+    }
+
 
     @Provides
     @Singleton
@@ -66,6 +91,7 @@ object AppModule {
         navigationDataStore: NavigationDataStore,
         progressDataStore: ProgressDataStore,
         ttsService: TextToSpeechService,
+        speechToTextManager: SpeechToTextManager,
         sectionDataDao: SectionDataDao,
         seedGenerator: SeedGenerator
     ): MainRepository {
@@ -77,7 +103,8 @@ object AppModule {
             ttsService = ttsService,
             sectionDataDao = sectionDataDao,
             seedGenerator = seedGenerator,
-            progressDataStore = progressDataStore
+            progressDataStore = progressDataStore,
+            speechToTextManager = speechToTextManager
         )
     }
 }

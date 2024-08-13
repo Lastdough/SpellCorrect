@@ -4,10 +4,14 @@ import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
+import com.abdurraahm.spellcorrect.data.service.SpeechToTextManager
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 
 interface MainRepository {
+    // Speech To Text
+    fun speechToTextManager(): SpeechToTextManager
+
     // Text To Speech
     fun startTextToSpeech()
     fun stopTextToSpeech()

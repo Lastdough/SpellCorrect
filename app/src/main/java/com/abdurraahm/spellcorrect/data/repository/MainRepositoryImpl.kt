@@ -13,6 +13,7 @@ import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.store.ProgressDataStore
 import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.SeedGenerator
+import com.abdurraahm.spellcorrect.data.service.SpeechToTextManager
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -37,8 +38,13 @@ class MainRepositoryImpl @Inject constructor(
     private val progressDataStore: ProgressDataStore,
     private val ttsService: TextToSpeechService,
     private val sectionDataDao: SectionDataDao,
-    private val seedGenerator: SeedGenerator
+    private val seedGenerator: SeedGenerator,
+    private val speechToTextManager: SpeechToTextManager
 ) : MainRepository {
+    // Speech To Text
+    override fun speechToTextManager() =
+        speechToTextManager
+
     // Text To Speech
     override fun startTextToSpeech() {
         val intent = Intent(context, TextToSpeechService::class.java)
