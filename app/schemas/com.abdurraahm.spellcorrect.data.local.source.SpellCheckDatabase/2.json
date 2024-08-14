@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "f449268b97e12a3d0a51fc0022a6ff08",
+    "identityHash": "8178c9649e9a64bdc62249189eac2281",
     "entities": [
       {
         "tableName": "section_table",
@@ -41,12 +41,56 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "word_entry",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word` TEXT NOT NULL, `definition` TEXT NOT NULL, `type` TEXT NOT NULL, `ipa` TEXT NOT NULL, `section` TEXT NOT NULL, PRIMARY KEY(`word`))",
+        "fields": [
+          {
+            "fieldPath": "word",
+            "columnName": "word",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "definition",
+            "columnName": "definition",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ipa",
+            "columnName": "ipa",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "section",
+            "columnName": "section",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "word"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f449268b97e12a3d0a51fc0022a6ff08')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8178c9649e9a64bdc62249189eac2281')"
     ]
   }
 }
