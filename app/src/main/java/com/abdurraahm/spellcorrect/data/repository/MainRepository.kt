@@ -36,7 +36,6 @@ interface MainRepository {
     suspend fun previousLastIndexed(section: Section)
     fun getLastIndexed(section: Section): Flow<Int>
     suspend fun saveLastIndexed(index: Int, section: Section)
-
     fun reviewSpeak(section: Section): Flow<List<WordEntry>>
     fun reviewListen(section: Section): Flow<List<WordEntry>>
 

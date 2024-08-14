@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
+import com.abdurraahm.spellcorrect.data.local.dao.WordEntryDao
 import com.abdurraahm.spellcorrect.data.local.model.Section
 import com.abdurraahm.spellcorrect.data.local.model.SectionData
 import com.abdurraahm.spellcorrect.data.local.model.WordEntry
@@ -39,7 +40,8 @@ class MainRepositoryImpl @Inject constructor(
     private val ttsService: TextToSpeechService,
     private val sectionDataDao: SectionDataDao,
     private val seedGenerator: SeedGenerator,
-    private val speechToTextManager: SpeechToTextManager
+    private val speechToTextManager: SpeechToTextManager,
+    private val wordEntryDao: WordEntryDao
 ) : MainRepository {
     // Speech To Text
     override fun speechToTextManager() =
@@ -86,7 +88,7 @@ class MainRepositoryImpl @Inject constructor(
     // Word Entry
     override fun wordOfTheDay(): Flow<WordEntry> = flow {
         // Collect the list once
-        val wordList = wordEntryLocalDataSource.mergedSection.first()
+        val wordList = wordEntryDao.wordEntryInDB().first()
         while (true) {
             val randomSeeded = Random(seedGenerator.generateDaily())
             val wordOfTheDayIndex = wordList.indices.random(randomSeeded)
@@ -96,7 +98,7 @@ class MainRepositoryImpl @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
     override fun getSectionListSize(section: Section) = flow {
-        emit(wordEntryLocalDataSource.sectionEntry(section).first().size)
+        emit(wordEntryDao.wordEntryBySectionSize(section).first())
     }
 
     override fun exerciseSpecific(word: String, section: Section): WordEntry {
@@ -108,7 +110,7 @@ class MainRepositoryImpl @Inject constructor(
         progressDataStore.saveSeed(seed = seed, section = section)
         progressDataStore.saveLastIndexed(index = 0, section = section)
         val randomSeeded = Random(seed)
-        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val list = wordEntryDao.wordEntryBySection(section).first()
         val shuffledList = list.shuffled(randomSeeded)
         emit(shuffledList)
     }
@@ -117,7 +119,7 @@ class MainRepositoryImpl @Inject constructor(
     override fun exerciseResume(section: Section): Flow<List<WordEntry>> = flow {
         val seed = progressDataStore.getLastSeed(section).first()
         val randomSeeded = Random(seed)
-        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val list = wordEntryDao.wordEntryBySection(section).first()
         val shuffledList = list.shuffled(randomSeeded)
         emit(shuffledList)
     }
@@ -153,7 +155,7 @@ class MainRepositoryImpl @Inject constructor(
 //        }
         val seed = seedGenerator.generate()
         val randomSeeded = Random(seed)
-        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val list = wordEntryDao.wordEntryBySection(section).first()
         val shuffledWords = list.shuffled(randomSeeded)
         val random10Words = shuffledWords.filter { word -> word.word.length > 5 }.take(10)
         emit(random10Words)
@@ -162,7 +164,7 @@ class MainRepositoryImpl @Inject constructor(
     override fun reviewListen(section: Section): Flow<List<WordEntry>> = flow {
         val seed = seedGenerator.generate()
         val randomSeeded = Random(seed)
-        val list = wordEntryLocalDataSource.sectionEntry(section).first()
+        val list = wordEntryDao.wordEntryBySection(section).first()
         val shuffledWords = list.shuffled(randomSeeded)
         val random10Words = shuffledWords.take(10)
         emit(random10Words)

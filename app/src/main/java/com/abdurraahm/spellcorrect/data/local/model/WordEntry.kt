@@ -1,6 +1,12 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "word_entry")
 data class WordEntry(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
     val word: String,
     val definition: List<String>,
     val type: String,
