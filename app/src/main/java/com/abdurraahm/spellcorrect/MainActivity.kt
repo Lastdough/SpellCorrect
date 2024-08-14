@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -37,6 +38,11 @@ class MainActivity : ComponentActivity() {
 
         lifecycleScope.launch {
             mainViewModel.onboardingCompletedState.collect { completed ->
+                if(!completed){
+                    mainViewModel.initDB()
+                    Log.d(TAG, "initDB()")
+                }
+
                 // splash screen false once state is known
                 keepSplashScreen = false
                 setContent {
@@ -76,6 +82,7 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val AUDIO_PERMISSION = android.Manifest.permission.RECORD_AUDIO
+        val TAG = "Main Activity"
     }
 }
 

@@ -40,6 +40,7 @@ interface MainRepository {
     fun reviewListen(section: Section): Flow<List<WordEntry>>
 
     // Room Database
+    suspend fun initDB(): Result<Boolean>
     fun totalSectionInDB(): Int
     fun sectionInDB(): Flow<List<SectionData>>
     fun getSectionDataById(id: Int): Flow<SectionData>

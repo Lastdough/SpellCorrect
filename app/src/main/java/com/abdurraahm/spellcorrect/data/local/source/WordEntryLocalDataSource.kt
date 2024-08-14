@@ -7,9 +7,6 @@ import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flow
 import java.io.IOException
 import java.util.Locale
 import javax.inject.Inject
@@ -37,16 +34,16 @@ class WordEntryLocalDataSource @Inject constructor(
         }
     }
 
-    val mergedSection: Flow<List<WordEntry>> = flow {
-        val mergedSection = Section.entries.flatMap { section ->
-            sectionEntry(section).first().map { wordEntry ->
-                wordEntry.copy(section = section) // Add section field here
+    fun mergedSectionDirect(): List<WordEntry> {
+        val list = Section.entries.flatMap { section ->
+            sectionEntryDirect(section).map { wordEntry ->
+                wordEntry.copy(section = section)
             }
         }
-        emit(mergedSection)
+        return list
     }
 
-    fun sectionEntry(section: Section): Flow<List<WordEntry>> = flow {
+    private fun sectionEntryDirect(section: Section): List<WordEntry> {
         val listType = object : TypeToken<List<WordEntry>>() {}.type
         val entries = sectionJsonStrings[section]?.run {
             Gson().fromJson(this, listType)
@@ -54,6 +51,6 @@ class WordEntryLocalDataSource @Inject constructor(
         entries.map { wordEntry ->
             wordEntry.copy(section = section)
         }
-        emit(entries)
+        return entries
     }
 }

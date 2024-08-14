@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
 import com.abdurraahm.spellcorrect.data.local.dao.WordEntryDao
 import com.abdurraahm.spellcorrect.data.local.model.Section
@@ -25,6 +26,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.withContext
 import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -171,6 +173,22 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     // Room Database
+    override suspend fun initDB(): Result<Boolean> = withContext(Dispatchers.IO) {
+        try {
+            wordEntryLocalDataSource.mergedSectionDirect().let { wordEntries ->
+                wordEntryDao.insertWordEntryList(wordEntries)
+            }
+            Log.d(TAG, "initDB: Success")
+            return@withContext Result.success(true)
+        } catch (exception: Exception) {
+            Log.e(
+                TAG,
+                exception.localizedMessage ?: "failed to pre-populate users into database"
+            )
+            return@withContext Result.failure(exception)
+        }
+    }
+
     override fun totalSectionInDB() =
         sectionDataDao.totalSectionInDB()
 
@@ -190,6 +208,10 @@ class MainRepositoryImpl @Inject constructor(
             shownWord = newShownWordSet
         )
         sectionDataDao.updateSectionData(sectionData)
+    }
+
+    companion object {
+        val TAG = "MainRepositoryImpl"
     }
 }
 
