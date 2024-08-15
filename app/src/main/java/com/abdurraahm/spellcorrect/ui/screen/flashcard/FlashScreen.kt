@@ -354,7 +354,7 @@ private fun FlashContent(
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
         ) {
-            if (isAList) {
+//            if (isAList) {
 //                when (shownWordState) {
 //                    is UiState.Success -> {
 //                        LinearProgressIndicator(
@@ -373,7 +373,7 @@ private fun FlashContent(
 //
 //                    else -> {}
 //                }
-            }
+//            }
             FlashCard(
                 word = word,
                 onWordClicked = onWordClicked,

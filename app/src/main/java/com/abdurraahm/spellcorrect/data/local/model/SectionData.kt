@@ -3,7 +3,6 @@ package com.abdurraahm.spellcorrect.data.local.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
 
 @Entity(tableName = "section_table")
 data class SectionData(

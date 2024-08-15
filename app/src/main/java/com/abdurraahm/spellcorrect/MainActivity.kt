@@ -85,7 +85,7 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val AUDIO_PERMISSION = android.Manifest.permission.RECORD_AUDIO
-        val TAG = "Main Activity saya"
+        const val TAG = "Main Activity saya"
     }
 }
 

@@ -13,7 +13,6 @@ import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
 import com.abdurraahm.spellcorrect.data.local.store.ProgressDataStore
-import com.abdurraahm.spellcorrect.data.local.store.WordEntryDataStore
 import com.abdurraahm.spellcorrect.data.service.SeedGenerator
 import com.abdurraahm.spellcorrect.data.service.SpeechToTextManager
 import com.abdurraahm.spellcorrect.data.service.TextToSpeechService
@@ -37,7 +36,6 @@ import kotlin.random.Random
 class MainRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context,
     private val wordEntryLocalDataSource: WordEntryLocalDataSource,
-    private val wordEntryDataStore: WordEntryDataStore,
     private val navigationDataStore: NavigationDataStore,
     private val progressDataStore: ProgressDataStore,
     private val ttsService: TextToSpeechService,
@@ -214,7 +212,7 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     companion object {
-        val TAG = "MainRepositoryImpl"
+        const val TAG = "MainRepositoryImpl"
     }
 }
 
