@@ -175,7 +175,7 @@ private fun ListeningContent(
     Scaffold(modifier = modifier,
         topBar = {
             ProgressTopBar(progress = progress) {
-
+                showConfirmationDialogState(true)
             }
         },
         bottomBar = { }
