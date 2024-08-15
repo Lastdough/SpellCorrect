@@ -44,8 +44,6 @@ object AppModule {
         SpellCheckDatabase::class.java,
         "spell_check_db")
         .createFromAsset("database/section.db")
-        .addMigrations(SpellCheckDatabase.MIGRATION_1_2)
-        .addMigrations(SpellCheckDatabase.MIGRATION_2_3)
         .build()
 
     @Provides

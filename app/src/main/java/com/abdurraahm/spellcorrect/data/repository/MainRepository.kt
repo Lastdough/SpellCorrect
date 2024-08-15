@@ -42,6 +42,7 @@ interface MainRepository {
     // Room Database
     suspend fun initDB(): Result<Boolean>
     fun totalSectionInDB(): Int
+    fun isDBEmpty(): Flow<Boolean>
     fun sectionInDB(): Flow<List<SectionData>>
     fun getSectionDataById(id: Int): Flow<SectionData>
     suspend fun updateSectionDataId(sectionId: Int, newProgress: Float, newShownWordSet: Set<Int>)

@@ -14,7 +14,7 @@ import com.abdurraahm.spellcorrect.data.local.model.SectionData
 
 @Database(
     entities = [SectionData::class, WordEntry::class],
-    version = 3,
+    version = 1,
     exportSchema = true
 )
 @TypeConverters(StringListConverter::class, IntSetConverter::class)
@@ -27,16 +27,6 @@ abstract class SpellCheckDatabase : RoomDatabase() {
             override fun migrate(db: SupportSQLiteDatabase) {
                 db.execSQL(
                     """
-                    ALTER TABLE section_table 
-                    ADD COLUMN last_updated INTEGER NOT NULL DEFAULT 0
-                """.trimIndent()
-                )
-            }
-        }
-        val MIGRATION_2_3 = object : Migration(2, 3) {
-            override fun migrate(db: SupportSQLiteDatabase) {
-                db.execSQL(
-                    """
                     CREATE TABLE new_word_entry (
                             word TEXT PRIMARY KEY NOT NULL,
                             definition TEXT NOT NULL,
@@ -44,10 +34,9 @@ abstract class SpellCheckDatabase : RoomDatabase() {
                             ipa TEXT NOT NULL,
                             section TEXT NOT NULL
                         )    
-                    """.trimIndent()
+                """.trimIndent()
                 )
             }
         }
-
     }
 }
