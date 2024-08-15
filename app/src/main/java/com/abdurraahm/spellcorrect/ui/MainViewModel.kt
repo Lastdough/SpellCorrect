@@ -21,6 +21,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    val isDBEmpty: Flow<Boolean> = mainRepository.isDBEmpty()
     fun initDB() {
         viewModelScope.launch(Dispatchers.IO) {
             async { mainRepository.initDB() }.await()

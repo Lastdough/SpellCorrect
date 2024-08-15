@@ -26,6 +26,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import java.util.Locale
 import javax.inject.Inject
@@ -188,6 +189,8 @@ class MainRepositoryImpl @Inject constructor(
             return@withContext Result.failure(exception)
         }
     }
+
+    override fun isDBEmpty(): Flow<Boolean> = wordEntryDao.wordEntrySize().map { it == 0 }
 
     override fun totalSectionInDB() =
         sectionDataDao.totalSectionInDB()

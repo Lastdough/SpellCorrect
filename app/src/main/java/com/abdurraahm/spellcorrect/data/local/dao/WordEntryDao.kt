@@ -13,6 +13,9 @@ interface WordEntryDao {
     @Query("SELECT count(id) FROM word_entry WHERE section  =:section")
     fun wordEntryBySectionSize(section: Section): Flow<Int>
 
+    @Query("SELECT count(id) FROM word_entry")
+    fun wordEntrySize(): Flow<Int>
+
     @Query("SELECT * FROM word_entry WHERE section  =:section")
     fun wordEntryBySection(section: Section): Flow<List<WordEntry>>
 
