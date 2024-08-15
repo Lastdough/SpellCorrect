@@ -6,6 +6,7 @@ import android.content.Context
 import android.speech.tts.TextToSpeech
 import androidx.room.Room
 import com.abdurraahm.spellcorrect.data.local.dao.SectionDataDao
+import com.abdurraahm.spellcorrect.data.local.dao.WordEntryDao
 import com.abdurraahm.spellcorrect.data.local.source.SpellCheckDatabase
 import com.abdurraahm.spellcorrect.data.local.source.WordEntryLocalDataSource
 import com.abdurraahm.spellcorrect.data.local.store.NavigationDataStore
@@ -43,12 +44,15 @@ object AppModule {
         SpellCheckDatabase::class.java,
         "spell_check_db")
         .createFromAsset("database/section.db")
-        .addMigrations(SpellCheckDatabase.MIGRATION_1_2)
         .build()
 
     @Provides
     @Singleton
     fun provideSectionDataDao(db: SpellCheckDatabase) = db.sectionDataDao()
+
+    @Provides
+    @Singleton
+    fun provideWordEntryDao(db: SpellCheckDatabase) = db.wordEntryDao()
 
     @Provides
     @Singleton
@@ -59,6 +63,12 @@ object AppModule {
     fun provideProgressDataStore(
         @ApplicationContext context: Context
     ): ProgressDataStore = ProgressDataStore(context)
+
+    @Provides
+    @Singleton
+    fun provideWordEntryLocalDataStore(
+        @ApplicationContext context: Context
+    ): WordEntryLocalDataSource = WordEntryLocalDataSource(context)
 
     @Provides
     @ApplicationContext
@@ -81,7 +91,6 @@ object AppModule {
         return SpeechToTextManager(application)
     }
 
-
     @Provides
     @Singleton
     fun provideMainRepositoryImpl(
@@ -93,6 +102,7 @@ object AppModule {
         ttsService: TextToSpeechService,
         speechToTextManager: SpeechToTextManager,
         sectionDataDao: SectionDataDao,
+        wordEntryDao: WordEntryDao,
         seedGenerator: SeedGenerator
     ): MainRepository {
         return MainRepositoryImpl(
@@ -104,7 +114,8 @@ object AppModule {
             sectionDataDao = sectionDataDao,
             seedGenerator = seedGenerator,
             progressDataStore = progressDataStore,
-            speechToTextManager = speechToTextManager
+            speechToTextManager = speechToTextManager,
+            wordEntryDao = wordEntryDao
         )
     }
 }

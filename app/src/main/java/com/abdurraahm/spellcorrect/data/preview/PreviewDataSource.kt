@@ -10,6 +10,7 @@ import com.abdurraahm.spellcorrect.data.local.model.WordEntry
 object PreviewDataSource {
     fun singleWord(): WordEntry =
         WordEntry(
+            id = 0,
             word = "accurate",
             definition = listOf(
                 "free from mistakes or errors",

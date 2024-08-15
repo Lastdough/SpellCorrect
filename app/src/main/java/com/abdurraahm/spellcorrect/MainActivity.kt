@@ -1,6 +1,7 @@
 package com.abdurraahm.spellcorrect
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -19,6 +20,7 @@ import com.abdurraahm.spellcorrect.ui.SpellCorrectApp
 import com.abdurraahm.spellcorrect.ui.navigation.Screen
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -36,6 +38,13 @@ class MainActivity : ComponentActivity() {
         }
 
         lifecycleScope.launch {
+            val isEmpty = mainViewModel.isDBEmpty.first()
+            Log.d(TAG, "isdbemty : $isEmpty")
+            if (isEmpty) {
+                mainViewModel.initDB()
+                Log.d(TAG, "initDB()")
+            }
+
             mainViewModel.onboardingCompletedState.collect { completed ->
                 // splash screen false once state is known
                 keepSplashScreen = false
@@ -76,6 +85,7 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val AUDIO_PERMISSION = android.Manifest.permission.RECORD_AUDIO
+        val TAG = "Main Activity saya"
     }
 }
 
