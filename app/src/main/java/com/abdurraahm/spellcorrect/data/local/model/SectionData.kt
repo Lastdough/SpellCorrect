@@ -1,5 +1,6 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -9,6 +10,8 @@ data class SectionData(
     val id: Int,
     val description: String,
     val progress: Float,
+    @ColumnInfo(name = "shown_words")
+    val shownWord: Set<Int> = emptySet(),
 ) {
     private fun Float.toPercent(): String {
         return "%.0f".format(this * 100)
@@ -51,4 +54,7 @@ data class SectionData(
 
     val started: Boolean
         get() = progress > 0F
+
+    val shownWordSize: Int
+        get() = shownWord.size
 }

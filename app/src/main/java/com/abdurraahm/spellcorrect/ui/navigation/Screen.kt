@@ -6,9 +6,20 @@ sealed class Screen(val route: String) {
     data object Review : Screen("Review")
     data object More : Screen("More")
 
-    object DrugsDetails : Screen("detail/{id}") {
-        fun createRoute(id: String) = "detail/$id"
+    data object Speaking : Screen("Speaking/{sectionId}") {
+        fun createRoute(sectionId: Int) = "Speaking/$sectionId"
     }
 
+    data object Listening : Screen("Listening/{sectionId}") {
+        fun createRoute(sectionId: Int) = "Listening/$sectionId"
+    }
 
+    data object Result : Screen("result/{correctAnswers}/{totalQuestions}") {
+        fun createRoute(correctAnswers: Int, totalQuestions: Int) =
+            "result/${correctAnswers}/${totalQuestions}"
+    }
+
+    data object FlashScreen : Screen("flash/{mode}/{sectionId}") {
+        fun createRoute(mode: Int, sectionId: Int) = "flash/$mode/$sectionId"
+    }
 }

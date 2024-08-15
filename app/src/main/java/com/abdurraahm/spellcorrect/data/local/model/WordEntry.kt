@@ -1,77 +1,75 @@
 package com.abdurraahm.spellcorrect.data.local.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "word_entry")
 data class WordEntry(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
     val word: String,
     val definition: List<String>,
     val type: String,
-    val ipa: String
+    val ipa: String,
+    val section: Section
 ) {
-    private fun String.capitalizeFirstLetter(): String {
-        return if (this.isNotEmpty()) {
-            this.substring(0, 1).uppercase() + this.substring(1)
-        } else {
-            this
-        }
-    }
+    private fun String.capitalizeFirstLetter() =
+        if (isNotEmpty()) substring(0, 1).uppercase() + substring(1) else this
 
     val wordFirstLetterCapitalized
         get() = word.capitalizeFirstLetter()
 
-    private fun String.formatType(): String = if (arrayOf(
-            'a',
-            'i',
-            'u',
-            'e',
-            'o'
-        ).contains(this.first())
-    ) "an $this" else "a $this"
+    private fun String.formatType() = when {
+        isEmpty() -> ""
+        first() in "aiueo" -> "an $this"
+        else -> "a $this"
+    }
 
-    private fun List<String>.formatDefinitions(): String =
-        this.mapIndexed { index, definition ->
+    private fun List<String>.formatDefinitions() =
+        mapIndexed { index, definition ->
             when (index) {
                 0 -> definition
-                1 -> "or $definition"
-                2 -> "or $definition"
+                1, 2 -> "or $definition"
                 else -> "Another meaning is: $definition"
             }
         }.joinToString(separator = ". ") { it }
 
-    private fun List<String>.mergeDefinitions(): String =
-        this.mapIndexed { index, definition ->
-            "${index + 1}. $definition"
+    private fun List<String>.mergeDefinitions() =
+        mapIndexed { index, definition ->
+            "${index + 1}  : $definition"
         }.joinToString(separator = "\n") { it }
 
     val definitionWithNumber
         get() = definition.mergeDefinitions()
 
     val fullDescription
-        get() = "$word: ${type.formatType()} meaning ${definition.formatDefinitions()}"
+        get() = "$word: ${type.clean().formatType()} meaning ${definition.formatDefinitions()}"
 
-    private fun String.abbreviation(): String {
-        return when (this) {
-            "noun" -> "Noun"
-            "adjective" -> "Adj"
-            "verb" -> "Verb"
-            "adverb" -> "Adv"
-            "interjection" -> "Interj"
-            "conjunction" -> "Conj"
-            "No word type available" -> ""
-            "preposition" -> "Prep"
-            "trademark" -> "TM"
-            "combining form" -> "Comb"
-            "service mark" -> "SM"
-            else -> ""
-        }
+    private fun String.abbreviation() = when (this) {
+        "noun" -> "Noun"
+        "geographical name" -> "Geo"
+        "adjective" -> "Adj"
+        "verb" -> "Verb"
+        "adverb" -> "Adv"
+        "interjection" -> "Interj"
+        "conjunction" -> "Conj"
+        "preposition" -> "Prep"
+        "trademark" -> "TM"
+        "combining form" -> "Comb"
+        "service mark" -> "SM"
+        else -> ""
     }
 
-    private fun String.clean(): String {
-        return when (this) {
-            "noun", "adjective", "verb", "adverb", "interjection", "conjunction", "preposition", "trademark" -> this.capitalizeFirstLetter()
-            "combining form" -> "Combining Form"
-            "service mark" -> "Service Mark"
-            "No word type available" -> ""
-            else -> ""
-        }
+    private fun String.clean() =
+        if (this == "No word type available") ""
+        else this
+
+    private fun String.capital() = when (this) {
+        "noun", "adjective", "verb", "adverb", "interjection", "conjunction", "preposition", "trademark" -> capitalizeFirstLetter()
+        "combining form" -> "Combining Form"
+        "geographical name" -> "Geographical Name"
+        "service mark" -> "Service Mark"
+        else -> ""
     }
 
     // Get the abbreviation and cleaned values for the type property
@@ -79,6 +77,9 @@ data class WordEntry(
         get() = type.abbreviation()
 
     val typeClean: String
-        get() = type.clean()
+        get() = type.clean().capital()
+
+    val hasIPA: Boolean
+        get() = ipa != "No IPA available"
 
 }

@@ -12,7 +12,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -24,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.abdurraahm.spellcorrect.ui.theme.SpellCorrectTheme
 
 @Composable
-fun CustomButton(
+fun PrimaryButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     text: String,
@@ -32,10 +31,11 @@ fun CustomButton(
     isOutlined: Boolean = true,
     contentDescriptionText: String? = null,
     useDarkTheme: Boolean = false,
+    roundedCornerShape: RoundedCornerShape = RoundedCornerShape(99.dp)
 ) {
     Button(
         onClick = onClick,
-        shape = RoundedCornerShape(99.dp),
+        shape = roundedCornerShape,
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xff2f2e41)),
         modifier = modifier
             .fillMaxWidth()
@@ -66,8 +66,8 @@ fun CustomButton(
 
 @Preview
 @Composable
-private fun CustomButtonPreview() {
+private fun PrimaryButtonPreview() {
     SpellCorrectTheme {
-        CustomButton(onClick = { }, text = "Get Started")
+        PrimaryButton(onClick = { }, text = "Get Started")
     }
 }
